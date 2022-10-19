@@ -1,48 +1,51 @@
 import Link from 'next/link';
 import InlineSVG from 'react-inlinesvg';
 import { Logo } from 'components/Icons/Logo';
-import { SearchIconMd } from 'components/Icons/SearchIcon';
-import Button from 'components/Button';
-import { HamburgerMenu } from 'components/Icons/HamburgerMenu';
+import { Star } from '../../components/Icons/Star';
+import { useRouter } from 'next/router';
+import clsx from 'clsx';
+import { Wallet } from '../../components/Icons/Wallet';
 
 const NavLinks = [
-  { title: 'წიგნები', url: '/books' },
-  { title: 'პრემია საბა', url: '/premium' },
-  { title: 'ბლოგი', url: '/blog' },
-  { title: 'ჩვენ შესახებ', url: '/about-us' },
-  { title: 'კონტაქტი', url: '/contact' },
-  { title: 'ხდკ', url: '/faq' },
+  { title: 'Home', url: '/' },
+  { title: 'Contact', url: '/contact' },
+  { title: 'About Us', url: '/about' },
 ];
 
+function useQuery() {
+  const location = useRouter();
+  return location.pathname;
+}
+
 function Header() {
+  const location = useQuery();
+
   return (
-    <header className="bg-white">
-      <nav className="cont flex h-9-6 items-center">
-        <div className="mr-2-0 mr-0-4 cursor-pointer">
-          <Link className="" href="/">
-            <InlineSVG src={Logo.src} />
-          </Link>
-        </div>
-        <div className="xl:flex hidden">
+    <header className="h-6-0 bg-black/30 w-full fixed z-20 flex items-center ">
+      <div className="h-6-0 w-6-0 min-w-6-0 flex items-center justify-center bg-red">
+        <InlineSVG src={Logo.src} />
+      </div>
+      <nav className="w-full flex items-center justify-end">
+        <div className=" flex mr-3-0">
           {NavLinks.map((link, i) => (
             <div
               key={i}
-              className="px-2-0 m-0-4 text-1-4 leading-2-4 text-primary"
+              className={clsx(
+                'hover:text-text-primary text-text-primary/50 leading-2-4 text-3-2  text-primary flex items-center',
+                {
+                  '!text-text-primary': location === link.url,
+                }
+              )}
             >
               <Link href={link.url}>{link.title}</Link>
+              {i !== NavLinks.length - 1 && (
+                <InlineSVG src={Star.src} className="mx-5-2 " />
+              )}
             </div>
           ))}
         </div>
-        <div className="ml-auto items-center flex flex-row-reverse xl:flex-row">
-          <div className="xl:hidden unset xl:ml-0 ml-3-5">
-            <Button color="transparent" type="cube" icon={HamburgerMenu.src} />
-          </div>
-          <div className=" xl:ml-0 ml-4-0">
-            <Button color="transparent" type="cube" icon={SearchIconMd.src} />
-          </div>
-          <div className="xl:ml-3-5 hidden sm:inline">
-            <Button text="შესვლა" />
-          </div>
+        <div className="w-8-0 h-6-0 flex items-center justify-center bg-red cursor-pointer">
+          <InlineSVG src={Wallet.src} className="" />
         </div>
       </nav>
     </header>

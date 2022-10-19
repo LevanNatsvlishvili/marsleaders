@@ -1,7 +1,21 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { About } from 'components/TextCarousels/About';
+import InlineSVG from 'react-inlinesvg';
+import useStore from 'context';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const { currView } = useStore();
+  const [carousel, setCarousel] = useState(0);
+
+  useEffect(() => {
+    console.log(currView);
+    setTimeout(() => {
+      setCarousel(carousel - 5);
+    }, 1200);
+  }, [currView]);
+
   return (
     <div className="w-full">
       <Head>
@@ -11,21 +25,55 @@ export default function Home() {
       </Head>
 
       <section className="h-100-vh w-full flex relative">
-        <div className="min-w-6-0 w-6-0 h-full absolute bg-black"></div>
-        <div className="">
-          <img className="h-full" src="/cover-image.png" alt="" />
+        <div className="min-w-6-0 w-6-0 h-full absolute z-40 bg-black ">
+          <div className="w-full h-full relative overflow-hidden">
+            <div
+              className="text-carousel"
+              style={{ transform: `translateY(${carousel}%)` }}
+            />
+          </div>
+        </div>
+        <div className="relative w-full h-full">
+          <Image
+            className="h-full w-full"
+            src="/cover-image.png"
+            alt=""
+            layout="fill"
+            objectFit="cover"
+          />
         </div>
       </section>
       <section className="h-100-vh w-full flex relative">
-        <div className="min-w-6-0 w-6-0 h-full absolute bg-red-darker"></div>
+        <div className="min-w-6-0 w-6-0 h-full absolute z-40 bg-red-darker">
+          <div className="w-full h-full relative overflow-hidden">
+            <div
+              className="text-carousel"
+              style={{ transform: `translateY(${carousel}%)` }}
+            />
+          </div>
+        </div>
         <div className="">2</div>
       </section>
       <section className="h-100-vh w-full flex relative">
-        <div className="min-w-6-0 w-6-0 h-full absolute bg-red-darker"></div>
+        <div className="min-w-6-0 w-6-0 h-full absolute z-40 bg-red-darker">
+          <div className="w-full h-full relative overflow-hidden">
+            <div
+              className="text-carousel"
+              style={{ transform: `translateY(${carousel}%)` }}
+            />
+          </div>
+        </div>
         <div>3</div>
       </section>
       <section className="h-100-vh w-full flex relative">
-        <div className="min-w-6-0 w-6-0 h-full absolute bg-text-primary"></div>
+        <div className="min-w-6-0 w-6-0 h-full absolute z-40 bg-text-primary">
+          <div className="w-full h-full relative overflow-hidden">
+            <div
+              className="text-carousel"
+              style={{ transform: `translateY(${carousel}%)` }}
+            />
+          </div>
+        </div>
         <div>4</div>
       </section>
     </div>

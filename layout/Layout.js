@@ -3,6 +3,10 @@ import Scroll from './Scroll';
 import useStore from 'context';
 import Loading from 'components/Loading';
 import { useRouter } from 'next/router';
+import InlineSVG from 'react-inlinesvg';
+import { Star } from '../components/Icons/Star';
+import { Logo } from '../components/Icons/Logo';
+import Header from './Header';
 
 function useQuery() {
   const location = useRouter();
@@ -25,8 +29,9 @@ const Layout = ({ children }) => {
 
   return (
     <div className="relative bg-secondary">
-      <Loading loading={loading} />
-      <div className="h-6-0 bg-black/30 w-full fixed z-20"></div>
+      {/* <Loading loading={loading} /> */}
+
+      <Header />
       <Scroll
         shouldScrollDisplay={true}
         currView={currView}

@@ -4,3 +4,14 @@
 @import 'config';
 @import 'typography';
 /*! purgecss end ignore */
+
+.text-carousel {
+  background-image: url('/text-carousel-about.svg');
+  background-repeat: repeat-y;
+  height: 300vh;
+  // transform: translateY(-5%);
+  position: absolute;
+  top: 0;
+  transition: 1500ms;
+  width: 60px;
+}
