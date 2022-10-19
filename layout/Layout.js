@@ -1,11 +1,8 @@
 import React, { useEffect } from 'react';
 import Scroll from './Scroll';
 import useStore from 'context';
-import Loading from 'components/Loading';
+// import Loading from 'components/Loading';
 import { useRouter } from 'next/router';
-import InlineSVG from 'react-inlinesvg';
-import { Star } from '../components/Icons/Star';
-import { Logo } from '../components/Icons/Logo';
 import Header from './Header';
 
 function useQuery() {

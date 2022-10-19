@@ -14,6 +14,8 @@ export default function Home() {
     setTimeout(() => {
       setCarousel(carousel - 5);
     }, 1200);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currView]);
 
   return (
