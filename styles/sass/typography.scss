@@ -1,0 +1,26 @@
+//
+// This file contains all @font-face declarations.
+/// @require {function} font-url - Font asset helper
+//
+
+$fonts: 'TBCX-Bold', 'TBCX-Medium', 'TBCX-Regular';
+
+@each $font in $fonts {
+  @if ($font != '') {
+    @font-face {
+      font-family: $font;
+      src: font-url('#{$font}.eot');
+      src: font-url('#{$font}.eot?#iefix') format('embedded-opentype'),
+        font-url('#{$font}.otf') format('opentype'),
+        font-url('#{$font}.svg##{$font}') format('svg'),
+        font-url('#{$font}.ttf') format('truetype'),
+        font-url('#{$font}.woff2') format('woff2'),
+        font-url('#{$font}.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+  }
+}
+
+/* font converted using font-converter.net. thank you! */

@@ -1,0 +1,16 @@
+@tailwind base;
+
+@layer base {
+  .cont {
+    @apply xl:px-11-2 2xl:px-16-5 xs:px-4-6 px-1-6;
+  }
+  .gallery-slider {
+    @apply !h-[255px] !w-[255px] first:mx-0 first:pr-[15px] last:mx-0 last:pl-[15px] mx-[15px] min-w-[255px];
+  }
+  .page-heading-text {
+    @apply text-primary text-2-0 sm:text-3-2 md:text-3-6 leading-4-8 md:leading-5-2 font-700;
+  }
+  .page-heading {
+    @apply pb-3-2 pt-6-4 xs:pt-8-0 cont;
+  }
+}
