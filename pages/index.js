@@ -1,9 +1,30 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from 'next/head';
 import Image from 'next/image';
 import { About } from 'components/TextCarousels/About';
 import InlineSVG from 'react-inlinesvg';
 import useStore from 'context';
 import { useEffect, useState } from 'react';
+import { Medal } from 'components/Icons/Medal';
+import { LogoLg } from 'components/Icons/Logo';
+import { MarsleaderHover } from 'components/Icons/MarsleaderHover';
+import { Galaxy } from 'components/Icons/Galaxy';
+import Swiper from 'components/Swiper';
+
+const images = [
+  '/images/marsleader.png',
+  '/images/marsleader.png',
+  '/images/marsleader.png',
+  '/images/marsleader.png',
+  '/images/marsleader.png',
+  '/images/marsleader.png',
+  '/images/marsleader.png',
+  '/images/marsleader.png',
+  '/images/marsleader.png',
+  '/images/marsleader.png',
+  '/images/marsleader.png',
+  '/images/marsleader.png',
+];
 
 export default function Home() {
   const { currView } = useStore();
@@ -12,7 +33,7 @@ export default function Home() {
   useEffect(() => {
     console.log(currView);
     setTimeout(() => {
-      setCarousel(carousel - 5);
+      setCarousel(carousel - 2);
     }, 1200);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -27,7 +48,7 @@ export default function Home() {
       </Head>
 
       <section className="h-100-vh w-full flex relative">
-        <div className="min-w-6-0 w-6-0 h-full absolute z-40 bg-black ">
+        <div className="min-w-6-0 w-6-0 h-full z-40 bg-black ">
           <div className="w-full h-full relative overflow-hidden">
             <div
               className="text-carousel"
@@ -38,7 +59,7 @@ export default function Home() {
         <div className="relative w-full h-full">
           <Image
             className="h-full w-full"
-            src="/cover-image.png"
+            src="/images/cover-image.png"
             alt=""
             layout="fill"
             objectFit="cover"
@@ -46,7 +67,7 @@ export default function Home() {
         </div>
       </section>
       <section className="h-100-vh w-full flex relative">
-        <div className="min-w-6-0 w-6-0 h-full absolute z-40 bg-red-darker">
+        <div className="min-w-6-0 w-6-0 h-full z-40 bg-red-darker">
           <div className="w-full h-full relative overflow-hidden">
             <div
               className="text-carousel"
@@ -54,10 +75,57 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="">2</div>
+        <div className="w-full">
+          <div className="h-50-percent text-primary flex relative">
+            <div className=" w-70-percent h-full bg-red flex justify-center flex-col pl-14-0 pr-11-6">
+              <div className="flex items-center">
+                <InlineSVG src={Medal.src} />
+                <p className="text-4-2 text-text-primary leading-5-0 tracking-1-19 ml-2-7">
+                  What is Marsleaders
+                </p>
+              </div>
+              <div className="h-0-2 mt-2-1 mb-3-7 w-full bg-red-dark" />
+
+              <p className="text-text-secondary text-3-2 leading-3-9 tracking-0-96">
+                Marsleaders - is a play-&-earn blockchain based metaverse world
+                life simulation game, giving humanity an opportunity to start
+                over, from a blank red soil, to base a new virtual civilization
+                on Mars.
+              </p>
+            </div>
+            <div className="min-w-50-vh bg-red-darker h-full flex items-center justify-center">
+              <InlineSVG src={LogoLg.src} />
+            </div>
+          </div>
+          <div className="h-50-percent text-primary  flex items-center relative">
+            <div className="relative h-full group">
+              <InlineSVG
+                src={MarsleaderHover.src}
+                className="opacity-0 group-hover:opacity-100 duration-300"
+              />
+              <img
+                src="/images/marsleader.png"
+                alt=""
+                className="absolute top-50-percent left-50-percent -translate-y-50-percent -translate-x-50-percent"
+                layout="intrinsic "
+              />
+            </div>
+            <p className="text-text-primary text-3-6 leading-6-0 tracking-3-6 font-blonde">
+              The Age of Exploration might be over for earth, but it’s only the
+              beginning <span className="text-red">for Mars</span>
+            </p>
+
+            <InlineSVG className="" src={Galaxy.src} />
+            <img
+              className="h-full absolute -z-10 right-0 top-0"
+              src="/images/galaxy.png"
+              alt=""
+            />
+          </div>
+        </div>
       </section>
       <section className="h-100-vh w-full flex relative">
-        <div className="min-w-6-0 w-6-0 h-full absolute z-40 bg-red-darker">
+        <div className="min-w-6-0 w-6-0 h-full z-40 bg-red-darker">
           <div className="w-full h-full relative overflow-hidden">
             <div
               className="text-carousel"
@@ -65,10 +133,28 @@ export default function Home() {
             />
           </div>
         </div>
-        <div>3</div>
+        <div className="w-full flex items-center justify-center bg-red">
+          <div className="max-w-[1365px]">
+            <p className="text-[#d6d6d6] leading-3-5 text-2-8 tracking-0-84 font-galatea">
+              <span className="text-red">NFT holders </span>
+              and players will be able to obtain various roles with different
+              privileges in a game, as well as virtual lands and facilities on
+              the newly ‘habitable’
+              <span className="text-red"> red planet</span>, to create their own
+              reality, states, laws and community
+            </p>
+
+            <Swiper list={images} />
+
+            <p className="text-[#d6d6d6] leading-3-5 text-2-8 tracking-0-84 font-galatea">
+              Marsleaders is a game of fiction, however, success in this game
+              directly converts to success in real life of NFT holders on earth.
+            </p>
+          </div>
+        </div>
       </section>
       <section className="h-100-vh w-full flex relative">
-        <div className="min-w-6-0 w-6-0 h-full absolute z-40 bg-text-primary">
+        <div className="min-w-6-0 w-6-0 h-full z-40 bg-text-primary">
           <div className="w-full h-full relative overflow-hidden">
             <div
               className="text-carousel"
@@ -76,7 +162,14 @@ export default function Home() {
             />
           </div>
         </div>
-        <div>4</div>
+        <div className="w-full">
+          <p className="color-[#d6d6d6] leading-3-5 text-2-8 tracking-0-84 font-galatea">
+            NFT holders and players will be able to obtain various roles with
+            different privileges in a game, as well as virtual lands and
+            facilities on the newly ‘habitable’ red planet, to create their own
+            reality, states, laws and community
+          </p>
+        </div>
       </section>
     </div>
   );

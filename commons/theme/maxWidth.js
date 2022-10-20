@@ -227,6 +227,7 @@ const maxWidth = {
   '100-percent': '100%',
   'fit-content': 'fit-content',
   '100-vw': '100vw',
+  '25-vh': '25vh',
   '17-0': '17rem',
   '22-0': '22rem',
   '105-8': '105.8rem',

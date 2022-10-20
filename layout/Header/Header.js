@@ -21,7 +21,7 @@ function Header() {
   const location = useQuery();
 
   return (
-    <header className="h-6-0 bg-black/30 w-full fixed z-20 flex items-center ">
+    <header className="h-6-0 bg-black w-full fixed z-20 flex items-center ">
       <div className="h-6-0 w-6-0 min-w-6-0 flex items-center justify-center bg-red">
         <InlineSVG src={Logo.src} />
       </div>
@@ -31,7 +31,7 @@ function Header() {
             <div
               key={i}
               className={clsx(
-                'hover:text-text-primary text-text-primary/50 leading-2-4 text-3-2  text-primary flex items-center',
+                'hover:text-text-primary text-text-primary/50 leading-2-4 text-3-2 tracking-0-96 text-primary flex items-center',
                 {
                   '!text-text-primary': location === link.url,
                 }
