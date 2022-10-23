@@ -21,10 +21,10 @@ section {
 
 html,
 body {
-  margin: 0;
+  /* margin: 0; */
   height: 100%;
   background: black;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 html {

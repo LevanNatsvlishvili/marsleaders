@@ -11,6 +11,7 @@ import { MarsleaderHover } from 'components/Icons/MarsleaderHover';
 import { Galaxy } from 'components/Icons/Galaxy';
 import Swiper from 'components/Swiper';
 import { Star } from 'components/Icons/Star';
+import { Rocket } from 'components/Icons/Rocket';
 
 const images = [
   {
@@ -36,15 +37,49 @@ const images = [
 export default function Home() {
   const { currView } = useStore();
   const [carousel, setCarousel] = useState(0);
+  const [rocket, setRocket] = useState(0);
 
   useEffect(() => {
     console.log(currView);
     setTimeout(() => {
-      setCarousel(carousel - 2);
+      setCarousel(carousel - 20);
     }, 1200);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currView]);
+
+  useEffect(() => {
+    setRocket((timeline.length + 1) * 10);
+  }, []);
+
+  const handleRocket = () => {
+    console.log(rocket);
+    if (rocket - 18.5 < -21) {
+      return;
+    }
+    setRocket(rocket - 18.5);
+  };
+
+  console.log(rocket);
+
+  const TimelineDot = (props) => {
+    const { date, content } = props;
+    return (
+      <div onClick={handleRocket} className="flex">
+        <div className=" min-w-5-8 w-5-8 h-5-8 bg-white rounded-50-percent flex items-center justify-center">
+          <div className="bg-red rounded-50-percent w-2-1 h-2-1"></div>
+        </div>
+        <div className="ml-3-1">
+          <p className="text-2-2 font-ranger leading-2-6 tracking-4-4">
+            {date}
+          </p>
+          <p className="mt-1-2 text-2-2 font-galatea leading-2-7 tracking-4-4">
+            {content}
+          </p>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="w-full">
@@ -180,15 +215,80 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="w-full">
-          <p className="color-[#d6d6d6] leading-3-5 text-2-8 tracking-0-84 font-galatea">
-            NFT holders and players will be able to obtain various roles with
-            different privileges in a game, as well as virtual lands and
-            facilities on the newly ‘habitable’ red planet, to create their own
-            reality, states, laws and community
-          </p>
+        <div className="w-full h-90-percent overflow-hidden m-auto">
+          <div className="w-50-percent m-auto text-text-primary  h-full relative">
+            <InlineSVG
+              src={Rocket.src}
+              className="absolute h-18-0 -left-1-8 top-50-percent z-10 -translate-y-50-percent top-50-percent"
+            />
+            <div
+              style={{
+                minHeight: `calc(20%*${timeline.length})`,
+                transform: `translateY(calc(${rocket}% * -1))`,
+              }}
+              className="h-full duration-1000 pb-10-percent"
+            >
+              <div
+                style={{ height: `calc((${timeline.length} * 20%) + 20%)` }}
+                className="h-full w-0-2 bg-white absolute left-2-8 -z-10 -mt-30-percent"
+              />
+              {timeline.map((checkpoint, i) => (
+                <div key={i} className="h-20-percent flex items-center">
+                  <TimelineDot
+                    content={checkpoint.content}
+                    date={checkpoint.date}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </div>
   );
 }
+
+const timeline = [
+  {
+    date: 'December 2023',
+    content: `MarsLeaders Official Launch`,
+  },
+  {
+    date: 'Novebmer 2023',
+    content: `Game utility sales
+      Announcing the season II`,
+  },
+  {
+    date: 'September 2023',
+    content: `Opening BETA version of MarsLeaders
+      Announcing game utility sales (vehicles, businesses)`,
+  },
+  {
+    date: 'April 2023',
+    content: `First community party in New York
+      First community party in Amsterdam
+      Marsleaders lands sale`,
+  },
+  {
+    date: 'March 2023',
+    content: `Announcing metaverse lands on sale
+      Announcing whitelist contests for the land sales
+      `,
+  },
+  {
+    date: 'Ferbuary 2023',
+    content: `MarsLeaders game development
+      First Season competition launch on Discord with 500k prize pool `,
+  },
+  {
+    date: 'January 2023',
+    content: `Announcing MarsCoin
+      First sales launch of Citizen collection (9750 NFT’s)
+      Presidents sales with auction system (195 NFT’s)
+      Contest Winner’s Awards`,
+  },
+  {
+    date: 'September-January 2022',
+    content: 'Contests with prizes Sneak peeks Whitelist giveaways',
+  },
+];
