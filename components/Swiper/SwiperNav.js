@@ -8,16 +8,13 @@ const SwiperNav = forwardRef((props, ref) => {
   const { nextRef, prevRef } = ref;
   return (
     <div className="h-2-4 flex items-center w-full mt-5-2 pr-11-2 relative pl-16-2">
-      {/* <div className="absolute left-0 ">
-        <div className="relative">
-          <div className="bullet-pagination absolute right-0"></div>
-        </div>
-        <div className="h-0-7 w-0-7 rounded-50-percent bg-[#E6E6E6] " />
-      </div> */}
+      <div className="bullet-pagination absolute !bottom-0 h-full">
+        <div className="h-0-7 w-0-7 rounded-50-percent bg-[#E6E6E6] swiper-pagination-bullet" />
+      </div>
       <div className="h-0-2 relative  w-full">
         <div className="!h-0-2 relative !bg-[#383838] w-full swiper-scrollbar" />
       </div>
-      <div className="h-full  absolute right-0 2xl:flex hidden flex items-center">
+      <div className="h-full absolute right-0  flex items-center">
         <div ref={prevRef} className="mr-0-9 cursor-pointer">
           <InlineSVG src={ArrowLeft.src} className="" />
         </div>
@@ -26,6 +23,19 @@ const SwiperNav = forwardRef((props, ref) => {
           <InlineSVG src={ArrowRight.src} className="" />
         </div>
       </div>
+      <style jsx>
+        {`
+          .bullet-pagination .swiper-pagination-bullet {
+            margin-right: 3rem;
+          }
+          .swiper-pagination-bullet:last-child {
+            margin-right: 0;
+          }
+          .bullet-pagination .swiper-pagination-bullet {
+            background: #fff;
+          }
+        `}
+      </style>
     </div>
   );
 });

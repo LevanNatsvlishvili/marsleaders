@@ -245,6 +245,7 @@ const spacing = {
   '65-percent': '65%',
   '70-percent': '70%',
   '71-5-percent': '71.5%',
+  '72-percent': '72%',
   '75-percent': '75%',
   '80-percent': '80%',
   '85-percent': '85%',

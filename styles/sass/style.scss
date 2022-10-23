@@ -5,6 +5,14 @@
 @import 'typography';
 /*! purgecss end ignore */
 
+$default-font-size: 62.5%;
+
+// @for $i from 1 through 3 {
+//   html {
+//     font-size: $default-font-size - 2.5;
+//   }
+// }
+
 .text-carousel {
   background-image: url('/images/text-carousel-about.svg');
   background-repeat: repeat-y;
@@ -14,4 +22,28 @@
   top: 0;
   transition: 1500ms;
   width: 60px;
+}
+
+.swiper-pagination-bullet {
+  background: transparent !important;
+  height: 2.4rem !important;
+  width: 2.4rem !important;
+  margin-right: 3rem !important;
+  position: relative;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  border: 1px solid #fff;
+}
+
+.swiper-pagination-bullet::after {
+  content: '';
+  background: #fff !important;
+  border-radius: 50%;
+  width: 0.8rem;
+  height: 0.8rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

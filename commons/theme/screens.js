@@ -7,6 +7,7 @@ const screens = {
   xl: '1024px',
   '2xl': '1268px',
   '3xl': '1440px',
+  '4xl': '1540px',
   print: { raw: 'print' },
   landscape: { raw: '(orientation: landscape)' },
 };

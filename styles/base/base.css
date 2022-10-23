@@ -23,7 +23,7 @@ html,
 body {
   margin: 0;
   height: 100%;
-  /* background: black; */
+  background: black;
   overflow: hidden;
 }
 
@@ -37,52 +37,32 @@ html {
 a {
   cursor: pointer;
 }
-/* 
-@media (max-width: 1358px) {
+
+@media (max-width: 1600px) {
   html {
-    font-size: 60%;
+    font-size: 50%;
   }
 }
-@media (max-width: 1300px) {
+@media (max-width: 1600px) {
   html {
-    font-size: 55%;
-  }
-}
-@media (max-width: 1200px) {
-  html {
-    font-size: 52.5%;
+    font-size: 45%;
   }
 }
 @media (max-width: 1100px) {
   html {
-    font-size: 50%;
+    font-size: 40%;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 900px) {
   html {
-    font-size: 62.5%;
+    font-size: 35%;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 839px) {
   html {
-    font-size: 60%;
+    font-size: 45%;
   }
 }
-@media (max-width: 950px) {
-  html {
-    font-size: 55%;
-  }
-}
-@media (max-width: 866px) {
-  html {
-    font-size: 50%;
-  }
-}
-@media (max-width: 767px) {
-  html {
-    font-size: 62.5%;
-  }
-} */
 
 .scroll-bar::-webkit-scrollbar {
   width: 4px;

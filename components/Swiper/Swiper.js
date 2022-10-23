@@ -24,11 +24,11 @@ const GallerySlider = (props) => {
     pagination: {
       type: 'bullets',
       el: '.bullet-pagination',
-      dynamicBullets: true,
-      dynamicMainBullets: 2,
+      // dynamicBullets: true,
+      // dynamicMainBullets: 2,
     },
     speed: 800,
-    slidesPerView: 4,
+    slidesPerView: 1,
     // breakpoints: {
     //   200: {
     //     spaceBetween: 15,
@@ -37,7 +37,7 @@ const GallerySlider = (props) => {
     //     spaceBetween: 30,
     //   },
     // },
-    spaceBetween: 40,
+    spaceBetween: 10,
     onInit: (swiper) => {
       swiper.params.navigation.prevEl = prevRef.current;
       swiper.params.navigation.nextEl = nextRef.current;
@@ -49,17 +49,33 @@ const GallerySlider = (props) => {
   return (
     <div>
       <div className="w-full bg-[#383838] h-0-1 mt-5-2" />
-      <div className="max-w-[1365px] mt-6-0">
-        <Swiper modules={[Pagination, Navigation]} {...sliderOptions}>
-          {list.map((item, i) => (
-            <SwiperSlide
-              key={item.id || i}
-              className="swiper-slide-img-gallery cursor-pointer"
-            >
-              <img src={item} alt="" className=" " />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <div className="w-full mt-6-0 ">
+        <div className="-mx-2-0">
+          <Swiper
+            modules={[Pagination, Navigation]}
+            {...sliderOptions}
+            className=""
+          >
+            {list.map((item, i) => (
+              <SwiperSlide key={item.id || i} className="cursor-pointer">
+                <div className="flex w-full pl-2-0">
+                  <div className="pr-4-0 w-25-percent">
+                    <img src={item.img1} alt="" className=" " />
+                  </div>
+                  <div className="pr-4-0 w-25-percent">
+                    <img src={item.img1} alt="" className=" " />
+                  </div>
+                  <div className="pr-4-0 w-25-percent">
+                    <img src={item.img1} alt="" className=" " />
+                  </div>
+                  <div className="pr-4-0 w-25-percent">
+                    <img src={item.img1} alt="" className=" " />
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
         <SwiperNav
           ref={{
@@ -71,40 +87,6 @@ const GallerySlider = (props) => {
           {`
             .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
               background: #00afcf;
-            }
-
-            .swiper-slide-img-gallery {
-              height: 391px !important;
-            }
-
-            .swiper-slide-img-viewer {
-              height: 22.2rem !important;
-              width: 13.4rem !important;
-            }
-            .swiper-slide-img-viewer.active {
-              width: 22.2rem !important;
-            }
-            .swiper-slide-img-viewer:hover {
-              width: 22.2rem !important;
-            }
-
-            @media only screen and (max-width: 600px) {
-              .swiper-slide-img-gallery {
-                width: 188px !important;
-                height: 188px !important;
-                min-width: 188px !important;
-              }
-
-              .swiper-slide-img-viewer {
-                width: 12rem !important;
-                height: 19.8rem !important;
-                &-active {
-                  width: 16.3rem !important;
-                }
-              }
-              .swiper-slide-img-viewer:hover {
-                width: 12rem !important;
-              }
             }
           `}
         </style>
