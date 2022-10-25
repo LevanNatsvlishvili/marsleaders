@@ -96,18 +96,10 @@ const GallerySlider = (props) => {
 };
 
 GallerySlider.propTypes = {
-  isNavOn: PropTypes.bool,
-  type: PropTypes.string,
   list: PropTypes.array,
-  onSlideClick: PropTypes.func,
-  value: PropTypes.string || PropTypes.bool,
 };
 GallerySlider.defaultProps = {
-  isNavOn: false,
-  type: 'imageGallery',
   list: [],
-  onSlideClick: () => {},
-  value: '' || false,
 };
 
 export default GallerySlider;

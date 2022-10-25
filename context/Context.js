@@ -8,7 +8,7 @@ export const StoreContextProvider = ({ children }) => {
   const router = useRouter();
 
   const [currView, setCurrView] = useState(0);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const handleNavigationLoading = (path) => {
     setLoading(true);
@@ -16,6 +16,7 @@ export const StoreContextProvider = ({ children }) => {
     setTimeout(() => {
       router.push(path);
     }, 400);
+
     setTimeout(() => {
       setLoading(false);
     }, 1100);

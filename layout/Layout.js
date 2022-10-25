@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import Scroll from './Scroll';
 import useStore from 'context';
-// import Loading from 'components/Loading';
+import Loading from 'components/Loading';
 import { useRouter } from 'next/router';
 import Header from './Header';
+import { setLazyProp } from 'next/dist/server/api-utils';
 
 function useQuery() {
   const location = useRouter();
@@ -14,7 +15,7 @@ function useQuery() {
 }
 
 const Layout = ({ children }) => {
-  const { currView, setCurrView, loading } = useStore();
+  const { currView, setCurrView, loading, setLoading } = useStore();
   const shouldScrollDisplay = useQuery();
 
   useEffect(() => {
@@ -24,9 +25,15 @@ const Layout = ({ children }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shouldScrollDisplay]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
+
   return (
     <div className="relative bg-secondary">
-      {/* <Loading loading={loading} /> */}
+      <Loading loading={loading} />
 
       <Header />
       <Scroll

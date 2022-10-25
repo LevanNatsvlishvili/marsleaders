@@ -1,17 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head';
 import Image from 'next/image';
-import { About } from 'components/TextCarousels/About';
 import InlineSVG from 'react-inlinesvg';
 import useStore from 'context';
 import { useEffect, useState } from 'react';
 import { Medal } from 'components/Icons/Medal';
 import { LogoLg } from 'components/Icons/Logo';
 import { MarsleaderHover } from 'components/Icons/MarsleaderHover';
-import { Galaxy } from 'components/Icons/Galaxy';
 import Swiper from 'components/Swiper';
 import { Star } from 'components/Icons/Star';
 import { Rocket } from 'components/Icons/Rocket';
+import HeadingGlitch from 'components/Animations/HeadingGlitch';
+import { motion } from 'framer-motion';
+import { ScrollArrow, ScrollMouse } from 'components/Icons/Scroll';
+import clsx from 'clsx';
+import ScrollDown from 'components/Animations/ScrollDown';
 
 const images = [
   {
@@ -38,18 +41,31 @@ export default function Home() {
   const { currView } = useStore();
   const [carousel, setCarousel] = useState(0);
   const [rocket, setRocket] = useState(0);
+  const [planets, setPlanets] = useState(0);
 
   useEffect(() => {
-    console.log(currView);
     setTimeout(() => {
-      setCarousel(carousel - 20);
+      setCarousel(carousel - 2);
     }, 1200);
+
+    if (currView !== 2) {
+      setTimeout(() => {
+        if (planets !== 0) {
+          setPlanets(0);
+        }
+        if (rocket !== (timeline.length + 1) * 10) {
+          setRocket((timeline.length + 1) * 10);
+        }
+      }, 2000);
+    }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currView]);
 
   useEffect(() => {
     setRocket((timeline.length + 1) * 10);
+
+    setPlanets(0);
   }, []);
 
   const handleRocket = () => {
@@ -58,15 +74,14 @@ export default function Home() {
       return;
     }
     setRocket(rocket - 18.5);
+    setPlanets(planets + 50);
   };
-
-  console.log(rocket);
 
   const TimelineDot = (props) => {
     const { date, content } = props;
     return (
-      <div onClick={handleRocket} className="flex">
-        <div className=" min-w-5-8 w-5-8 h-5-8 bg-white rounded-50-percent flex items-center justify-center">
+      <div onClick={handleRocket} className="flex cursor-pointer">
+        <div className="min-w-4-6 w-4-6 h-4-6 bg-white rounded-50-percent flex items-center justify-center">
           <div className="bg-red rounded-50-percent w-2-1 h-2-1"></div>
         </div>
         <div className="ml-3-1">
@@ -106,6 +121,13 @@ export default function Home() {
             layout="fill"
             objectFit="cover"
           />
+          <div className="absolute top-50-percent -translate-y-50-percent left-0">
+            <div className="mb-10-0">
+              <HeadingGlitch />
+            </div>
+
+            <ScrollDown currView={currView} />
+          </div>
         </div>
       </section>
       <section className="h-100-vh w-full flex relative">
@@ -206,7 +228,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="h-100-vh w-full flex relative">
+      <section className="h-100-vh w-full flex relative overflow-hidden">
         <div className="min-w-6-0 w-6-0 h-full z-40 bg-text-primary">
           <div className="w-full h-full relative overflow-hidden">
             <div
@@ -215,32 +237,59 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="w-full h-90-percent overflow-hidden m-auto">
-          <div className="w-50-percent m-auto text-text-primary  h-full relative">
-            <InlineSVG
-              src={Rocket.src}
-              className="absolute h-18-0 -left-1-8 top-50-percent z-10 -translate-y-50-percent top-50-percent"
-            />
-            <div
-              style={{
-                minHeight: `calc(20%*${timeline.length})`,
-                transform: `translateY(calc(${rocket}% * -1))`,
+        <div className="w-full h-full flex relative">
+          <div className="absolute -translate-x-70-percent -translate-y-70-percent left-0 top-0">
+            <motion.div
+              transition={{ ease: 'easeOut', duration: 2 }}
+              animate={{
+                x: planets,
+                y: planets,
               }}
-              className="h-full duration-1000 pb-10-percent"
             >
+              <img className="" src="/images/mars.png" alt="" />
+            </motion.div>
+          </div>
+          <div className="h-90-percent overflow-hidden m-auto relative">
+            <div className="w-50-percent mx-auto text-text-primary  h-full relative">
+              <div className="absolute rounded-50-percent -mt-0-8 h-17-5 -left-3-0 top-50-percent z-10 -translate-y-80-percent top-50-percent">
+                <img
+                  className="w-full h-full"
+                  src="/images/shuttle.png"
+                  alt=""
+                />
+              </div>
               <div
-                style={{ height: `calc((${timeline.length} * 20%) + 20%)` }}
-                className="h-full w-0-2 bg-white absolute left-2-8 -z-10 -mt-30-percent"
-              />
-              {timeline.map((checkpoint, i) => (
-                <div key={i} className="h-20-percent flex items-center">
-                  <TimelineDot
-                    content={checkpoint.content}
-                    date={checkpoint.date}
-                  />
-                </div>
-              ))}
+                style={{
+                  minHeight: `calc(20%*${timeline.length})`,
+                  transform: `translateY(calc(${rocket}% * -1))`,
+                }}
+                className="h-full duration-1000 pb-10-percent"
+              >
+                <div
+                  style={{ height: `calc((${timeline.length} * 20%) + 20%)` }}
+                  className="h-full w-0-2 bg-white absolute left-2-3 -z-10 -mt-30-percent"
+                />
+                {timeline.map((checkpoint, i) => (
+                  <div key={i} className="h-20-percent flex items-center">
+                    <TimelineDot
+                      content={checkpoint.content}
+                      date={checkpoint.date}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
+          </div>
+          <div className="absolute translate-x-30-percent translate-y-30-percent right-0 bottom-0">
+            <motion.div
+              transition={{ ease: 'easeOut', duration: 2 }}
+              animate={{
+                x: planets,
+                y: planets,
+              }}
+            >
+              <img className="" src="/images/earth.png" alt="" />
+            </motion.div>
           </div>
         </div>
       </section>

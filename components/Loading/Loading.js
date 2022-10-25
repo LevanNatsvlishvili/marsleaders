@@ -7,16 +7,16 @@ function Loading(props) {
   return (
     <div
       className={clsx(
-        `navmenu bg-global overflow-hidden ease-linear flex justify-center items-center text-6xl sm:text-8xl text-center absolute z-50`,
+        `bg-black z-50 w-full h-full flex justify-center items-center absolute`,
         {
-          'navbar-visible': loading,
-          'navbar-hidden': !loading,
+          'opacity-100': loading,
+          'opacity-0': !loading,
         }
       )}
     >
-      <div className="loader">
-        <div className="loader-face">
-          <div className="loader-circle"></div>
+      <div className="">
+        <div className="">
+          <div className=""></div>
         </div>
       </div>
     </div>
