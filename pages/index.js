@@ -38,10 +38,11 @@ const images = [
 ];
 
 export default function Home() {
-  const { currView } = useStore();
+  const { currView, loading } = useStore();
   const [carousel, setCarousel] = useState(0);
   const [rocket, setRocket] = useState(0);
   const [planets, setPlanets] = useState(0);
+  const [video, setVideo] = useState('');
 
   useEffect(() => {
     setTimeout(() => {
@@ -96,6 +97,10 @@ export default function Home() {
     );
   };
 
+  useEffect(() => {
+    setVideo('./video/marsleaders-banner.mp4');
+  }, [loading]);
+
   return (
     <div className="w-full">
       <Head>
@@ -114,19 +119,28 @@ export default function Home() {
           </div>
         </div>
         <div className="relative w-full h-full">
-          <Image
+          {/* <Image
             className="h-full w-full"
             src="/images/cover-image.png"
             alt=""
             layout="fill"
             objectFit="cover"
-          />
-          <div className="absolute top-50-percent -translate-y-50-percent left-0">
-            <div className="mb-10-0">
-              <HeadingGlitch />
-            </div>
+          /> */}
+          <video
+            className="w-100-vw h-100-vh object-cover"
+            width="100%"
+            height="100%"
+            autoPlay={true}
+            loop={true}
+            muted
+          >
+            <source src="./video/marsleaders-banner.mp4" type="video/mp4" />
+          </video>
 
-            <ScrollDown currView={currView} />
+          <div className="absolute top-50-percent -translate-y-50-percent left-0">
+            <div className="mb-10-0">{!loading && <HeadingGlitch />}</div>
+
+            <ScrollDown loading={loading} currView={currView} />
           </div>
         </div>
       </section>

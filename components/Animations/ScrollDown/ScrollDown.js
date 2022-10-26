@@ -4,13 +4,14 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import InlineSVG from 'react-inlinesvg';
 
-function ScrollDown({ currView }) {
+function ScrollDown({ currView, loading }) {
   return (
     <div
       className={clsx(
-        'flex items-center flex-col -mb-10-0 duration-700 opacity-0',
+        'flex items-center flex-col -mb-10-0 duration-1000 opacity-0',
         {
           '!opacity-100': currView === 0,
+          '!opacity-0': loading,
         }
       )}
     >

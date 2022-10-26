@@ -10,8 +10,8 @@ function Loading(props) {
       className={clsx(
         `bg-black z-50 w-full h-full flex justify-center items-center absolute`,
         {
-          'opacity-100': loading,
-          'opacity-0': !loading,
+          block: loading,
+          hidden: !loading,
         }
       )}
     >

@@ -5,7 +5,7 @@ import HeadingGlitchAnimation from './HeadingGlitch.json';
 function HeadingGlitch() {
   return (
     <Lottie
-      loop={true}
+      loop={false}
       animationData={HeadingGlitchAnimation}
       play={true}
       style={{ width: '100%', height: '100%' }}
