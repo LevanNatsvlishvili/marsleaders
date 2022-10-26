@@ -1,15 +1,21 @@
 @import url('https://dollarfontclub.com/projects/6359729765812d1e9c58528a.css');
 
-* {
-  font-family: 'Blonde-Regular';
-}
-
 @font-face {
   font-family: 'Blonde';
-  src: 'Blonde-Regular';
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  src: local('Blonde'),
+    url('https://dollarfontclub.com/fonts/5f1758ddd6aa803f6064bdab.woff2')
+      format('woff2'),
+    url('https://dollarfontclub.com/fonts/5f1758ddd6aa803f6064bdab.woff')
+      format('woff'),
+    url('https://dollarfontclub.com/fonts/5f1758ddd6aa803f6064bdab.otf')
+      format('opentype');
+  font-display: auto;
+  font-style: regular;
+  font-weight: 200;
+}
+
+* {
+  font-family: 'Blonde';
 }
 
 .tbc-reg {
