@@ -161,7 +161,7 @@ export default function Home() {
                   className="h-5-0 lg:h-7-0 lg:w-3-8 hidden lg:block"
                   src={Medal.src}
                 />
-                <p className="text-2-8 lg:text-4-2 text-text-primary leading-3-2 lg:leading-5-0 tracking-1-19 ml-0 lg:ml-2-7">
+                <p className="dfc-blonde text-2-8 lg:text-4-2 text-text-primary leading-3-2 lg:leading-5-0 tracking-1-19 ml-0 lg:ml-2-7">
                   What is Marsleaders
                 </p>
               </div>

@@ -4,6 +4,14 @@
   font-family: 'Blonde-Regular';
 }
 
+@font-face {
+  font-family: 'Blonde';
+  src: 'Blonde-Regular';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .tbc-reg {
   font-family: 'TBCX-Regular';
 }
