@@ -119,9 +119,9 @@ export default function Home() {
 
       <section className="h-100-vh w-full flex relative">
         <div className="min-w-6-0 w-6-0 h-full z-40 bg-black ">
-          <div className="w-full h-full relative overflow-hidden">
+          <div className="w-full h-full relative overflow-hidden flex justify-center">
             <div
-              className="text-carousel"
+              className="text-carousel text-carousel-1"
               style={{ transform: `translateY(${carousel}%)` }}
             />
           </div>
@@ -154,9 +154,9 @@ export default function Home() {
       </section>
       <section className="h-100-vh w-full flex relative">
         <div className="min-w-6-0 w-6-0 h-full z-40 bg-red-darker">
-          <div className="w-full h-full relative overflow-hidden">
+          <div className="w-full h-full relative overflow-hidden flex justify-center">
             <div
-              className="text-carousel"
+              className="text-carousel text-carousel-2"
               style={{ transform: `translateY(${carousel}%)` }}
             />
           </div>
@@ -215,9 +215,9 @@ export default function Home() {
       </section>
       <section className="h-100-vh w-full flex relative">
         <div className="min-w-6-0 w-6-0 h-full z-40 bg-red-darker">
-          <div className="w-full h-full relative overflow-hidden">
+          <div className="w-full h-full relative overflow-hidden flex justify-center">
             <div
-              className="text-carousel"
+              className="text-carousel text-carousel-2"
               style={{ transform: `translateY(${carousel}%)` }}
             />
           </div>
@@ -252,9 +252,9 @@ export default function Home() {
       </section>
       <section className="h-100-vh w-full flex relative overflow-hidden">
         <div className="min-w-6-0 w-6-0 h-full z-40 bg-text-primary">
-          <div className="w-full h-full relative overflow-hidden">
+          <div className="w-full h-full relative overflow-hidden flex justify-center">
             <div
-              className="text-carousel"
+              className="text-carousel text-carousel-3"
               style={{ transform: `translateY(${carousel}%)` }}
             />
           </div>

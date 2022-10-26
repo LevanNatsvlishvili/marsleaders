@@ -8,14 +8,22 @@
 $default-font-size: 62.5%;
 
 .text-carousel {
-  background-image: url('/images/about.svg');
   background-repeat: repeat-y;
   height: 300vh;
   // transform: translateY(-5%);
   position: absolute;
   top: 0;
   transition: 1500ms;
-  width: 60px;
+  padding: 0 10px;
+}
+.text-carousel-1 {
+  background-image: url('/images/1.svg');
+}
+.text-carousel-2 {
+  background-image: url('/images/2.svg');
+}
+.text-carousel-3 {
+  background-image: url('/images/3.svg');
 }
 
 .swiper-pagination-bullet {
