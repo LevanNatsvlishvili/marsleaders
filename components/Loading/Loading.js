@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import LoadingAnimate from 'components/Animations/Loading';
 import React from 'react';
 
 function Loading(props) {
@@ -14,11 +15,7 @@ function Loading(props) {
         }
       )}
     >
-      <div className="">
-        <div className="">
-          <div className=""></div>
-        </div>
-      </div>
+      <LoadingAnimate />
     </div>
   );
 }
