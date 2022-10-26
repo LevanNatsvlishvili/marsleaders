@@ -145,7 +145,7 @@ export default function Home() {
             <source src="./video/marsleaders-banner.mp4" type="video/mp4" />
           </video>
 
-          <div className="absolute top-50-percent -translate-y-50-percent left-0">
+          <div className="absolute top-50-percent -translate-y-50-percent left-50-percent -translate-x-50-percent w-100-percent">
             <div className="mb-10-0">{!loading && <HeadingGlitch />}</div>
 
             <ScrollDown loading={loading} currView={currView} />
