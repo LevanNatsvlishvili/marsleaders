@@ -3,7 +3,9 @@
 /// @require {function} font-url - Font asset helper
 //
 
-$fonts: 'TBCX-Bold', 'TBCX-Medium', 'TBCX-Regular';
+@import url('https://dollarfontclub.com/projects/63597ac165812d1e9c58543e.css');
+
+$fonts: 'Galatea-Narrow';
 
 @each $font in $fonts {
   @if ($font != '') {
@@ -24,3 +26,15 @@ $fonts: 'TBCX-Bold', 'TBCX-Medium', 'TBCX-Regular';
 }
 
 /* font converted using font-converter.net. thank you! */
+
+// @font-face {
+//   font-family: 'island';
+//   src: font-url('IslandMoments-Regular.ttf') format('truetype');
+//   font-display: auto;
+//   font-style: normal;
+//   font-weight: 400;
+// }
+
+* {
+  // font-family: 'Galatea-Narrow';
+}

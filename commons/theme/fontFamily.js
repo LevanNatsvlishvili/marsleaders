@@ -1,6 +1,6 @@
 const fontFamily = {
   blonde: '',
-  galatea: '',
+  galatea: 'Galatea-Narrow',
   ranger: '',
 };
 

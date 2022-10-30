@@ -19,7 +19,7 @@ module.exports = {
     maxHeight: require('./commons/theme/spacing'),
     minHeight: require('./commons/theme/spacing'),
     display: require('./commons/theme/display'),
-    // fontFamily: require('./commons/theme/fontFamily'),
+    fontFamily: require('./commons/theme/fontFamily'),
     // cursor: require('./commons/theme/cursor'),
   },
   // plugins: require('./commons/plugins'),

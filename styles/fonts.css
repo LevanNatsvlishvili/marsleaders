@@ -1,7 +1,6 @@
 /* @import url('https://dollarfontclub.com/projects/6359729765812d1e9c58528a.css'); */
-@import url('https://dollarfontclub.com/projects/63597ac165812d1e9c58543e.css');
 
-@font-face {
+/* @font-face {
   font-family: 'Blonde';
   src: local('Blonde'),
     url('https://dollarfontclub.com/fonts/5f1758ddd6aa803f6064bdab.woff2')
@@ -13,13 +12,28 @@
   font-display: auto;
   font-style: regular;
   font-weight: 200;
-}
+} */
 
-* {
-  font-family: 'Blonde';
-}
+/* @font-face {
+  font-family: 'Galatea';
+  src: url('/public/fonts/Galatea-Narrow.otf') format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+} */
+/* @font-face {
+  font-family: 'island';
+  src: url('/public/fonts/IslandMoments-Regular.ttf') format('truetype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+} */
 
-.tbc-reg {
+/* * {
+  font-family: 'island';
+} */
+
+/* .tbc-reg {
   font-family: 'TBCX-Regular';
 }
 .tbc-bold {
@@ -27,4 +41,4 @@
 }
 .tbc-medium {
   font-family: 'TBCX-Medium';
-}
+} */
