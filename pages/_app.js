@@ -6,9 +6,9 @@ import { StoreContextProvider } from 'context';
 function MyApp({ Component, pageProps }) {
   return (
     <StoreContextProvider>
-      {/* <Layout> */}
-      <Component {...pageProps} />
-      {/* </Layout> */}
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </StoreContextProvider>
   );
 }
