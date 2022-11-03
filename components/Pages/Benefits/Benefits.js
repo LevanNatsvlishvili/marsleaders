@@ -75,6 +75,40 @@ function BenefitsComponent({ carousel }) {
               </div>
             </div>
           )}
+          {value === 'citizens' && (
+            <div className="grid grid-cols-12 gap-x-1-5 mt-2-2">
+              <div className="col-span-4">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
+                  <InlineSVG
+                    className="h-15-0 w-15-0"
+                    src={BenefitsPrize.src}
+                  />
+                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    Win a share from the $500k competition prize pool
+                  </p>
+                </div>
+              </div>
+              <div className="col-span-4">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
+                  <InlineSVG className="h-15-0 w-15-0" src={BenefitsLand.src} />
+                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    Free land on the Marsleaders game
+                  </p>
+                </div>
+              </div>
+              <div className="col-span-4">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
+                  <InlineSVG
+                    className="h-15-0 w-15-0"
+                    src={BenefitsPassport.src}
+                  />
+                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    MarsPassport which unlocks benefits in the game
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
           <div className="flex justify-center my-auto">
             <InlineSVG src={Star.src} className="w-2-0 h-2-0 mr-3-0" />
             <InlineSVG src={Star.src} className="w-2-0 h-2-0 mr-3-0" />

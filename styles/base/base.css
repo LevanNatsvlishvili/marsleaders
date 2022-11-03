@@ -76,3 +76,15 @@ a {
   background-color: #d1d5d6;
   margin-right: 100px;
 }
+
+.mint::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #000;
+  position: absolute;
+  margin-top: -10px;
+  right: 30%;
+}

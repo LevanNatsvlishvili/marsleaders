@@ -44,8 +44,11 @@ function Header() {
             </div>
           ))}
         </div>
-        <div className="w-8-0 h-6-0 flex items-center justify-center bg-red cursor-pointer">
+        <div className="w-8-0 h-6-0 flex items-center justify-center bg-red cursor-pointer relative group">
           <InlineSVG src={Wallet.src} className="" />
+          <div className="group-hover:opacity-100 opacity-0 duration-300 -bottom-5-0 -ml-2-0 bg-black text-white text-1-6 absolute px-1-2 py-0-2 rounded-0-8 mint">
+            MINT
+          </div>
         </div>
       </nav>
     </header>

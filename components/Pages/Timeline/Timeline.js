@@ -1,57 +1,16 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import Head from 'next/head';
-import Image from 'next/image';
-import InlineSVG from 'react-inlinesvg';
+/* eslint-disable react/no-unescaped-entities */
+
 import useStore from 'context';
 import { useEffect, useState } from 'react';
-import { Medal } from 'components/Icons/Medal';
-import { LogoLg } from 'components/Icons/Logo';
-import { MarsleaderHover } from 'components/Icons/MarsleaderHover';
-import Swiper from 'components/Swiper';
-import { Star } from 'components/Icons/Star';
-import { Rocket } from 'components/Icons/Rocket';
-import HeadingGlitch from 'components/Animations/HeadingGlitch';
 import { motion } from 'framer-motion';
-import { ScrollArrow, ScrollMouse } from 'components/Icons/Scroll';
 import clsx from 'clsx';
-import ScrollDown from 'components/Animations/ScrollDown';
-import {
-  Benefits,
-  BenefitsLand,
-  BenefitsPassport,
-  BenefitsPrize,
-} from 'components/Icons/Benefits';
-import Tabs from 'components/Tabs';
-import Welcome from 'components/Pages/Welcome';
-import About from 'components/Pages/About';
-import Project from 'components/Pages/Project';
-
-const images = [
-  {
-    img1: '/images/marsleader.png',
-    img2: '/images/marsleader.png',
-    img3: '/images/marsleader.png',
-    img4: '/images/marsleader.png',
-  },
-  {
-    img1: '/images/marsleader.png',
-    img2: '/images/marsleader.png',
-    img3: '/images/marsleader.png',
-    img4: '/images/marsleader.png',
-  },
-  {
-    img1: '/images/marsleader.png',
-    img2: '/images/marsleader.png',
-    img3: '/images/marsleader.png',
-    img4: '/images/marsleader.png',
-  },
-];
 
 function Timeline({ carousel }) {
   const { currView } = useStore();
   const [rocket, setRocket] = useState(0);
   const [planets, setPlanets] = useState(0);
+  const [dot, setDot] = useState(timeline.length - 2);
 
   useEffect(() => {
     if (currView !== 2) {
@@ -72,24 +31,41 @@ function Timeline({ carousel }) {
     setRocket((timeline.length + 1) * 10);
 
     setPlanets(0);
+    setDot(timeline.length - 2);
   }, []);
 
   const handleRocket = () => {
     if (rocket - 18.5 < -21) {
       return;
     }
+    setDot(dot - 1);
     setRocket(rocket - 18.5);
     setPlanets(planets + 50);
   };
 
   const TimelineDot = (props) => {
-    const { date, content } = props;
+    const { date, content, index } = props;
+    if (index === dot) console.log(date);
     return (
       <div onClick={handleRocket} className="flex cursor-pointer">
-        <div className="min-w-4-6 w-4-6 h-4-6 bg-white rounded-50-percent flex items-center justify-center">
-          <div className="bg-red rounded-50-percent w-2-1 h-2-1"></div>
-        </div>
-        <div className="ml-3-1">
+        <motion.div
+          animate={{
+            opacity: index === dot ? 0 : 1,
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          <div
+            style={{ transition: '3000ms' }}
+            className={clsx(
+              'min-w-4-6 w-4-6 h-4-6 bg-white  rounded-50-percent flex items-center justify-center duration-300'
+              // index === dot && '!opacity-0'
+            )}
+          >
+            <div className="bg-red rounded-50-percent w-2-1 h-2-1"></div>
+          </div>
+        </motion.div>
+
+        <div className="ml-4-0">
           <p className="text-2-2 font-ranger leading-2-6 tracking-4-4">
             {date}
           </p>
@@ -125,7 +101,7 @@ function Timeline({ carousel }) {
         </div>
         <div className="h-90-percent overflow-hidden m-auto relative">
           <div className="w-50-percent mx-auto text-text-primary  h-full relative">
-            <div className="absolute rounded-50-percent -mt-0-8 h-17-5 -left-3-0 top-50-percent z-10 -translate-y-80-percent top-50-percent">
+            <div className="absolute rounded-50-percent  h-17-5 -left-3-0 top-50-percent z-10 -translate-y-80-percent top-50-percent">
               <img className="w-full h-full" src="/images/shuttle.png" alt="" />
             </div>
             <div
@@ -144,6 +120,7 @@ function Timeline({ carousel }) {
                   <TimelineDot
                     content={checkpoint.content}
                     date={checkpoint.date}
+                    index={i}
                   />
                 </div>
               ))}
