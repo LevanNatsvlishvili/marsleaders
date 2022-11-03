@@ -10,8 +10,10 @@ function SectionScrolling(props) {
   const pages = [
     { name: 'welcome', axis: 'translateY(0vh)' },
     { name: 'about', axis: 'translateY(-100vh)' },
-    { name: 'projects', axis: 'translateY(-200vh)' },
-    { name: 'contact', axis: 'translateY(-300vh)' },
+    { name: 'project', axis: 'translateY(-200vh)' },
+    { name: 'timeline', axis: 'translateY(-300vh)' },
+    { name: 'benefits', axis: 'translateY(-400vh)' },
+    { name: 'faq', axis: 'translateY(-500vh)' },
   ];
 
   useEffect(() => {
@@ -128,7 +130,6 @@ function SectionScrolling(props) {
   }, [currView]);
 
   function scrollDown() {
-    console.log(currView);
     if (currView === pages.length - 1) return;
     setCurrView(currView + 1);
     const axis = `translateY(-${currView + 1}00vh)`;

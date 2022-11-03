@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head';
 import Image from 'next/image';
@@ -15,6 +16,14 @@ import { motion } from 'framer-motion';
 import { ScrollArrow, ScrollMouse } from 'components/Icons/Scroll';
 import clsx from 'clsx';
 import ScrollDown from 'components/Animations/ScrollDown';
+import {
+  Benefits,
+  BenefitsLand,
+  BenefitsPassport,
+  BenefitsPrize,
+} from 'components/Icons/Benefits';
+import Tabs from 'components/Tabs';
+import Welcome from 'components/Pages/Welcome';
 
 const images = [
   {
@@ -42,7 +51,6 @@ export default function Home() {
   const [carousel, setCarousel] = useState(0);
   const [rocket, setRocket] = useState(0);
   const [planets, setPlanets] = useState(0);
-  const [video, setVideo] = useState('');
 
   useEffect(() => {
     setTimeout(() => {
@@ -97,10 +105,6 @@ export default function Home() {
     );
   };
 
-  useEffect(() => {
-    setVideo('./video/marsleaders-banner.mp4');
-  }, [loading]);
-
   return (
     <div className="w-full">
       <Head>
@@ -113,7 +117,7 @@ export default function Home() {
           href="https://dollarfontclub.com/projects/635ea1b065812d1e9c58620d.css"
         />
       </Head>
-
+      <Welcome carousel={carousel} />
       <section className="h-100-vh w-full flex relative">
         <div className="min-w-6-0 w-6-0 h-full z-40 bg-black ">
           <div className="w-full h-full relative overflow-hidden flex justify-center">
@@ -124,13 +128,6 @@ export default function Home() {
           </div>
         </div>
         <div className="relative w-full h-full">
-          {/* <Image
-            className="h-full w-full"
-            src="/images/cover-image.png"
-            alt=""
-            layout="fill"
-            objectFit="cover"
-          /> */}
           <video
             className="w-100-vw h-100-vh object-cover"
             width="100%"
@@ -149,7 +146,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="h-100-vh w-full flex relative">
+
+      {/*  */}
+
+      {/* <section className="h-100-vh w-full flex relative">
         <div className="min-w-6-0 w-6-0 h-full z-40 bg-red-darker">
           <div className="w-full h-full relative overflow-hidden flex justify-center">
             <div
@@ -209,8 +209,11 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
-      <section className="h-100-vh w-full flex relative">
+      </section> */}
+
+      {/*  */}
+
+      {/* <section className="h-100-vh w-full flex relative">
         <div className="min-w-6-0 w-6-0 h-full z-40 bg-red-darker">
           <div className="w-full h-full relative overflow-hidden flex justify-center">
             <div
@@ -246,8 +249,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-      <section className="h-100-vh w-full flex relative overflow-hidden">
+      </section> */}
+
+      {/*  */}
+
+      {/* <section className="h-100-vh w-full flex relative overflow-hidden">
         <div className="min-w-6-0 w-6-0 h-full z-40 bg-text-primary">
           <div className="w-full h-full relative overflow-hidden flex justify-center">
             <div
@@ -311,7 +317,93 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      {/*  */}
+
+      {/* <section className="h-100-vh w-full flex relative overflow-hidden bg-red-dark">
+        <div className="min-w-6-0 w-6-0 h-full z-40 bg-text-primary">
+          <div className="w-full h-full relative overflow-hidden flex justify-center">
+            <div
+              className="text-carousel text-carousel-3"
+              style={{ transform: `translateY(${carousel}%)` }}
+            />
+          </div>
+        </div>
+        <div className="w-full h-full flex relative bg-red mt-6-0 flex-col">
+          <div className="h-25-vh bg-red-dark w-full flex items-center pl-9-0 pr-14-0">
+            <div className="flex items-center">
+              <InlineSVG src={Benefits.src} />
+              <p className="ml-2-6 text-4-2 text-text-primary leading-5-0 tracking-1-26">
+                Benefits
+              </p>
+            </div>
+            <div className="ml-auto">
+              <Tabs />
+            </div>
+          </div>
+          <div className="h-75-vh w-full flex pl-9-0 py-8-0 pr-14-0 flex-col">
+            <div className="w-full">
+              <p className="text-3-2 w-70-percent font-galatea leading-3-9 tracking-0-96 text-text-secondary">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+              </p>
+            </div>
+            <div className="grid grid-cols-12 gap-x-1-5 mt-2-2">
+              <div className="col-span-4">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
+                  <InlineSVG
+                    className="h-15-0 w-15-0"
+                    src={BenefitsPrize.src}
+                  />
+                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    Win a share from the $500k competition prize pool
+                  </p>
+                </div>
+              </div>
+              <div className="col-span-4">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
+                  <InlineSVG className="h-15-0 w-15-0" src={BenefitsLand.src} />
+                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    Free land on the Marsleaders game
+                  </p>
+                </div>
+              </div>
+              <div className="col-span-4">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
+                  <InlineSVG
+                    className="h-15-0 w-15-0"
+                    src={BenefitsPassport.src}
+                  />
+                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    MarsPassport which unlocks benefits in the game
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center my-auto">
+              <InlineSVG src={Star.src} className="w-2-0 h-2-0 mr-3-0" />
+              <InlineSVG src={Star.src} className="w-2-0 h-2-0 mr-3-0" />
+              <InlineSVG src={Star.src} className="w-2-0 h-2-0" />
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/*  */}
+
+      {/* <section className="h-100-vh w-full flex relative overflow-hidden">
+        <div className="min-w-6-0 w-6-0 h-full z-40 bg-text-primary">
+          <div className="w-full h-full relative overflow-hidden flex justify-center">
+            <div
+              className="text-carousel text-carousel-3"
+              style={{ transform: `translateY(${carousel}%)` }}
+            />
+          </div>
+        </div>
+        <div className="w-full h-full flex relative">123</div>
+      </section> */}
     </div>
   );
 }
