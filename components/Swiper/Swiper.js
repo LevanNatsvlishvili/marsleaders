@@ -24,19 +24,9 @@ const GallerySlider = (props) => {
     pagination: {
       type: 'bullets',
       el: '.bullet-pagination',
-      // dynamicBullets: true,
-      // dynamicMainBullets: 2,
     },
     speed: 800,
     slidesPerView: 1,
-    // breakpoints: {
-    //   200: {
-    //     spaceBetween: 15,
-    //   },
-    //   600: {
-    //     spaceBetween: 30,
-    //   },
-    // },
     spaceBetween: 10,
     onInit: (swiper) => {
       swiper.params.navigation.prevEl = prevRef.current;
@@ -63,13 +53,13 @@ const GallerySlider = (props) => {
                     <img src={item.img1} alt="" className=" " />
                   </div>
                   <div className="pr-4-0 w-25-percent">
-                    <img src={item.img1} alt="" className=" " />
+                    <img src={item.img2} alt="" className=" " />
                   </div>
                   <div className="pr-4-0 w-25-percent">
-                    <img src={item.img1} alt="" className=" " />
+                    <img src={item.img3} alt="" className=" " />
                   </div>
                   <div className="pr-4-0 w-25-percent">
-                    <img src={item.img1} alt="" className=" " />
+                    <img src={item.img4} alt="" className=" " />
                   </div>
                 </div>
               </SwiperSlide>
