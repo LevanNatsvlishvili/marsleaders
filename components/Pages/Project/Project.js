@@ -11,7 +11,7 @@ function Project({ carousel }) {
         <div className="w-full h-full relative overflow-hidden flex justify-center">
           <div
             className="text-carousel text-carousel-2"
-            style={{ transform: `translateY(${carousel}%)` }}
+            style={{ transform: `translateY(${carousel}00px)` }}
           />
         </div>
       </div>

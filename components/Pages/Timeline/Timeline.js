@@ -21,6 +21,9 @@ function Timeline({ carousel }) {
         if (rocket !== (timeline.length + 1) * 10) {
           setRocket((timeline.length + 1) * 10);
         }
+        if (dot !== timeline.length - 2) {
+          setDot(timeline.length - 2);
+        }
       }, 2000);
     }
 
@@ -45,9 +48,9 @@ function Timeline({ carousel }) {
 
   const TimelineDot = (props) => {
     const { date, content, index } = props;
-    if (index === dot) console.log(date);
+
     return (
-      <div onClick={handleRocket} className="flex cursor-pointer">
+      <div onClick={handleRocket} className="flex cursor-pointer mt-10-0">
         <motion.div
           animate={{
             opacity: index === dot ? 0 : 1,
@@ -55,10 +58,8 @@ function Timeline({ carousel }) {
           transition={{ duration: 0.3 }}
         >
           <div
-            style={{ transition: '3000ms' }}
             className={clsx(
-              'min-w-4-6 w-4-6 h-4-6 bg-white  rounded-50-percent flex items-center justify-center duration-300'
-              // index === dot && '!opacity-0'
+              'min-w-4-6 w-4-6 h-4-6 bg-white rounded-50-percent flex items-center justify-center duration-300'
             )}
           >
             <div className="bg-red rounded-50-percent w-2-1 h-2-1"></div>
@@ -83,7 +84,7 @@ function Timeline({ carousel }) {
         <div className="w-full h-full relative overflow-hidden flex justify-center">
           <div
             className="text-carousel text-carousel-3"
-            style={{ transform: `translateY(${carousel}%)` }}
+            style={{ transform: `translateY(${carousel}00px)` }}
           />
         </div>
       </div>
@@ -96,12 +97,12 @@ function Timeline({ carousel }) {
               y: planets,
             }}
           >
-            <img className="" src="/images/mars.png" alt="" />
+            <img className="rotate-[20deg]" src="/images/mars.png" alt="" />
           </motion.div>
         </div>
         <div className="h-90-percent overflow-hidden m-auto relative">
           <div className="w-50-percent mx-auto text-text-primary  h-full relative">
-            <div className="absolute rounded-50-percent  h-17-5 -left-3-0 top-50-percent z-10 -translate-y-80-percent top-50-percent">
+            <div className="absolute rounded-50-percent  h-17-0 -left-2-8 top-50-percent z-10 -translate-y-50-percent top-50-percent">
               <img className="w-full h-full" src="/images/shuttle.png" alt="" />
             </div>
             <div

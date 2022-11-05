@@ -5,6 +5,11 @@ import {
   Benefits,
   BenefitsLand,
   BenefitsPassport,
+  BenefitsPresident1,
+  BenefitsPresident2,
+  BenefitsPresident3,
+  BenefitsPresident4,
+  BenefitsPresident5,
   BenefitsPrize,
 } from 'components/Icons/Benefits';
 import Tabs from 'components/Tabs';
@@ -19,7 +24,7 @@ function BenefitsComponent({ carousel }) {
         <div className="w-full h-full relative overflow-hidden flex justify-center">
           <div
             className="text-carousel text-carousel-3"
-            style={{ transform: `translateY(${carousel}%)` }}
+            style={{ transform: `translateY(${carousel}00px)` }}
           />
         </div>
       </div>
@@ -80,57 +85,57 @@ function BenefitsComponent({ carousel }) {
           {value === 'presidents' && (
             <div className="grid grid-cols-5 gap-x-1-5 mt-2-2">
               <div className="">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-4-6">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
                   <InlineSVG
                     className="h-15-0 w-15-0"
-                    src={BenefitsPrize.src}
+                    src={BenefitsPresident1.src}
                   />
-                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    Win a share from the $500k competition prize pool
+                  <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    More percentage from the prize pool
                   </p>
                 </div>
               </div>
               <div className="">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-4-6">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
                   <InlineSVG
                     className="h-15-0 w-15-0"
-                    src={BenefitsPrize.src}
+                    src={BenefitsPresident2.src}
                   />
-                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    Win a share from the $500k competition prize pool
+                  <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    Country Leadership
                   </p>
                 </div>
               </div>
               <div className="">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-4-6">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
                   <InlineSVG
                     className="h-15-0 w-15-0"
-                    src={BenefitsPrize.src}
+                    src={BenefitsPresident3.src}
                   />
-                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    Win a share from the $500k competition prize pool
+                  <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    3x Personal Free Land
                   </p>
                 </div>
               </div>
               <div className="">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-4-6">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
                   <InlineSVG
                     className="h-15-0 w-15-0"
-                    src={BenefitsPrize.src}
+                    src={BenefitsPresident4.src}
                   />
-                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    Win a share from the $500k competition prize pool
+                  <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    Management of goverment lands
                   </p>
                 </div>
               </div>
               <div className="">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-4-6">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
                   <InlineSVG
                     className="h-15-0 w-15-0"
-                    src={BenefitsPrize.src}
+                    src={BenefitsPresident5.src}
                   />
-                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    Win a share from the $500k competition prize pool
+                  <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    Personal twitter account of Marsleaders President
                   </p>
                 </div>
               </div>

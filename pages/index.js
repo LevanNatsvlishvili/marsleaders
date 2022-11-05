@@ -28,6 +28,8 @@ import About from 'components/Pages/About';
 import Project from 'components/Pages/Project';
 import Timeline from 'components/Pages/Timeline';
 import BenefitsComponent from 'components/Pages/Benefits/Benefits';
+import Accordion from 'components/Accordion';
+import Faq from 'components/Pages/Faq';
 
 const images = [
   {
@@ -56,7 +58,7 @@ export default function Home() {
 
   useEffect(() => {
     setTimeout(() => {
-      setCarousel(carousel - 2);
+      setCarousel(carousel - 1);
     }, 800);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -85,17 +87,7 @@ export default function Home() {
 
       <BenefitsComponent carousel={carousel} />
 
-      <section className="h-100-vh w-full flex relative overflow-hidden">
-        <div className="min-w-6-0 w-6-0 h-full z-40 bg-text-primary">
-          <div className="w-full h-full relative overflow-hidden flex justify-center">
-            <div
-              className="text-carousel text-carousel-3"
-              style={{ transform: `translateY(${carousel}%)` }}
-            />
-          </div>
-        </div>
-        <div className="w-full h-full flex relative">123</div>
-      </section>
+      <Faq carousel={carousel} />
     </div>
   );
 }

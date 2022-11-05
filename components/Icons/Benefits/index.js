@@ -2,3 +2,8 @@ export { default as Benefits } from './Benefits.svg';
 export { default as BenefitsPrize } from './BenefitsPrize.svg';
 export { default as BenefitsLand } from './BenefitsLand.svg';
 export { default as BenefitsPassport } from './BenefitsPassport.svg';
+export { default as BenefitsPresident1 } from './BenefitsPresident1.svg';
+export { default as BenefitsPresident2 } from './BenefitsPresident2.svg';
+export { default as BenefitsPresident3 } from './BenefitsPresident3.svg';
+export { default as BenefitsPresident4 } from './BenefitsPresident4.svg';
+export { default as BenefitsPresident5 } from './BenefitsPresident5.svg';
