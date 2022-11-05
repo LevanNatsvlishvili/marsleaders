@@ -53,7 +53,7 @@ function BenefitsComponent({ carousel }) {
               <div className="col-span-4">
                 <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
                   <InlineSVG
-                    className="h-15-0 w-15-0"
+                    className="h-12-0 w-12-0"
                     src={BenefitsPrize.src}
                   />
                   <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
@@ -63,7 +63,7 @@ function BenefitsComponent({ carousel }) {
               </div>
               <div className="col-span-4">
                 <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
-                  <InlineSVG className="h-15-0 w-15-0" src={BenefitsLand.src} />
+                  <InlineSVG className="h-12-0 w-12-0" src={BenefitsLand.src} />
                   <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
                     Free land on the Marsleaders game
                   </p>
@@ -72,7 +72,7 @@ function BenefitsComponent({ carousel }) {
               <div className="col-span-4">
                 <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
                   <InlineSVG
-                    className="h-15-0 w-15-0"
+                    className="h-12-0 w-12-0"
                     src={BenefitsPassport.src}
                   />
                   <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
@@ -87,7 +87,7 @@ function BenefitsComponent({ carousel }) {
               <div className="">
                 <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
                   <InlineSVG
-                    className="h-15-0 w-15-0"
+                    className="h-12-0 w-12-0"
                     src={BenefitsPresident1.src}
                   />
                   <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
@@ -98,7 +98,7 @@ function BenefitsComponent({ carousel }) {
               <div className="">
                 <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
                   <InlineSVG
-                    className="h-15-0 w-15-0"
+                    className="h-12-0 w-12-0"
                     src={BenefitsPresident2.src}
                   />
                   <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
@@ -109,7 +109,7 @@ function BenefitsComponent({ carousel }) {
               <div className="">
                 <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
                   <InlineSVG
-                    className="h-15-0 w-15-0"
+                    className="h-12-0 w-12-0"
                     src={BenefitsPresident3.src}
                   />
                   <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
@@ -120,7 +120,7 @@ function BenefitsComponent({ carousel }) {
               <div className="">
                 <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
                   <InlineSVG
-                    className="h-15-0 w-15-0"
+                    className="h-12-0 w-12-0"
                     src={BenefitsPresident4.src}
                   />
                   <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
@@ -131,7 +131,7 @@ function BenefitsComponent({ carousel }) {
               <div className="">
                 <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
                   <InlineSVG
-                    className="h-15-0 w-15-0"
+                    className="h-12-0 w-12-0"
                     src={BenefitsPresident5.src}
                   />
                   <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">

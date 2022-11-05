@@ -53,7 +53,7 @@ const images = [
 ];
 
 export default function Home() {
-  const { currView, loading } = useStore();
+  const { currView } = useStore();
   const [carousel, setCarousel] = useState(0);
 
   useEffect(() => {

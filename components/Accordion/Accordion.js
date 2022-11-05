@@ -59,11 +59,11 @@ function AccordionItem(props) {
   const { heading, active, content, handleClick, id } = props;
 
   return (
-    <div className="mb-1-0 h-full">
+    <div className="my-1-0 h-full">
       <div
         onClick={() => handleClick(id)}
         className={clsx(
-          'bg-white h-8-2 px-1-5 min-h-8-2 border flex items-center rounded-1-2 overflow-hidden duration-1000 cursor-pointer relative'
+          'bg-white h-8-2 px-1-5 min-h-8-2 border flex items-center overflow-hidden duration-1000 cursor-pointer relative'
         )}
       >
         <InlineSVG
@@ -86,7 +86,7 @@ function AccordionItem(props) {
           height: active === id ? 'auto' : 0,
         }}
         transition={{ duration: 0.2 }}
-        className="overflow-hidden"
+        className="overflow-hidden bg-black"
       >
         <div className="p-4-5 font-500 text-text-secondary font-tbc-medium text-1-4 leading-2-4">
           {content}

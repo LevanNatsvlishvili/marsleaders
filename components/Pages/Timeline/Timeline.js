@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
-
 import useStore from 'context';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
