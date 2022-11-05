@@ -12,6 +12,7 @@ import { useState } from 'react';
 
 function BenefitsComponent({ carousel }) {
   const [value, setValue] = useState('citizens');
+
   return (
     <section className="h-100-vh w-full flex relative overflow-hidden bg-red-dark">
       <div className="min-w-6-0 w-6-0 h-full z-40 bg-text-primary">
@@ -31,7 +32,7 @@ function BenefitsComponent({ carousel }) {
             </p>
           </div>
           <div className="ml-auto">
-            <Tabs />
+            <Tabs active={value} onChange={setValue} />
           </div>
         </div>
         <div className="h-75-vh w-full flex pl-9-0 py-8-0 pr-14-0 flex-col">
@@ -47,74 +48,7 @@ function BenefitsComponent({ carousel }) {
               <div className="col-span-4">
                 <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
                   <InlineSVG
-                    className="h-10-0 w-10-0"
-                    src={BenefitsPrize.src}
-                  />
-                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    Win a share from the $500k competition prize pool
-                  </p>
-                </div>
-              </div>
-              <div className="col-span-4">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
-                  <InlineSVG className="h-10-0 w-10-0" src={BenefitsLand.src} />
-                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    Free land on the Marsleaders game
-                  </p>
-                </div>
-              </div>
-              <div className="col-span-4">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
-                  <InlineSVG
-                    className="h-10-0 w-10-0"
-                    src={BenefitsPassport.src}
-                  />
-                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    MarsPassport which unlocks benefits in the game
-                  </p>
-                </div>
-              </div>
-              <div className="col-span-4">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
-                  <InlineSVG
-                    className="h-10-0 w-10-0"
-                    src={BenefitsPassport.src}
-                  />
-                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    MarsPassport which unlocks benefits in the game
-                  </p>
-                </div>
-              </div>
-              <div className="col-span-4">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
-                  <InlineSVG
-                    className="h-10-0 w-10-0"
-                    src={BenefitsPassport.src}
-                  />
-                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    MarsPassport which unlocks benefits in the game
-                  </p>
-                </div>
-              </div>
-              <div className="col-span-4">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
-                  <InlineSVG
-                    className="h-10-0 w-10-0"
-                    src={BenefitsPassport.src}
-                  />
-                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    MarsPassport which unlocks benefits in the game
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-          {/* {value === 'citizens' && (
-            <div className="grid grid-cols-12 gap-x-1-5 mt-2-2">
-              <div className="col-span-4">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
-                  <InlineSVG
-                    className="h-10-0 w-10-0"
+                    className="h-15-0 w-15-0"
                     src={BenefitsPrize.src}
                   />
                   <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
@@ -133,7 +67,7 @@ function BenefitsComponent({ carousel }) {
               <div className="col-span-4">
                 <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
                   <InlineSVG
-                    className="h-10-0 w-10-0"
+                    className="h-15-0 w-15-0"
                     src={BenefitsPassport.src}
                   />
                   <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
@@ -142,7 +76,66 @@ function BenefitsComponent({ carousel }) {
                 </div>
               </div>
             </div>
-          )} */}
+          )}
+          {value === 'presidents' && (
+            <div className="grid grid-cols-5 gap-x-1-5 mt-2-2">
+              <div className="">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-4-6">
+                  <InlineSVG
+                    className="h-15-0 w-15-0"
+                    src={BenefitsPrize.src}
+                  />
+                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    Win a share from the $500k competition prize pool
+                  </p>
+                </div>
+              </div>
+              <div className="">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-4-6">
+                  <InlineSVG
+                    className="h-15-0 w-15-0"
+                    src={BenefitsPrize.src}
+                  />
+                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    Win a share from the $500k competition prize pool
+                  </p>
+                </div>
+              </div>
+              <div className="">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-4-6">
+                  <InlineSVG
+                    className="h-15-0 w-15-0"
+                    src={BenefitsPrize.src}
+                  />
+                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    Win a share from the $500k competition prize pool
+                  </p>
+                </div>
+              </div>
+              <div className="">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-4-6">
+                  <InlineSVG
+                    className="h-15-0 w-15-0"
+                    src={BenefitsPrize.src}
+                  />
+                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    Win a share from the $500k competition prize pool
+                  </p>
+                </div>
+              </div>
+              <div className="">
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-4-6">
+                  <InlineSVG
+                    className="h-15-0 w-15-0"
+                    src={BenefitsPrize.src}
+                  />
+                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    Win a share from the $500k competition prize pool
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
           <div className="flex justify-center my-auto">
             <InlineSVG src={Star.src} className="w-2-0 h-2-0 mr-3-0" />
             <InlineSVG src={Star.src} className="w-2-0 h-2-0 mr-3-0" />

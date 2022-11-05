@@ -53,61 +53,14 @@ const images = [
 export default function Home() {
   const { currView, loading } = useStore();
   const [carousel, setCarousel] = useState(0);
-  const [rocket, setRocket] = useState(0);
-  const [planets, setPlanets] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
       setCarousel(carousel - 2);
-    }, 1200);
-
-    if (currView !== 2) {
-      setTimeout(() => {
-        if (planets !== 0) {
-          setPlanets(0);
-        }
-        if (rocket !== (timeline.length + 1) * 10) {
-          setRocket((timeline.length + 1) * 10);
-        }
-      }, 2000);
-    }
+    }, 800);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currView]);
-
-  useEffect(() => {
-    setRocket((timeline.length + 1) * 10);
-
-    setPlanets(0);
-  }, []);
-
-  const handleRocket = () => {
-    console.log(rocket);
-    if (rocket - 18.5 < -21) {
-      return;
-    }
-    setRocket(rocket - 18.5);
-    setPlanets(planets + 50);
-  };
-
-  const TimelineDot = (props) => {
-    const { date, content } = props;
-    return (
-      <div onClick={handleRocket} className="flex cursor-pointer">
-        <div className="min-w-4-6 w-4-6 h-4-6 bg-white rounded-50-percent flex items-center justify-center">
-          <div className="bg-red rounded-50-percent w-2-1 h-2-1"></div>
-        </div>
-        <div className="ml-3-1">
-          <p className="text-2-2 font-ranger leading-2-6 tracking-4-4">
-            {date}
-          </p>
-          <p className="mt-1-2 text-2-2 font-galatea leading-2-7 tracking-4-4">
-            {content}
-          </p>
-        </div>
-      </div>
-    );
-  };
 
   return (
     <div className="w-full">
