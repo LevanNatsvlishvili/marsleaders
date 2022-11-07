@@ -28,8 +28,7 @@ const faqs = [
   },
 ];
 
-function Accordion(props) {
-  const { heading, children } = props;
+function Accordion() {
   const [active, setActive] = useState(null);
 
   const handleClick = (id) => {

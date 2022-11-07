@@ -20,10 +20,10 @@ function BenefitsComponent({ carousel }) {
 
   return (
     <section className="h-100-vh w-full flex relative overflow-hidden bg-red-dark">
-      <div className="min-w-6-0 w-6-0 h-full z-40 bg-text-primary">
+      <div className="min-w-6-0 w-6-0 h-full z-40 bg-black">
         <div className="w-full h-full relative overflow-hidden flex justify-center">
           <div
-            className="text-carousel text-carousel-3"
+            className="text-carousel text-carousel-4"
             style={{ transform: `translateY(${carousel}00px)` }}
           />
         </div>

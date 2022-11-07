@@ -10,7 +10,7 @@ function Faq({ carousel }) {
       <div className="min-w-6-0 w-6-0 h-full z-40 bg-text-primary">
         <div className="w-full h-full relative overflow-hidden flex justify-center">
           <div
-            className="text-carousel text-carousel-3"
+            className="text-carousel text-carousel-5"
             style={{ transform: `translateY(${carousel}00px)` }}
           />
         </div>

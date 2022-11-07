@@ -58,6 +58,10 @@ export default function Home() {
 
   useEffect(() => {
     setTimeout(() => {
+      if (carousel > 90) {
+        setCarousel(0);
+        return;
+      }
       setCarousel(carousel - 1);
     }, 800);
 
