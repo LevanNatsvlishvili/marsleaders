@@ -21,10 +21,10 @@ function Timeline({ carousel }) {
           setPlanets(0);
         }
         if (rocket !== (timeline.length + 1) * 10) {
-          setRocket((timeline.length + 1) * 10);
+          setRocket((timeline.length + 3) * 10);
         }
-        if (dot !== timeline.length - 2) {
-          setDot(timeline.length - 2);
+        if (dot !== timeline.length - 4) {
+          // setDot(timeline.length - 4);
         }
       }, 2000);
     }
@@ -33,11 +33,13 @@ function Timeline({ carousel }) {
   }, [currView]);
 
   useEffect(() => {
-    setRocket((timeline.length + 1) * 10);
+    setRocket((timeline.length + 3) * 10);
 
     setPlanets(0);
-    setDot(timeline.length - 2);
+    setDot(timeline.length);
   }, []);
+
+  console.log(rocket);
 
   const handleRocket = () => {
     if (rocket - 18.5 < -21) {
@@ -48,7 +50,7 @@ function Timeline({ carousel }) {
     setPlanets(planets + 50);
   };
   const handleRocketDown = () => {
-    if (rocket + 18.5 > 90) {
+    if (rocket >= 110) {
       return;
     }
     setDot(dot + 1);
@@ -56,13 +58,11 @@ function Timeline({ carousel }) {
     setPlanets(planets - 50);
   };
 
-  console.log(rocket);
-
   const TimelineDot = (props) => {
     const { date, content, index } = props;
 
     return (
-      <div onClick={handleRocket} className="flex cursor-pointer mt-10-0">
+      <div onClick={handleRocket} className="flex cursor-pointer mt-10-0 z-0">
         <motion.div
           animate={{
             opacity: index === dot ? 0 : 1,
@@ -102,7 +102,7 @@ function Timeline({ carousel }) {
       </div>
       <div className="w-full h-full flex relative">
         {/* Planet */}
-        <div className="absolute -translate-x-70-percent -translate-y-70-percent left-0 top-0">
+        <div className="md:block hidden absolute -translate-x-70-percent -translate-y-70-percent left-0 top-0">
           <motion.div
             transition={{ ease: 'easeOut', duration: 2 }}
             animate={{
@@ -117,7 +117,7 @@ function Timeline({ carousel }) {
 
         {/* Rocket */}
         <div className="h-90-percent overflow-hidden m-auto relative">
-          <div className="w-50-percent mx-auto text-text-primary h-full relative">
+          <div className="w-50-percent mx-auto text-text-primary h-full relative z-50">
             <Rocket up={handleRocket} down={handleRocketDown} />
             <div
               style={{
@@ -143,7 +143,7 @@ function Timeline({ carousel }) {
           </div>
         </div>
         {/* Planet */}
-        <div className="absolute translate-x-30-percent translate-y-30-percent right-0 bottom-0">
+        <div className="md:block hidden absolute translate-x-30-percent translate-y-30-percent right-0 bottom-0">
           <motion.div
             transition={{ ease: 'easeOut', duration: 2 }}
             animate={{

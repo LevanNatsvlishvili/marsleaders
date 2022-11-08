@@ -40,9 +40,9 @@ function BenefitsComponent({ carousel }) {
             <Tabs active={value} onChange={setValue} />
           </div>
         </div>
-        <div className="h-75-vh w-full flex pl-9-0 py-8-0 pr-14-0 flex-col">
+        <div className="h-75-vh w-full flex pl-9-0 py-4-0 pr-14-0 flex-col">
           <div className="w-full">
-            <p className="text-3-2 w-70-percent font-galatea leading-3-9 tracking-0-96 text-text-secondary">
+            <p className="text-3-2 font-galatea leading-3-9 tracking-0-96 text-text-secondary">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley
@@ -56,7 +56,7 @@ function BenefitsComponent({ carousel }) {
                     className="h-12-0 w-12-0"
                     src={BenefitsPrize.src}
                   />
-                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                  <p className="text-center text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
                     Win a share from the $500k competition prize pool
                   </p>
                 </div>
@@ -64,7 +64,7 @@ function BenefitsComponent({ carousel }) {
               <div className="col-span-4">
                 <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
                   <InlineSVG className="h-12-0 w-12-0" src={BenefitsLand.src} />
-                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                  <p className="text-center text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
                     Free land on the Marsleaders game
                   </p>
                 </div>
@@ -75,7 +75,7 @@ function BenefitsComponent({ carousel }) {
                     className="h-12-0 w-12-0"
                     src={BenefitsPassport.src}
                   />
-                  <p className="w-85-percent text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                  <p className="text-center text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
                     MarsPassport which unlocks benefits in the game
                   </p>
                 </div>
@@ -90,7 +90,7 @@ function BenefitsComponent({ carousel }) {
                     className="h-12-0 w-12-0"
                     src={BenefitsPresident1.src}
                   />
-                  <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                  <p className="text-center text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
                     More percentage from the prize pool
                   </p>
                 </div>
@@ -101,7 +101,7 @@ function BenefitsComponent({ carousel }) {
                     className="h-12-0 w-12-0"
                     src={BenefitsPresident2.src}
                   />
-                  <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                  <p className="text-center text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
                     Country Leadership
                   </p>
                 </div>
@@ -112,7 +112,7 @@ function BenefitsComponent({ carousel }) {
                     className="h-12-0 w-12-0"
                     src={BenefitsPresident3.src}
                   />
-                  <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                  <p className="text-center text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
                     3x Personal Free Land
                   </p>
                 </div>
@@ -123,7 +123,7 @@ function BenefitsComponent({ carousel }) {
                     className="h-12-0 w-12-0"
                     src={BenefitsPresident4.src}
                   />
-                  <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                  <p className="text-center text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
                     Management of goverment lands
                   </p>
                 </div>
@@ -134,7 +134,7 @@ function BenefitsComponent({ carousel }) {
                     className="h-12-0 w-12-0"
                     src={BenefitsPresident5.src}
                   />
-                  <p className="text-center text-2-6 leading-3-2 tracking-0-78 text-white mt-2-2">
+                  <p className="text-center text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
                     Personal twitter account of Marsleaders President
                   </p>
                 </div>

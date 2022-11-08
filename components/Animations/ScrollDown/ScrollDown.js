@@ -1,5 +1,9 @@
 import clsx from 'clsx';
-import { ScrollArrow, ScrollMouse } from 'components/Icons/Scroll';
+import {
+  ScrollArrow,
+  ScrollMouse,
+  ScrollMouseMobile,
+} from 'components/Icons/Scroll';
 import { motion } from 'framer-motion';
 import React from 'react';
 import InlineSVG from 'react-inlinesvg';
@@ -15,7 +19,8 @@ function ScrollDown({ currView, loading }) {
         }
       )}
     >
-      <InlineSVG src={ScrollMouse.src} />
+      <InlineSVG src={ScrollMouse.src} className="md-block hidden" />
+      <InlineSVG src={ScrollMouseMobile.src} className="" />
       <motion.div
         className=""
         transition={{
@@ -29,8 +34,11 @@ function ScrollDown({ currView, loading }) {
       >
         <InlineSVG src={ScrollArrow.src} />
       </motion.div>
-      <p className="text-1-4 leading-1-9 tracking-0-3 text-text-primary mt-1-8 font-blonde">
+      <p className="hidden md-block text-1-4 leading-1-9 tracking-0-3 text-text-primary mt-1-8 font-blonde">
         scroll down for travel
+      </p>
+      <p className="block md-hidden text-1-4 leading-1-9 tracking-0-3 text-text-primary mt-1-8 font-blonde">
+        swipe down for travel
       </p>
     </div>
   );

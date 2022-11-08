@@ -16,7 +16,7 @@ function Faq({ carousel }) {
         </div>
       </div>
       <div className="w-full h-full flex relative bg-secondary">
-        <div className="max-w-[1080px] w-full mx-auto mt-16-5">
+        <div className="max-w-[1080px] px-6-0 2xl:px-0 w-full mx-auto mt-16-5">
           <div className="w-full">
             <div className="flex mb-8-0">
               <p className="text-white text-4-2 leading-5-0 tracking-1-26 uppercase">
