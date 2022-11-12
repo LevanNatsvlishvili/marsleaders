@@ -1,5 +1,6 @@
 const screens = {
-  xss: '375px',
+  xss: '376px',
+  xsm: '400px',
   xs: '450px',
   sm: '600px',
   md: '768px',

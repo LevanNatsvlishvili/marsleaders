@@ -7,6 +7,7 @@ const borderRadius = {
   '0-6': '0.6rem',
   '0-8': '0.8rem',
   '1-2': '1.2rem',
+  '1-6': '1.6rem',
 };
 
 module.exports = borderRadius;
