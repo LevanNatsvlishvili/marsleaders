@@ -1,56 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head';
-import Image from 'next/image';
-import InlineSVG from 'react-inlinesvg';
 import useStore from 'context';
 import { useEffect, useState } from 'react';
-import { Medal } from 'components/Icons/Medal';
-import { LogoLg } from 'components/Icons/Logo';
-import { MarsleaderHover } from 'components/Icons/MarsleaderHover';
-import Swiper from 'components/Swiper';
-import { Star } from 'components/Icons/Star';
-import { Rocket } from 'components/Icons/Rocket';
-import HeadingGlitch from 'components/Animations/HeadingGlitch';
-import { motion } from 'framer-motion';
-import { ScrollArrow, ScrollMouse } from 'components/Icons/Scroll';
-import clsx from 'clsx';
-import ScrollDown from 'components/Animations/ScrollDown';
-import {
-  Benefits,
-  BenefitsLand,
-  BenefitsPassport,
-  BenefitsPrize,
-} from 'components/Icons/Benefits';
-import Tabs from 'components/Tabs';
 import Welcome from 'components/Pages/Welcome';
 import About from 'components/Pages/About';
 import Project from 'components/Pages/Project';
 import Timeline from 'components/Pages/Timeline';
 import BenefitsComponent from 'components/Pages/Benefits/Benefits';
-import Accordion from 'components/Accordion';
 import Faq from 'components/Pages/Faq';
-
-const images = [
-  {
-    img1: '/images/marsleader.png',
-    img2: '/images/marsleader.png',
-    img3: '/images/marsleader.png',
-    img4: '/images/marsleader.png',
-  },
-  {
-    img1: '/images/marsleader.png',
-    img2: '/images/marsleader.png',
-    img3: '/images/marsleader.png',
-    img4: '/images/marsleader.png',
-  },
-  {
-    img1: '/images/marsleader.png',
-    img2: '/images/marsleader.png',
-    img3: '/images/marsleader.png',
-    img4: '/images/marsleader.png',
-  },
-];
 
 export default function Home() {
   const { currView } = useStore();

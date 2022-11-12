@@ -20,7 +20,7 @@ function BenefitsComponent({ carousel }) {
 
   return (
     <section className="h-100-vh w-full flex relative overflow-hidden bg-red-dark">
-      <div className="min-w-6-0 w-6-0 h-full z-40 bg-black">
+      <div className="w-4-0 min-w-4-0 lg:min-w-6-0 lg:w-6-0 h-full z-40 bg-black">
         <div className="w-full h-full relative overflow-hidden flex justify-center">
           <div
             className="text-carousel text-carousel-4"

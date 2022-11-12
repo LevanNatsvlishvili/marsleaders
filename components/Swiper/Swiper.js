@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from 'next/image';
 import React, { useRef, useState } from 'react';
 import { Pagination, Navigation } from 'swiper/core';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -26,8 +25,23 @@ const GallerySlider = (props) => {
       el: '.bullet-pagination',
     },
     speed: 800,
-    slidesPerView: 1,
+    breakpoints: {
+      200: {
+        slidesPerView: 3,
+      },
+      600: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+      },
+    },
     spaceBetween: 10,
+    grabCursor: true,
+    keyboard: {
+      enabled: true,
+    },
     onInit: (swiper) => {
       swiper.params.navigation.prevEl = prevRef.current;
       swiper.params.navigation.nextEl = nextRef.current;
@@ -40,28 +54,15 @@ const GallerySlider = (props) => {
     <div>
       <div className="w-full bg-[#383838] h-0-1 mt-5-2" />
       <div className="w-full mt-6-0 ">
-        <div className="-mx-2-0">
+        <div className="">
           <Swiper
             modules={[Pagination, Navigation]}
             {...sliderOptions}
             className=""
           >
             {list.map((item, i) => (
-              <SwiperSlide key={item.id || i} className="cursor-pointer">
-                <div className="flex w-full pl-2-0">
-                  <div className="pr-4-0 w-25-percent">
-                    <img src={item.img1} alt="" className=" " />
-                  </div>
-                  <div className="pr-4-0 w-25-percent">
-                    <img src={item.img2} alt="" className=" " />
-                  </div>
-                  <div className="pr-4-0 w-25-percent">
-                    <img src={item.img3} alt="" className=" " />
-                  </div>
-                  <div className="pr-4-0 w-25-percent">
-                    <img src={item.img4} alt="" className=" " />
-                  </div>
-                </div>
+              <SwiperSlide key={item.id || i} className="cursor-pointer ">
+                <img src={item} alt="" className="h-full" />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -77,6 +78,14 @@ const GallerySlider = (props) => {
           {`
             .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
               background: #00afcf;
+            }
+
+            @media only screen and (max-width: 600px) {
+              .swiper-slide {
+                width: 26rem !important;
+                height: 30rem !important;
+                min-width: 26rem !important;
+              }
             }
           `}
         </style>

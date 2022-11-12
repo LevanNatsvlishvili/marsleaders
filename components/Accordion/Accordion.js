@@ -62,20 +62,23 @@ function AccordionItem(props) {
       <div
         onClick={() => handleClick(id)}
         className={clsx(
-          'bg-white h-8-2 px-1-5 min-h-8-2 border flex items-center overflow-hidden duration-1000 cursor-pointer relative'
+          'px-1-5 bg-white h-6-0 lg:h-8-2 lg:min-h-8-2 border flex items-center overflow-hidden duration-1000 cursor-pointer relative'
         )}
       >
         <InlineSVG
           src={ArrowDown.src}
-          className={clsx('absolute right-3-6 w-2-4 h-2-4 duration-300', {
-            '-rotate-180': active === id,
-          })}
+          className={clsx(
+            'absolute right-1-2 md:right-3-6 w-1-2 md:w-2-4  md:h-2-4 duration-300',
+            {
+              '-rotate-180': active === id,
+            }
+          )}
         />
         <div className={clsx('flex items-center')}>
-          <p className="font-ranger text-6-0 leading-7-2 tracking-1-8 leading-2-4 font-700 font-tbc-bold text-primary">
+          <p className="font-ranger text-2-8 md:text-4-2 lg:text-6-0 leading-7-2 tracking-1-8 leading-2-4 font-700 font-tbc-bold text-primary">
             0{id + 1}
           </p>
-          <p className="ml-3-5 text-2-8 leading-3-5 tracking-0-84 text-secondary font-galatea-bold">
+          <p className="ml-0-8 md:ml-3-5 text-1-4 md:text-2-8 leading-3-5 tracking-0-84 text-secondary font-galatea-bold">
             {heading}
           </p>
         </div>
@@ -87,7 +90,7 @@ function AccordionItem(props) {
         transition={{ duration: 0.2 }}
         className="overflow-hidden bg-black"
       >
-        <div className="p-4-5 font-500 text-text-secondary font-tbc-medium text-1-4 leading-2-4">
+        <div className=" p-2-5 lg:p-4-5 font-500 text-text-secondary font-tbc-medium text-1-4 leading-2-4">
           {content}
         </div>
       </motion.div>

@@ -82,7 +82,7 @@ function TimelineMobile({ carousel }) {
   return (
     <div className="w-full h-full ">
       <div className="h-60-vh w-full overflow-hidden">
-        <div className="absolute h-8-0 w-6-0 xss:h-10-0 -mt-3-0 top-50-percent z-20 left-50-percent -translate-y-50-percent ">
+        <div className="absolute h-8-0 w-6-0 xss:h-10-0 -mt-3-0 top-50-percent -ml-4-0 z-20 left-50-percent -translate-y-50-percent translate-x-50-percent">
           <img className="w-full h-full" src="/images/shuttle.png" alt="" />
         </div>
         <div
