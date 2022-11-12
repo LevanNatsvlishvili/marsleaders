@@ -17,7 +17,7 @@ function About({ carousel }) {
         </div>
       </div>
       <div className="w-full">
-        <div className="h-50-percent text-primary flex relative">
+        <div className="h-40-percent lg:h-50-percent text-primary flex relative">
           <div className="w-fit h-full bg-red flex justify-center flex-col px-2-8 lg:px-6-0 xl:pl-14-0 xl:pr-11-6 pt-6-0">
             <div className="flex items-center">
               <InlineSVG
@@ -29,21 +29,21 @@ function About({ carousel }) {
               </p>
             </div>
 
-            <div className="h-0-2 mt-1-6 mb-2-8 lg:mt-2-1 lg:mb-3-7 w-full bg-red-dark" />
+            <div className="h-0-2 mt-1-0 xss:mt-1-6 mb-1-4 lg:mb-2-8 lg:mt-2-1 lg:mb-3-7 w-full bg-red-dark" />
 
-            <p className="text-text-secondary text-2-2 lg:text-3-2 leading-3-9 tracking-0-96">
+            <p className="text-text-secondary text-1-6 xss:text-2-2 lg:text-3-2 leading-3-9 tracking-0-96">
               Marsleaders - is a play-&-earn blockchain based metaverse world
               life simulation game, giving humanity an opportunity to start
               over, from a blank red soil, to base a new virtual civilization on
               Mars.
             </p>
           </div>
-          <div className="min-w-50-vh w-50-vh bg-red-darker h-full flex items-center justify-center py-11-0">
+          <div className="hidden lg:flex min-w-50-vh w-50-vh bg-red-darker h-full items-center justify-center py-11-0">
             <InlineSVG src={LogoLg.src} className="h-full mt-6-0" />
           </div>
         </div>
-        <div className="h-50-percent text-primary  flex items-center relative">
-          <div className="relative h-full group 3xl:ml-7-0 ">
+        <div className="h-60-percent text-primary flex-col lg:flex-row flex items-center relative p-3-0 lg:px-0">
+          <div className="relative h-60-percent lg:h-full group 3xl:ml-7-0 ">
             <InlineSVG
               src={MarsleaderHover.src}
               className="opacity-0 group-hover:opacity-100 duration-300 h-full hidden xl:block"
@@ -51,11 +51,11 @@ function About({ carousel }) {
             <img
               src="/images/cards/marsleader-1.png"
               alt=""
-              className="xl:absolute xl:top-50-percent xl:left-50-percent xl:-translate-y-50-percent xl:-translate-x-50-percent h-full py-4-0 px-2-8"
+              className="xl:absolute xl:top-50-percent xl:left-50-percent xl:-translate-y-50-percent xl:-translate-x-50-percent h-full lg:py-4-0 lg:px-2-8"
               layout="intrinsic "
             />
           </div>
-          <p className="text-text-primary text-3-6 leading-6-0 tracking-3-6 font-blonde w-60-percent lg:w-45-percent ">
+          <p className="mt-4-0 text-center text-text-primary text-2-2 leading-2-8 lg:text-3-6 leading-6-0 tracking-3-6 font-blonde lg:w-60-percent lg:w-45-percent ">
             The Age of Exploration might be over for earth, but it’s only the
             beginning <span className="text-red">for Mars</span>
           </p>
