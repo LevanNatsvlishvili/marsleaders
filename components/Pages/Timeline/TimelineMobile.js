@@ -112,8 +112,8 @@ function TimelineMobile({ carousel }) {
             {timeline[dot]['date']}
           </p>
         </div>
-        <div className="h-10-0 xsm:h-14-0 mb-2-0 border border-[#2c2c2c] px-1-6 rounded-1-6 mt-0-8 flex items-center">
-          <p className="text-white text-1-6 font-ranger leading-1-9 tracking-3-2">
+        <div className="h-10-0 xsm:h-14-0 mb-0-8 xss:mb-2-0 border border-[#2c2c2c] px-1-6 rounded-1-6 mt-0-8 flex items-center">
+          <p className="text-white text-1-4 xs:text-1-6 font-ranger leading-1-9 tracking-3-2">
             {timeline[dot]['content']}
           </p>
         </div>
@@ -136,15 +136,15 @@ const CPanel = ({ up, down }) => (
         <div className="mt-2-2 flex justify-between">
           <div
             onClick={up}
-            className="cursor-pointer bg-[#242424] w-full mr-1-0 h-6-2 flex items-center justify-center"
+            className="cursor-pointer bg-[#242424] w-full mr-1-0 h-4-0 xss:h-6-2 flex items-center justify-center"
           >
-            <InlineSVG src={ArrowDownV2.src} className="" />
+            <InlineSVG src={ArrowDownV2.src} className="w-1-6 xs:w-auto" />
           </div>
           <div
             onClick={down}
-            className="cursor-pointer bg-[#242424] w-full ml-1-0 h-6-2 flex items-center justify-center rotate-180"
+            className="cursor-pointer bg-[#242424] w-full ml-1-0 h-4-0 xss:h-6-2 flex items-center justify-center rotate-180"
           >
-            <InlineSVG src={ArrowDownV2.src} className="" />
+            <InlineSVG src={ArrowDownV2.src} className="w-1-6 xs:w-auto" />
           </div>
         </div>
       </div>
