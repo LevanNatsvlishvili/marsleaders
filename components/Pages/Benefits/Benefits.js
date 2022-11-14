@@ -27,6 +27,28 @@ const citizens = [
     icon: BenefitsPassport,
   },
 ];
+const presidents = [
+  {
+    content: 'More percentage from the prize pool',
+    icon: BenefitsPresident1,
+  },
+  {
+    content: 'Country Leadership',
+    icon: BenefitsPresident2,
+  },
+  {
+    content: '3x Personal Free Land',
+    icon: BenefitsPresident3,
+  },
+  {
+    content: 'Management of goverment lands',
+    icon: BenefitsPresident4,
+  },
+  {
+    content: 'Personal twitter account of Marsleaders President',
+    icon: BenefitsPresident5,
+  },
+];
 
 function BenefitsComponent({ carousel }) {
   const [value, setValue] = useState('citizens');
@@ -54,83 +76,9 @@ function BenefitsComponent({ carousel }) {
           </div>
         </div>
         <div className="h-15-vh sm:h-75-vh w-full flex py-4-0 pl-2-0 pr-6-0 md:pl-4-0 md:pr-8-0 md:pl-9-0 xsm:pl-4-0 xsm:pr-8-0 md:pr-14-0 flex-col">
-          <BenefitsSwiper list={citizens} />
-          {/* {value === 'citizens' && (
-            <div className="grid grid-cols-12 gap-x-1-5 mt-2-2">
+          {value === 'citizens' && <BenefitsSwiper list={citizens} />}
+          {value === 'presidents' && <BenefitsSwiper list={presidents} />}
 
-              
-              <div className="col-span-4">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-8-6">
-                  <InlineSVG
-                    className="h-12-0 w-12-0"
-                    src={BenefitsPassport.src}
-                  />
-                  <p className="text-center text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    MarsPassport which unlocks benefits in the game
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-          {value === 'presidents' && (
-            <div className="grid grid-cols-5 gap-x-1-5 mt-2-2">
-              <div className="">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
-                  <InlineSVG
-                    className="h-12-0 w-12-0"
-                    src={BenefitsPresident1.src}
-                  />
-                  <p className="text-center text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    More percentage from the prize pool
-                  </p>
-                </div>
-              </div>
-              <div className="">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
-                  <InlineSVG
-                    className="h-12-0 w-12-0"
-                    src={BenefitsPresident2.src}
-                  />
-                  <p className="text-center text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    Country Leadership
-                  </p>
-                </div>
-              </div>
-              <div className="">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
-                  <InlineSVG
-                    className="h-12-0 w-12-0"
-                    src={BenefitsPresident3.src}
-                  />
-                  <p className="text-center text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    3x Personal Free Land
-                  </p>
-                </div>
-              </div>
-              <div className="">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
-                  <InlineSVG
-                    className="h-12-0 w-12-0"
-                    src={BenefitsPresident4.src}
-                  />
-                  <p className="text-center text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    Management of goverment lands
-                  </p>
-                </div>
-              </div>
-              <div className="">
-                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-3-7 px-2-6">
-                  <InlineSVG
-                    className="h-12-0 w-12-0"
-                    src={BenefitsPresident5.src}
-                  />
-                  <p className="text-center text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
-                    Personal twitter account of Marsleaders President
-                  </p>
-                </div>
-              </div>
-            </div>
-          )} */}
           <div className="lg:flex hidden justify-center my-auto">
             <InlineSVG src={Star.src} className="w-2-0 h-2-0 mr-3-0" />
             <InlineSVG src={Star.src} className="w-2-0 h-2-0 mr-3-0" />

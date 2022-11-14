@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import SwiperNav from './SwiperNav';
 // import Promo from 'components/Promo';
 
-const GallerySlider = (props) => {
+const CardSlider = (props) => {
   const { list } = props;
 
   const prevRef = useRef(null);
@@ -94,11 +94,11 @@ const GallerySlider = (props) => {
   );
 };
 
-GallerySlider.propTypes = {
+CardSlider.propTypes = {
   list: PropTypes.array,
 };
-GallerySlider.defaultProps = {
+CardSlider.defaultProps = {
   list: [],
 };
 
-export default GallerySlider;
+export default CardSlider;
