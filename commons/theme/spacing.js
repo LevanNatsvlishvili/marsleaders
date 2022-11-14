@@ -258,6 +258,7 @@ const spacing = {
   '200-percent': '200%',
   '250-percent': '250%',
   '300-percent': '300%',
+  '15-vh': '15vh',
   '25-vh': '25vh',
   '40-vh': '40vh',
   '50-vh': '50vh',

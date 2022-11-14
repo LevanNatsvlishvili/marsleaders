@@ -9,7 +9,7 @@ const SwiperNav = forwardRef((props, ref) => {
   return (
     <div className="md:flex hidden h-2-4 items-center w-full mt-5-2 pr-11-2 relative pl-16-2">
       <div className="bullet-pagination absolute !bottom-0 h-full">
-        <div className="h-0-7 w-0-7 rounded-50-percent bg-[#E6E6E6] swiper-pagination-bullet" />
+        <div className="h-0-7 w-0-7 rounded-50-percent bg-[#E6E6E6] scroll" />
       </div>
       <div className="h-0-2 relative  w-full">
         <div className="!h-0-2 relative !bg-[#383838] w-full swiper-scrollbar" />

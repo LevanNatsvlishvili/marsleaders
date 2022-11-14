@@ -8,43 +8,54 @@ import 'swiper/css/pagination';
 import PropTypes from 'prop-types';
 import SwiperNav from './SwiperNav';
 // import Promo from 'components/Promo';
+import InlineSVG from 'react-inlinesvg';
+import {
+  Benefits,
+  BenefitsLand,
+  BenefitsPassport,
+  BenefitsPresident1,
+  BenefitsPresident2,
+  BenefitsPresident3,
+  BenefitsPresident4,
+  BenefitsPresident5,
+  BenefitsPrize,
+} from 'components/Icons/Benefits';
 
-const GallerySlider = (props) => {
+const BenefitsSwiper = (props) => {
   const { list } = props;
 
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  const bPrevRef = useRef(null);
+  const bNextRef = useRef(null);
 
   const sliderOptions = {
     navigation: {
-      prevEl: prevRef.current ? prevRef.current : null,
-      nextEl: nextRef.current ? nextRef.current : null,
+      prevEl: bPrevRef.current ? bPrevRef.current : null,
+      nextEl: bNextRef.current ? bNextRef.current : null,
     },
     pagination: {
-      type: 'bullets',
-      el: '.bullet-pagination',
+      type: 'progressbar',
+      el: '.scroll',
     },
     speed: 800,
     breakpoints: {
       200: {
-        slidesPerView: 3,
+        slidesPerView: 'auto',
       },
       600: {
-        slidesPerView: 3,
+        slidesPerView: 2,
       },
       768: {
-        slidesPerView: 4,
-        slidesPerGroup: 4,
+        slidesPerView: 3,
       },
     },
-    spaceBetween: 10,
+    spaceBetween: 15,
     grabCursor: true,
     keyboard: {
       enabled: true,
     },
     onInit: (swiper) => {
-      swiper.params.navigation.prevEl = prevRef.current;
-      swiper.params.navigation.nextEl = nextRef.current;
+      swiper.params.navigation.prevEl = bPrevRef.current;
+      swiper.params.navigation.nextEl = bNextRef.current;
       swiper.navigation.init();
       swiper.navigation.update();
     },
@@ -52,8 +63,7 @@ const GallerySlider = (props) => {
 
   return (
     <div>
-      <div className="w-full bg-[#383838] h-0-1 mt-5-2" />
-      <div className="w-full mt-6-0 ">
+      <div className="w-full mt-3-0 ">
         <div className="">
           <Swiper
             modules={[Pagination, Navigation]}
@@ -62,7 +72,15 @@ const GallerySlider = (props) => {
           >
             {list.map((item, i) => (
               <SwiperSlide key={item.id || i} className="cursor-pointer ">
-                <img src={item} alt="" className="h-full" />
+                <div className="h-full bg-red-dark flex items-center flex-col justify-center py-4-0 px-2-0 lg:py-3-7 lg:px-8-6">
+                  <InlineSVG
+                    className="h-12-0 w-12-0"
+                    src={BenefitsPrize.src}
+                  />
+                  <p className="text-center sm:text-1-6 lg:text-2-4 leading-3-2 tracking-0-78 text-white mt-2-2">
+                    Win a share from the $500k competition prize pool
+                  </p>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -70,8 +88,8 @@ const GallerySlider = (props) => {
 
         <SwiperNav
           ref={{
-            prevRef: prevRef,
-            nextRef: nextRef,
+            prevRef: bPrevRef,
+            nextRef: bNextRef,
           }}
         />
         <style global jsx>
@@ -82,9 +100,7 @@ const GallerySlider = (props) => {
 
             @media only screen and (max-width: 600px) {
               .swiper-slide {
-                width: 26rem !important;
-                height: 30rem !important;
-                min-width: 26rem !important;
+                width: 70%;
               }
             }
           `}
@@ -94,11 +110,11 @@ const GallerySlider = (props) => {
   );
 };
 
-GallerySlider.propTypes = {
+BenefitsSwiper.propTypes = {
   list: PropTypes.array,
 };
-GallerySlider.defaultProps = {
+BenefitsSwiper.defaultProps = {
   list: [],
 };
 
-export default GallerySlider;
+export default BenefitsSwiper;
