@@ -1,12 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
-import useStore from 'context';
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import clsx from 'clsx';
-import InlineSVG from 'react-inlinesvg';
-import { ControlPanel } from 'components/Icons/ControlPanel';
-import { ArrowDownV2 } from 'components/Icons/Arrow';
 import TimelineDesktop from './TimelineDesktop';
 import TimelineMobile from './TimelineMobile';
 

@@ -4,7 +4,6 @@ import useStore from 'context';
 import Loading from 'components/Loading';
 import { useRouter } from 'next/router';
 import Header from './Header';
-import { setLazyProp } from 'next/dist/server/api-utils';
 
 function useQuery() {
   const location = useRouter();
@@ -43,7 +42,7 @@ const Layout = ({ children }) => {
         currView={currView}
         setCurrView={setCurrView}
       >
-        <main className="flex ">{children}</main>
+        <main className="flex">{children}</main>
       </Scroll>
     </div>
   );

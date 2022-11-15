@@ -1,27 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import Head from 'next/head';
-import Image from 'next/image';
-import InlineSVG from 'react-inlinesvg';
 import useStore from 'context';
-import { useEffect, useState } from 'react';
-import { Medal } from 'components/Icons/Medal';
-import { LogoLg } from 'components/Icons/Logo';
-import { MarsleaderHover } from 'components/Icons/MarsleaderHover';
-import Swiper from 'components/Swiper';
-import { Star } from 'components/Icons/Star';
-import { Rocket } from 'components/Icons/Rocket';
 import HeadingGlitch from 'components/Animations/HeadingGlitch';
-import { motion } from 'framer-motion';
-import { ScrollArrow, ScrollMouse } from 'components/Icons/Scroll';
-import clsx from 'clsx';
 import ScrollDown from 'components/Animations/ScrollDown';
 
 function Welcome({ carousel }) {
   const { currView, loading } = useStore();
 
   return (
-    <section className="h-100-vh w-full flex relative">
+    <section className="h-100-vh w-full flex relative section">
       <div className="w-4-0 min-w-4-0 lg:min-w-6-0 lg:w-6-0 h-full z-40 bg-black ">
         <div className="w-full h-full relative overflow-hidden flex justify-center">
           <div

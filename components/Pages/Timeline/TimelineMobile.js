@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import useStore from 'context';
 import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import clsx from 'clsx';
 import InlineSVG from 'react-inlinesvg';
 import { ControlPanel } from 'components/Icons/ControlPanel';
