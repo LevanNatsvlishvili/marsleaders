@@ -45,7 +45,7 @@ function Header() {
   return (
     <header className="h-4-0 lg:h-6-0 bg-black w-full fixed z-20 flex items-center ">
       <div className="w-4-0 h-4-0 max-w-4-0 lg:h-6-0 lg:w-6-0 lg:min-w-6-0 flex items-center justify-center bg-red">
-        <InlineSVG src={Logo.src} className="w-3-0 h-3-0" />
+        <InlineSVG src={Logo.src} className="lg:w-5-0 lg:h-5-0 w-3-0 h-3-0" />
       </div>
       <nav className="w-full flex items-center justify-end relative">
         <div className="hidden lg:flex mr-3-0">
@@ -62,7 +62,7 @@ function Header() {
             >
               <p href={link.url}>{link.title}</p>
               {i !== NavLinks.length - 1 && (
-                <InlineSVG src={Star.src} className="mx-5-2 " />
+                <InlineSVG src={Star.src} className="mx-5-2" />
               )}
             </div>
           ))}

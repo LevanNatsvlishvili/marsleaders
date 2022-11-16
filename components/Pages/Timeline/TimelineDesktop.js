@@ -8,7 +8,7 @@ import InlineSVG from 'react-inlinesvg';
 import { ControlPanel } from 'components/Icons/ControlPanel';
 import { ArrowDownV2 } from 'components/Icons/Arrow';
 
-function TimelineDesktop({ carousel }) {
+function TimelineDesktop() {
   const { currView } = useStore();
   const [rocket, setRocket] = useState(0);
   const [planets, setPlanets] = useState(0);
@@ -16,17 +16,15 @@ function TimelineDesktop({ carousel }) {
 
   useEffect(() => {
     if (currView !== 2) {
-      setTimeout(() => {
-        if (planets !== 0) {
-          setPlanets(0);
-        }
-        if (rocket !== (timeline.length + 1) * 10) {
-          setRocket((timeline.length + 3) * 10);
-        }
-        if (dot !== timeline.length - 1) {
-          setDot(timeline.length - 1);
-        }
-      }, 2000);
+      if (planets !== 0) {
+        setPlanets(0);
+      }
+      if (rocket !== (timeline.length + 1) * 10) {
+        setRocket((timeline.length + 3) * 10);
+      }
+      if (dot !== timeline.length - 1) {
+        setDot(timeline.length - 1);
+      }
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

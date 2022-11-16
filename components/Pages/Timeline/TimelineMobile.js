@@ -16,14 +16,12 @@ function TimelineMobile({ carousel }) {
 
   useEffect(() => {
     if (currView !== 2) {
-      setTimeout(() => {
-        if (rocket !== (timeline.length + 1) * 10) {
-          setRocket(120);
-        }
-        if (dot !== timeline.length - 1) {
-          setDot(timeline.length - 1);
-        }
-      }, 2000);
+      if (rocket !== (timeline.length + 1) * 10) {
+        setRocket(120);
+      }
+      if (dot !== timeline.length - 1) {
+        setDot(timeline.length - 1);
+      }
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
