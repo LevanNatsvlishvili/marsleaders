@@ -8,6 +8,7 @@ export const StoreContextProvider = ({ children }) => {
   const router = useRouter();
 
   const [currView, setCurrView] = useState(0);
+  const [swiperRef, setSwiperRef] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const handleNavigationLoading = (path) => {
@@ -30,6 +31,8 @@ export const StoreContextProvider = ({ children }) => {
         loading,
         setLoading,
         handleNavigationLoading,
+        swiperRef,
+        setSwiperRef,
       }}
     >
       {children}

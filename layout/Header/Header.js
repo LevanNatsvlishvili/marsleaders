@@ -12,11 +12,11 @@ import { AnimatePresence, motion } from 'framer-motion';
 import useStore from 'context/Context';
 
 const NavLinks = [
-  { title: 'Home', url: '/' },
-  { title: 'About', url: '/about' },
-  { title: 'Roadmap', url: '/about' },
-  { title: 'Benefits', url: '/about' },
-  { title: 'FAQ', url: '/about' },
+  { title: 'Home', activeIndex: [0] },
+  { title: 'About', activeIndex: [1, 2] },
+  { title: 'Roadmap', activeIndex: [3] },
+  { title: 'Benefits', activeIndex: [4] },
+  { title: 'FAQ', activeIndex: [5] },
 ];
 
 function useQuery() {
@@ -25,20 +25,18 @@ function useQuery() {
 }
 
 function Header() {
-  const { currView, setCurrView } = useStore();
+  const { currView, setCurrView, swiperRef } = useStore();
 
   const location = useQuery();
   const [hamburger, setHamburger] = useState(false);
 
   const handleNavigation = (val) => {
+    swiperRef.slideTo(val);
     setCurrView(val);
-    const axis = `translateY(-${val}00vh)`;
-    document.getElementById('wrapper').style.transform = axis;
   };
   const handleNavigationMobile = (val) => {
+    swiperRef.slideTo(val);
     setCurrView(val);
-    const axis = `translateY(-${val}00vh)`;
-    document.getElementById('wrapper').style.transform = axis;
     setHamburger(false);
   };
 
@@ -51,12 +49,12 @@ function Header() {
         <div className="hidden lg:flex mr-3-0">
           {NavLinks.map((link, i) => (
             <div
-              onClick={() => handleNavigation(i)}
+              onClick={() => handleNavigation(link.activeIndex[0])}
               key={i}
               className={clsx(
                 'hover:text-text-primary text-text-primary/50 leading-2-4 text-2-6 lg:text-3-2 tracking-0-96 text-primary flex items-center',
                 {
-                  '!text-text-primary': i === currView,
+                  '!text-text-primary': link.activeIndex.includes(currView),
                 }
               )}
             >
@@ -105,12 +103,12 @@ function Header() {
             <ul>
               {NavLinks.map((link, i) => (
                 <li
-                  onClick={() => handleNavigationMobile(i)}
+                  onClick={() => handleNavigationMobile(link.activeIndex[0])}
                   key={i}
                   className={clsx(
                     'mb-3-0 hover:text-text-primary text-text-primary/50 leading-2-4 text-2-6 lg:text-3-2 tracking-0-96 text-primary flex items-center',
                     {
-                      '!text-text-primary': i === currView,
+                      '!text-text-primary': link.activeIndex.includes(currView),
                     }
                   )}
                 >
