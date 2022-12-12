@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import InlineSVG from 'react-inlinesvg';
 import { Logo } from 'components/Icons/Logo';
 import { Star } from '../../components/Icons/Star';

@@ -12,6 +12,7 @@ function TimelineDesktop() {
   const { currView } = useStore();
   const [rocket, setRocket] = useState(0);
   const [planets, setPlanets] = useState(0);
+  const [direction, setDirection] = useState('up');
   const [dot, setDot] = useState(timeline.length - 2);
 
   useEffect(() => {
@@ -25,6 +26,7 @@ function TimelineDesktop() {
       if (dot !== timeline.length - 1) {
         setDot(timeline.length - 1);
       }
+      setDirection('up');
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -44,6 +46,7 @@ function TimelineDesktop() {
     setDot(dot - 1);
     setRocket(rocket - 18.5);
     setPlanets(planets + 50);
+    setDirection('up');
   };
   const handleRocketDown = () => {
     if (rocket >= 110) {
@@ -52,6 +55,7 @@ function TimelineDesktop() {
     setDot(dot + 1);
     setRocket(rocket + 18.5);
     setPlanets(planets - 50);
+    setDirection('down');
   };
 
   const TimelineDot = (props) => {
@@ -105,7 +109,11 @@ function TimelineDesktop() {
       {/* Rocket */}
       <div className="h-90-percent overflow-hidden m-auto relative">
         <div className="w-50-percent mx-auto text-text-primary h-full relative z-50">
-          <Rocket up={handleRocket} down={handleRocketDown} />
+          <Rocket
+            up={handleRocket}
+            down={handleRocketDown}
+            direction={direction}
+          />
           <div
             style={{
               minHeight: `calc(20%*${timeline.length})`,
@@ -146,10 +154,17 @@ function TimelineDesktop() {
   );
 }
 
-const Rocket = ({ up, down }) => (
+const Rocket = ({ up, down, direction }) => (
   <>
     <div className="absolute  h-17-0 -left-2-8 top-50-percent z-20 -translate-y-50-percent ">
-      <img className="w-full h-full" src="/images/shuttle.png" alt="" />
+      <motion.img
+        animate={{
+          rotate: direction === 'up' ? '0deg' : '180deg',
+        }}
+        className="w-full h-full"
+        src="/images/shuttle.png"
+        alt=""
+      />
     </div>
     <div className="absolute -left-30-0 top-50-percent z-10 -translate-y-50-percent ">
       <div className="p-0-6 rounded-1-6 border border-white/30">
