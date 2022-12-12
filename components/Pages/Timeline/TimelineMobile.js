@@ -13,6 +13,7 @@ function TimelineMobile({ carousel }) {
   const [rocket, setRocket] = useState(0);
   const [planets, setPlanets] = useState(0);
   const [dot, setDot] = useState(timeline.length - 1);
+  const [direction, setDirection] = useState('up');
 
   useEffect(() => {
     if (currView !== 2) {
@@ -22,6 +23,7 @@ function TimelineMobile({ carousel }) {
       if (dot !== timeline.length - 1) {
         setDot(timeline.length - 1);
       }
+      setDirection('up');
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -39,6 +41,7 @@ function TimelineMobile({ carousel }) {
     setDot(dot - 1);
     setRocket(rocket - 20);
     // setPlanets(planets + 50);
+    setDirection('up');
   };
   const handleRocketDown = () => {
     if (rocket >= 110) {
@@ -47,6 +50,7 @@ function TimelineMobile({ carousel }) {
     setDot(dot + 1);
     setRocket(rocket + 20);
     setPlanets(planets - 50);
+    setDirection('down');
   };
 
   const TimelineDot = (props) => {
@@ -81,7 +85,14 @@ function TimelineMobile({ carousel }) {
     <div className="w-full h-full ">
       <div className="h-60-vh w-full overflow-hidden">
         <div className="absolute h-8-0 w-6-0 xss:h-10-0 -mt-3-0 top-50-percent -ml-4-0 z-20 left-50-percent -translate-y-50-percent translate-x-50-percent">
-          <img className="w-full h-full" src="/images/shuttle.png" alt="" />
+          <motion.img
+            animate={{
+              rotate: direction === 'up' ? '0deg' : '180deg',
+            }}
+            className="w-full h-full"
+            src="/images/shuttle.png"
+            alt=""
+          />
         </div>
         <div
           style={{

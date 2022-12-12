@@ -16,7 +16,7 @@ import { Mousewheel, Pagination } from 'swiper';
 import { Logo } from 'components/Icons/Logo';
 
 export default function Home() {
-  const { currView, setCurrView, swiperRef, setSwiperRef } = useStore();
+  const { currView, setCurrView, setSwiperRef } = useStore();
   const [carousel, setCarousel] = useState(0);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Home() {
         return;
       }
       setCarousel(carousel - 1);
-    }, 800);
+    }, 300);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currView]);

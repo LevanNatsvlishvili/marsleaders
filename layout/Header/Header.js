@@ -51,7 +51,7 @@ function Header() {
               onClick={() => handleNavigation(link.activeIndex[0])}
               key={i}
               className={clsx(
-                'hover:text-text-primary text-text-primary/50 leading-2-4 text-2-6 lg:text-3-2 tracking-0-96 text-primary flex items-center',
+                'cursor-pointer hover:text-text-primary text-text-primary/50 leading-2-4 text-2-6 lg:text-3-2 tracking-0-96 text-primary flex items-center',
                 {
                   '!text-text-primary': link.activeIndex.includes(currView),
                 }
