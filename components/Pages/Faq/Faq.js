@@ -16,10 +16,10 @@ function Faq({ carousel }) {
         </div>
       </div>
       <div className="w-full h-full flex relative bg-secondary">
-        <div className="max-w-[1080px] px-3-0 lg:px-6-0 2xl:px-0 w-full mx-auto mt-6-0 lg:mt-16-5">
+        <div className="max-w-[1080px] px-3-0 lg:px-6-0 2xl:px-0 w-full mx-auto mt-6-0 lg:mt-10-0">
           <div className="w-full">
-            <div className="flex items-center mb-3-0 lg:mb-8-0">
-              <p className="text-white text-2-4 md:text-3-2 leading-3-8 lg:text-4-2 lg:leading-5-0 tracking-1-26 uppercase">
+            <div className="flex items-center mb-3-0 lg:mb-4-0">
+              <p className="font-techno text-white text-2-4 md:text-3-2 leading-3-8 lg:text-4-2 lg:leading-5-0 tracking-1-26 uppercase">
                 frequently asked questions
               </p>
               <InlineSVG
@@ -27,12 +27,45 @@ function Faq({ carousel }) {
                 src={FAQIcon.src}
               />
             </div>
-            <Accordion />
+            <Accordion faqs={faqs} />
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+const faqs = [
+  {
+    heading: 'What are the future plans?',
+    content:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+  },
+  {
+    heading: 'How can I get whitelisted?',
+    content:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+  },
+  {
+    heading: 'What will be the price of each piece?',
+    content:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+  },
+  {
+    heading: 'How many pieces will be in the collection?',
+    content:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+  },
+  {
+    heading: 'How high will the gas fee be?',
+    content:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+  },
+  {
+    heading: 'How many NFT can I mint?',
+    content:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+  },
+];
 
 export default Faq;

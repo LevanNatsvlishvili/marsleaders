@@ -3,7 +3,7 @@
 /// @require {function} font-url - Font asset helper
 //
 
-$fonts: 'Galatea-Narrow';
+$fonts: 'Galatea-Narrow', 'TechnoChain';
 
 @each $font in $fonts {
   @if ($font != '') {
@@ -21,18 +21,4 @@ $fonts: 'Galatea-Narrow';
       font-display: swap;
     }
   }
-}
-
-/* font converted using font-converter.net. thank you! */
-
-// @font-face {
-//   font-family: 'island';
-//   src: font-url('IslandMoments-Regular.ttf') format('truetype');
-//   font-display: auto;
-//   font-style: normal;
-//   font-weight: 400;
-// }
-
-* {
-  // font-family: 'Galatea-Narrow';
 }

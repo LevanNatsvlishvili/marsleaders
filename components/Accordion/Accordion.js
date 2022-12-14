@@ -5,30 +5,7 @@ import PropTypes from 'prop-types';
 import { ArrowDown } from 'components/Icons/Arrow';
 import { motion } from 'framer-motion';
 
-const faqs = [
-  {
-    heading: 'What are the future plans?',
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
-  },
-  {
-    heading: 'How can I get whitelisted?',
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
-  },
-  {
-    heading: 'How can I get whitelisted?',
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
-  },
-  {
-    heading: 'How can I get whitelisted?',
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
-  },
-];
-
-function Accordion() {
+function Accordion({ faqs }) {
   const [active, setActive] = useState(null);
 
   const handleClick = (id) => {
@@ -75,10 +52,10 @@ function AccordionItem(props) {
           )}
         />
         <div className={clsx('flex items-center')}>
-          <p className="font-ranger text-2-8 md:text-4-2 lg:text-6-0 leading-7-2 tracking-1-8 leading-2-4 font-700 font-tbc-bold text-primary">
+          <p className="font-galatea text-2-8 md:text-4-2 lg:text-6-0 leading-7-2 tracking-1-8 leading-2-4 font-700 font-tbc-bold text-primary">
             0{id + 1}
           </p>
-          <p className="ml-0-8 md:ml-3-5 text-1-4 md:text-2-8 leading-3-5 tracking-0-84 text-secondary font-galatea-bold">
+          <p className="font-galatea font-700 ml-0-8 md:ml-3-5 text-1-4 font md:text-2-8 leading-3-5 tracking-0-84 text-secondary">
             {heading}
           </p>
         </div>
@@ -101,10 +78,12 @@ function AccordionItem(props) {
 Accordion.propTypes = {
   heading: PropTypes.string,
   children: PropTypes.node,
+  faqs: PropTypes.array,
 };
 Accordion.defaultProps = {
   heading: 'heading',
   children: [],
+  faqs: [],
 };
 
 export default Accordion;

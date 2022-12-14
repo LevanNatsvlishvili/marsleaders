@@ -117,12 +117,12 @@ function TimelineMobile({ carousel }) {
       </div>
       <div className="h-40-vh w-full p-2-0">
         <div className="h-3-8 border border-[#2c2c2c] px-1-6 rounded-1-6 mt-0-8 flex items-center">
-          <p className="text-white text-1-6 font-ranger leading-1-9 tracking-3-2">
+          <p className="font-techno text-white text-1-6 font-ranger leading-1-9 tracking-3-2">
             {timeline[dot]['date']}
           </p>
         </div>
         <div className="h-10-0 xsm:h-14-0 mb-0-8 xss:mb-2-0 border border-[#2c2c2c] px-1-6 rounded-1-6 mt-0-8 flex items-center">
-          <p className="text-white text-1-4 xs:text-1-6 font-ranger leading-1-9 tracking-3-2">
+          <p className="font-galatea text-white text-1-4 xs:text-1-6 font-ranger leading-1-9 tracking-3-2">
             {timeline[dot]['content']}
           </p>
         </div>
@@ -138,7 +138,7 @@ const CPanel = ({ up, down }) => (
   <div className="">
     <div className="p-0-6 rounded-1-6 border border-white/30">
       <div className="px-1-6 py-1-0 rounded-1-6 min-w-19-2 h-full bg-[#171717] ">
-        <div className="flex items-center justify-between text-1-6 text-white font-regularleading-2-1 tracking-3-0">
+        <div className="font-techno flex items-center justify-between text-1-6 text-white font-regularleading-2-1 tracking-3-0">
           Control Panel
           <InlineSVG src={ControlPanel.src} className="mt-0-4" />
         </div>

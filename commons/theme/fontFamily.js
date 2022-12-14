@@ -1,7 +1,6 @@
 const fontFamily = {
-  blonde: '',
   galatea: 'Galatea-Narrow',
-  ranger: '',
+  techno: 'TechnoChain',
 };
 
 module.exports = fontFamily;

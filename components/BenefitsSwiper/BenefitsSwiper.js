@@ -56,7 +56,7 @@ const BenefitsSwiper = (props) => {
           <Swiper
             modules={[Pagination, Navigation]}
             {...sliderOptions}
-            className=""
+            className="card-swiper"
           >
             {list.map((item, i) => (
               <SwiperSlide key={item.id || i} className="cursor-pointer h-full">
@@ -83,11 +83,11 @@ const BenefitsSwiper = (props) => {
             .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
               background: #00afcf;
             }
-            .swiper-slide {
+            .card-swiper .swiper-slide {
               height: auto;
             }
             @media only screen and (max-width: 600px) {
-              .swiper-slide {
+              .card-swiper .swiper-slide {
                 width: 70%;
               }
             }

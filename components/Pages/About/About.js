@@ -24,14 +24,14 @@ function About({ carousel }) {
                 className="h-5-0 lg:h-7-0 lg:w-3-8 hidden lg:block"
                 src={Medal.src}
               />
-              <p className="dfc-blonde text-2-8 lg:text-4-2 text-text-primary leading-3-2 lg:leading-5-0 tracking-1-19 ml-0 lg:ml-2-7">
+              <p className="font-techno text-2-8 lg:text-4-2 text-text-primary leading-3-2 lg:leading-5-0 tracking-1-19 ml-0 lg:ml-2-7">
                 What is Marsleaders
               </p>
             </div>
 
             <div className="h-0-2 mt-1-0 xss:mt-1-6 mb-1-4 lg:mb-2-8 lg:mt-2-1 lg:mb-3-7 w-full bg-red-dark" />
 
-            <p className="text-text-secondary text-1-6 xss:text-2-2 lg:text-3-2 leading-3-9 tracking-0-96">
+            <p className="font-galatea text-text-secondary text-1-6 xss:text-2-2 lg:text-3-2 leading-3-9 tracking-0-96">
               Marsleaders - is a play-&-earn blockchain based metaverse world
               life simulation game, giving humanity an opportunity to start
               over, from a blank red soil, to base a new virtual civilization on
@@ -55,7 +55,7 @@ function About({ carousel }) {
               layout="intrinsic "
             />
           </div>
-          <p className="mt-2-0 xs:mt-4-0 text-center text-text-primary text-2-2 leading-3-2 lg:text-3-6 lg:leading-6-0 tracking-3-6 font-blonde lg:w-60-percent lg:w-45-percent ">
+          <p className="font-techno mt-2-0 xs:mt-4-0 text-center lg:text-left text-text-primary text-2-2 leading-3-2 lg:text-3-6 lg:leading-6-0 tracking-3-6 font-blonde lg:w-60-percent lg:w-45-percent ">
             The Age of Exploration might be over for earth, but it’s only the
             beginning <span className="text-red">for Mars</span>
           </p>

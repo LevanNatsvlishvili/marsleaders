@@ -67,7 +67,7 @@ function TimelineDesktop() {
           animate={{
             opacity: index === dot ? 0 : 1,
           }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.1 }}
         >
           <div
             className={clsx(
@@ -79,10 +79,10 @@ function TimelineDesktop() {
         </motion.div>
 
         <div className="ml-4-0">
-          <p className="text-2-2 font-ranger leading-2-6 tracking-4-4">
+          <p className="font-techno text-2-2 font-ranger leading-2-6 tracking-4-4">
             {date}
           </p>
-          <p className="mt-1-2 text-2-2 font-galatea leading-2-7 tracking-4-4">
+          <p className="font-galatea mt-1-2 text-2-2 font-galatea leading-2-7 tracking-4-4">
             {content}
           </p>
         </div>

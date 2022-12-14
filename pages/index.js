@@ -51,7 +51,7 @@ export default function Home() {
       clickable: false,
     },
     onSlideChange: handleSlideChange,
-    // allowTouchMove: false,
+    allowTouchMove: false,
     onSwiper: setSwiperRef,
   };
 

@@ -57,3 +57,8 @@ $default-font-size: 62.5%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.mySwiper .swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper-vertical > .swiper-pagination-bullets {
+  right: 0;
+}
