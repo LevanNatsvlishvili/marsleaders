@@ -17,7 +17,7 @@ function Project({ carousel }) {
       </div>
       <div
         style={{ width: 'calc(100% - 6rem)' }}
-        className="w-full flex items-center justify-center bg-secondary pt-6-0"
+        className="w-full flex md:items-center justify-center bg-secondary pt-6-0"
       >
         <div className="max-w-90-percent lg:max-w-80-percent xl:max-w-72-percent">
           <p className="text-[#d6d6d6] leading-3-5 text-1-6 md:text-2-4 lg:text-2-8 tracking-0-84 font-galatea">
