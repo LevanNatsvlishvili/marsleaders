@@ -54,7 +54,7 @@ function Header() {
               onClick={() => handleNavigation(link.activeIndex[0])}
               key={i}
               className={clsx(
-                'font-techno cursor-pointer hover:text-text-primary text-text-primary/50 leading-2-4 text-2-6 lg:text-3-2 tracking-0-96 text-primary flex items-center',
+                'font-techno select-none cursor-pointer hover:text-text-primary text-text-primary/50 leading-2-4 text-2-6 lg:text-3-2 tracking-0-96 text-primary flex items-center',
                 {
                   '!text-text-primary': link.activeIndex.includes(currView),
                 }
@@ -108,7 +108,7 @@ function Header() {
                   onClick={() => handleNavigationMobile(link.activeIndex[0])}
                   key={i}
                   className={clsx(
-                    'font-techno mb-3-0 hover:text-text-primary text-text-primary/50 leading-2-4 text-2-6 lg:text-3-2 tracking-0-96 text-primary flex items-center',
+                    'select-none font-techno mb-3-0 hover:text-text-primary text-text-primary/50 leading-2-4 text-2-6 lg:text-3-2 tracking-0-96 text-primary flex items-center',
                     {
                       '!text-text-primary': link.activeIndex.includes(currView),
                     }

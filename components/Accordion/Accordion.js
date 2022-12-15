@@ -39,7 +39,7 @@ function AccordionItem(props) {
       <div
         onClick={() => handleClick(id)}
         className={clsx(
-          'group px-1-5 hover:bg-[#D0D0D0] bg-white h-6-0 lg:h-8-2 lg:min-h-8-2 border flex items-center overflow-hidden duration-100 cursor-pointer relative',
+          'select-none group px-1-5 hover:bg-[#D0D0D0] bg-white h-6-0 lg:h-8-2 lg:min-h-8-2 border flex items-center overflow-hidden duration-100 cursor-pointer relative',
           active === id && 'bg-red hover:!bg-red'
         )}
       >
