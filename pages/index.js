@@ -47,11 +47,13 @@ export default function Home() {
       releaseOnEdges: true,
       thresholdDelta: 50,
     },
-    pagination: {
-      clickable: false,
+    allowTouchMove: true,
+    breakpoints: {
+      768: {
+        allowTouchMove: false,
+      },
     },
     onSlideChange: handleSlideChange,
-    allowTouchMove: false,
     onSwiper: setSwiperRef,
   };
 
@@ -65,7 +67,7 @@ export default function Home() {
 
       <Swiper
         {...swiperSettigns}
-        modules={[Mousewheel, Pagination]}
+        modules={[Mousewheel]}
         className="mySwiper h-full"
       >
         <SwiperSlide className="!h-full">
