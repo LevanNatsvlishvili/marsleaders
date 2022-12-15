@@ -42,6 +42,7 @@ const CardSlider = (props) => {
     keyboard: {
       enabled: true,
     },
+    allowTouchMove: true,
     onInit: (swiper) => {
       swiper.params.navigation.prevEl = prevRef.current;
       swiper.params.navigation.nextEl = nextRef.current;

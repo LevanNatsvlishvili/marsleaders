@@ -39,7 +39,8 @@ function AccordionItem(props) {
       <div
         onClick={() => handleClick(id)}
         className={clsx(
-          'px-1-5 bg-white h-6-0 lg:h-8-2 lg:min-h-8-2 border flex items-center overflow-hidden duration-1000 cursor-pointer relative'
+          'group px-1-5 hover:bg-[#D0D0D0] bg-white h-6-0 lg:h-8-2 lg:min-h-8-2 border flex items-center overflow-hidden duration-100 cursor-pointer relative',
+          active === id && 'bg-red hover:!bg-red'
         )}
       >
         <InlineSVG
@@ -51,11 +52,16 @@ function AccordionItem(props) {
             }
           )}
         />
-        <div className={clsx('flex items-center')}>
-          <p className="font-galatea text-2-8 md:text-4-2 lg:text-6-0 leading-7-2 tracking-1-8 leading-2-4 font-700 font-tbc-bold text-primary">
+        <div
+          className={clsx(
+            'flex items-center text-primary',
+            active === id && '!text-white'
+          )}
+        >
+          <p className="min-w-6-0 font-galatea text-2-8 md:text-4-2 lg:text-6-0 leading-7-2 tracking-1-8 leading-2-4 font-700 font-tbc-bold text-inherit">
             0{id + 1}
           </p>
-          <p className="font-galatea font-700 ml-0-8 md:ml-3-5 text-1-4 font md:text-2-8 leading-3-5 tracking-0-84 text-secondary">
+          <p className="group-hover:translate-x-1-0 duration-300 font-galatea font-700 ml-0-8 md:ml-3-5 text-1-4 font md:text-2-8 leading-3-5 tracking-0-84 text-inherit">
             {heading}
           </p>
         </div>

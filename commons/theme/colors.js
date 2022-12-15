@@ -14,6 +14,7 @@ const colors = {
   secondary: '#111111',
   'text-primary': '#fff',
   'text-secondary': '#EFBCBC',
+  inherit: 'inherit',
 };
 
 module.exports = colors;

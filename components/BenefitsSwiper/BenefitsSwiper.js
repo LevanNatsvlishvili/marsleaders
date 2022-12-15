@@ -41,6 +41,7 @@ const BenefitsSwiper = (props) => {
     keyboard: {
       enabled: true,
     },
+    allowTouchMove: true,
     onInit: (swiper) => {
       swiper.params.navigation.prevEl = bPrevRef.current;
       swiper.params.navigation.nextEl = bNextRef.current;

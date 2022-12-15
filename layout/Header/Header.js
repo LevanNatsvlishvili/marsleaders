@@ -41,7 +41,10 @@ function Header() {
 
   return (
     <header className="h-4-0 lg:h-6-0 bg-black w-full fixed z-20 flex items-center ">
-      <div className="w-4-0 h-4-0 max-w-4-0 lg:h-6-0 lg:w-6-0 lg:min-w-6-0 flex items-center justify-center bg-red">
+      <div
+        onClick={() => handleNavigation(0)}
+        className="cursor-pointer w-4-0 h-4-0 max-w-4-0 lg:h-6-0 lg:w-6-0 lg:min-w-6-0 flex items-center justify-center bg-red"
+      >
         <InlineSVG src={Logo.src} className="lg:w-5-0 lg:h-5-0 w-3-0 h-3-0" />
       </div>
       <nav className="w-full flex items-center justify-end relative">
@@ -69,7 +72,7 @@ function Header() {
             src={Wallet.src}
             className="h-2-8 w-2-8 lg:w-auto lg:h-auto"
           />
-          <div className="hidden lg-block group-hover:opacity-100 opacity-0 duration-300 -bottom-5-0 -ml-2-0 bg-black text-white text-1-6 absolute px-1-2 py-0-2 rounded-0-8 mint">
+          <div className="hidden lg:block group-hover:opacity-100 opacity-0 duration-300 -bottom-5-0 -ml-2-0 bg-black text-white text-1-6 absolute px-1-2 py-0-2 rounded-0-8 mint">
             MINT
           </div>
           <p className="lg:hidden inline ml-0-8 text-white text-1-4 font-galatea leading-1-9">
@@ -122,7 +125,7 @@ function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="fixed -right-12-5 -rotate-90 bottom-20-percent">
+      <div className="fixed right-0 bottom-20-percent">
         <SocMedia />
       </div>
     </header>

@@ -169,22 +169,28 @@ const Rocket = ({ up, down, direction }) => (
     <div className="absolute -left-30-0 top-50-percent z-10 -translate-y-50-percent ">
       <div className="p-0-6 rounded-1-6 border border-white/30">
         <div className="px-1-6 py-1-0 rounded-1-6 min-w-19-2 h-14-0 bg-[#171717] ">
-          <div className="flex items-center justify-between text-1-6 text-white font-regularleading-2-1 tracking-3-0">
+          <div className="font-techno flex items-center justify-between text-1-6 text-white font-regularleading-2-1 tracking-3-0">
             Control Panel
             <InlineSVG src={ControlPanel.src} className="mt-0-4" />
           </div>
           <div className="mt-2-2 flex justify-between">
             <div
               onClick={up}
-              className="cursor-pointer bg-[#242424] w-7-0 h-6-2 flex items-center justify-center"
+              className="group hover:bg-red cursor-pointer bg-[#242424] w-7-0 h-6-2 flex items-center justify-center"
             >
-              <InlineSVG src={ArrowDownV2.src} className="" />
+              <InlineSVG
+                src={ArrowDownV2.src}
+                className="group-hover:fill-white"
+              />
             </div>
             <div
               onClick={down}
-              className="cursor-pointer bg-[#242424] w-7-0 h-6-2 flex items-center justify-center rotate-180"
+              className="group hover:bg-red cursor-pointer bg-[#242424] w-7-0 h-6-2 flex items-center justify-center rotate-180"
             >
-              <InlineSVG src={ArrowDownV2.src} className="" />
+              <InlineSVG
+                src={ArrowDownV2.src}
+                className="group-hover:fill-white"
+              />
             </div>
           </div>
           <div className="absolute w-full  -right-100-percent top-50-percent flex items-center">
