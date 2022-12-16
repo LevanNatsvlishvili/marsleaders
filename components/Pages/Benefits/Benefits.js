@@ -82,13 +82,12 @@ function BenefitsComponent({ carousel }) {
             ever since the 1500s, when an unknown printer took a galley
           </p>
 
-          {/* <div className={value === 'citizens' ? 'block' : 'hidden'}>
+          <div className={value === 'citizens' ? 'block' : 'hidden'}>
             <BenefitsSwiper list={citizens} />
           </div>
           <div className={value === 'presidents' ? 'block' : 'hidden'}>
             <BenefitsSwiper list={presidents} />
-          </div> */}
-          <BenefitsSwiper list={presidents} />
+          </div>
 
           <div className="lg:flex hidden justify-center my-auto">
             <InlineSVG src={Star.src} className="w-2-0 h-2-0 mr-3-0" />
