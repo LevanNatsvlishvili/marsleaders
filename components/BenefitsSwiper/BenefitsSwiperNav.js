@@ -6,25 +6,25 @@ import { Dot } from 'components/Icons/Dot';
 import clsx from 'clsx';
 
 const SwiperNav = forwardRef((props, ref) => {
-  const { nextRef, prevRef } = ref;
+  const { bNextRef, bPrevRef } = ref;
   const { length } = props;
   return (
     <div
       className={clsx(
-        'md:flex hidden h-2-4 items-center w-full mt-5-2  relative',
+        'md:flex hidden h-2-4 items-center w-full mt-5-2 relative',
         length > 3 && 'pr-11-2'
       )}
     >
-      <div className="h-0-2 relative  w-full">
+      <div className="h-0-2 relative w-full">
         <div className="!h-0-2 relative !bg-[#383838] w-full " />
       </div>
       {length > 3 && (
         <div className="h-full absolute right-0  flex items-center">
-          <div ref={prevRef} className="mr-0-9 cursor-pointer">
+          <div ref={bPrevRef} className="mr-0-9 cursor-pointer">
             <InlineSVG src={ArrowLeft.src} className="" />
           </div>
           <InlineSVG src={Dot.src} className="mr-0-9" />
-          <div ref={nextRef} className="cursor-pointer">
+          <div ref={bNextRef} className="cursor-pointer">
             <InlineSVG src={ArrowRight.src} className="" />
           </div>
         </div>
