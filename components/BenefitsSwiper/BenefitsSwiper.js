@@ -12,17 +12,13 @@ import InlineSVG from 'react-inlinesvg';
 const BenefitsSwiper = (props) => {
   const { list } = props;
 
-  const bPrevRef = useRef(null);
-  const bNextRef = useRef(null);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
   const sliderOptions = {
     navigation: {
-      prevEl: bPrevRef.current ? bPrevRef.current : null,
-      nextEl: bNextRef.current ? bNextRef.current : null,
-    },
-    pagination: {
-      type: 'progressbar',
-      el: '.scroll',
+      prevEl: prevRef.current ? prevRef.current : null,
+      nextEl: nextRef.current ? nextRef.current : null,
     },
     speed: 800,
     breakpoints: {
@@ -43,8 +39,8 @@ const BenefitsSwiper = (props) => {
     },
     allowTouchMove: true,
     onInit: (swiper) => {
-      swiper.params.navigation.prevEl = bPrevRef.current;
-      swiper.params.navigation.nextEl = bNextRef.current;
+      swiper.params.navigation.prevEl = prevRef.current;
+      swiper.params.navigation.nextEl = nextRef.current;
       swiper.navigation.init();
       swiper.navigation.update();
     },
@@ -55,7 +51,7 @@ const BenefitsSwiper = (props) => {
       <div className="w-full mt-3-0 ">
         <div className="">
           <Swiper
-            modules={[Pagination, Navigation]}
+            modules={[Navigation]}
             {...sliderOptions}
             className="card-swiper"
           >
@@ -72,11 +68,20 @@ const BenefitsSwiper = (props) => {
           </Swiper>
         </div>
 
+        {/* <div className="h-full flex items-center">
+          <div ref={prevRef} className="mr-0-9 cursor-pointer">
+            prev
+          </div>
+          <div ref={nextRef} className="cursor-pointer">
+            next
+          </div>
+        </div> */}
+
         <SwiperNav
           length={list.length}
           ref={{
-            prevRef: bPrevRef,
-            nextRef: bNextRef,
+            prevRef: prevRef,
+            nextRef: nextRef,
           }}
         />
         <style global jsx>
