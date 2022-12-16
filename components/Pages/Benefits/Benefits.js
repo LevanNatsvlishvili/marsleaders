@@ -82,7 +82,7 @@ function BenefitsComponent({ carousel }) {
             ever since the 1500s, when an unknown printer took a galley
           </p>
 
-          {value === 'citizens' && <BenefitsSwiper list={citizens} />}
+          {/* {value === 'citizens' && <BenefitsSwiper  list={citizens} />} */}
           {value === 'presidents' && <BenefitsSwiper list={presidents} />}
 
           <div className="lg:flex hidden justify-center my-auto">
