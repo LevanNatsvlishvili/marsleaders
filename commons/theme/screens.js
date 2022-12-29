@@ -9,6 +9,7 @@ const screens = {
   '2xl': '1268px',
   '3xl': '1440px',
   '4xl': '1540px',
+  '4k': '2540px',
   print: { raw: 'print' },
   landscape: { raw: '(orientation: landscape)' },
 };

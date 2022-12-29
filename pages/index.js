@@ -14,6 +14,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Mousewheel, Pagination } from 'swiper';
 import { Logo } from 'components/Icons/Logo';
+import Team from 'components/Pages/Team';
 
 export default function Home() {
   const { currView, setCurrView, setSwiperRef } = useStore();
@@ -70,7 +71,7 @@ export default function Home() {
         modules={[Mousewheel]}
         className="mySwiper h-full"
       >
-        <SwiperSlide className="!h-full">
+        {/* <SwiperSlide className="!h-full">
           <Welcome carousel={carousel} />
         </SwiperSlide>
         <SwiperSlide className="!h-full">
@@ -84,6 +85,9 @@ export default function Home() {
         </SwiperSlide>
         <SwiperSlide className="!h-full">
           <BenefitsComponent carousel={carousel} />
+        </SwiperSlide> */}
+        <SwiperSlide className="!h-full">
+          <Team carousel={carousel} />
         </SwiperSlide>
         <SwiperSlide className="!h-full">
           <Faq carousel={carousel} />

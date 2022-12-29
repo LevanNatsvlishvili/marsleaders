@@ -18,7 +18,7 @@ function About({ carousel }) {
       </div>
       <div className="w-full">
         <div className="h-30-percent lg:h-50-percent text-primary flex relative">
-          <div className="w-fit h-full bg-red flex md:justify-center flex-col px-2-8 lg:px-6-0 xl:pl-14-0 xl:pr-11-6 pt-6-0">
+          <div className="w-fit 4k:w-full h-full bg-red flex md:justify-center flex-col px-2-8 lg:px-6-0 xl:pl-14-0 xl:pr-11-6 pt-6-0">
             <div className="flex items-center">
               <InlineSVG
                 className="h-5-0 lg:h-7-0 lg:w-3-8 hidden lg:block"

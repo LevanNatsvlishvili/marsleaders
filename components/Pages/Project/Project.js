@@ -58,7 +58,7 @@ const imagesNew = [
   '/images/cards/marsleader-7.png',
   '/images/cards/marsleader-8.png',
   '/images/cards/marsleader-9.png',
-  '/images/cards/marsleader-1.png',
-  '/images/cards/marsleader-2.png',
-  '/images/cards/marsleader-3.png',
+  '/images/cards/marsleader-10.png',
+  '/images/cards/marsleader-11.png',
+  '/images/cards/marsleader-12.png',
 ];

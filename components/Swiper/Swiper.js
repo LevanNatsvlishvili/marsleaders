@@ -78,13 +78,13 @@ const CardSlider = (props) => {
         <style global jsx>
           {`
             .swiper-component
-              .swiper-pagination-progressbar
+              > .swiper-pagination-progressbar
               .swiper-pagination-progressbar-fill {
               background: #00afcf;
             }
 
             @media only screen and (max-width: 600px) {
-              .swiper-component .swiper-slide {
+              .swiper-component > .swiper-slide {
                 width: 26rem !important;
                 height: 30rem !important;
                 min-width: 26rem !important;
