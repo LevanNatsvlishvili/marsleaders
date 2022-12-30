@@ -64,7 +64,7 @@ const faqs = [
   {
     heading: 'How do get I A whitelist?',
     content:
-      '<p> Current Mission To Get Whitelisted <br/> \n ☛Get JR.Martian Rank & invite 3 members<br/> ☛ Invite 10 members with your personal invitation link</p>',
+      '<p> Current Mission To Get Whitelisted <br/> \n ☛Get JR.Martian Rank & invite 3 members<br/> ☛Invite 10 members with your personal invitation link</p>',
   },
 ];
 
