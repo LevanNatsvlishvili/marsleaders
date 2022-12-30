@@ -15,7 +15,8 @@ const NavLinks = [
   { title: 'About', activeIndex: [1, 2] },
   { title: 'Roadmap', activeIndex: [3] },
   { title: 'Benefits', activeIndex: [4] },
-  { title: 'FAQ', activeIndex: [5] },
+  { title: 'Team', activeIndex: [5] },
+  { title: 'FAQ', activeIndex: [6] },
 ];
 
 function useQuery() {

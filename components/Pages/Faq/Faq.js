@@ -16,16 +16,13 @@ function Faq({ carousel }) {
         </div>
       </div>
       <div className="w-full h-full flex relative bg-secondary">
-        <div className="max-w-[1080px] px-3-0 lg:px-6-0 2xl:px-0 w-full mx-auto mt-6-0 lg:mt-10-0">
+        <div className="max-w-[1080px] px-3-0 lg:px-6-0 2xl:px-0 w-full mx-auto mt-3-0 lg:mt-6-0">
           <div className="w-full">
-            <div className="flex items-center mb-3-0 lg:mb-4-0">
+            <div className="flex items-center mb-1-6 lg:mb-2-0">
               <p className="font-techno text-white text-2-4 md:text-3-2 leading-3-8 lg:text-4-2 lg:leading-5-0 tracking-1-26 uppercase">
                 frequently asked questions
               </p>
-              <InlineSVG
-                className="ml-auto w-6-0 lg:w-auto"
-                src={FAQIcon.src}
-              />
+              <InlineSVG className="ml-auto w-6-0 " src={FAQIcon.src} />
             </div>
             <Accordion faqs={faqs} />
           </div>
@@ -37,34 +34,37 @@ function Faq({ carousel }) {
 
 const faqs = [
   {
-    heading: 'What are the future plans?',
+    heading: 'What is Marsleaders?',
     content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+      'Marsleaders is a competitively driven community that aims to make a blockchain-based multiplayer roleplay life-simulation civilization based on Mars. Moving 195 Earth countries along with their presidents and citizens to Mars in a fictitious manner, hosting competitions between the countries by hosting weekly challenges and calculating points on a leaderboard based on how well citizens and presidents handle these challenges.',
   },
   {
-    heading: 'How can I get whitelisted?',
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+    heading: 'Is team doxxed and how can I get more details about project?',
+    content: `The team is doxxed. If you want to be more educated about the project, we advise you to check #project-info, #roadmap, and #utilities.
+    <br/>Please always feel free to ask any questions you may have by raising a ticket or asking in community chats. 
+    `,
   },
   {
-    heading: 'What will be the price of each piece?',
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+    heading: 'When is mint and strategies?',
+    content: `Marsleaders is launching first sale only for VIPs, people who have whitelist, will be able to purchase NFT before the public sale. There is more than one month period between VIP sale and Public sale, because we announced warmup competition before first season takes off.
+      <br/>
+      VIP Sale - 14 January
+      <br/>Launching presidents at an auction (10 presidents weekly) - From 20 January
+      <br/>Launching warmup competition between VIP community members with prizepool of $20 000
+      <br/>Launching public sale at 20 Ferbuary
+      <br/>First season takes off.
+      `,
   },
   {
-    heading: 'How many pieces will be in the collection?',
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+    heading: 'What is mint price?',
+    content: `Price for Presale collection is 0.07ETH, Public mint price is TBA.
+    <br/>You can mint up to 3 NFT with whitelist.
+    `,
   },
   {
-    heading: 'How high will the gas fee be?',
+    heading: 'How do get I A whitelist?',
     content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
-  },
-  {
-    heading: 'How many NFT can I mint?',
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+      '<p> Current Mission To Get Whitelisted <br/> \n ☛Get JR.Martian Rank & invite 3 members<br/> ☛ Invite 10 members with your personal invitation link</p>',
   },
 ];
 

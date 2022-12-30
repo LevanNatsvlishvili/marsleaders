@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import InlineSVG from 'react-inlinesvg';
 import PropTypes from 'prop-types';
 import { ArrowDown } from 'components/Icons/Arrow';
@@ -74,7 +74,7 @@ function AccordionItem(props) {
         className="overflow-hidden bg-black"
       >
         <div className=" p-2-5 lg:p-4-5 font-500 text-text-secondary font-tbc-medium text-1-4 leading-2-4">
-          {content}
+          <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
       </motion.div>
     </div>
