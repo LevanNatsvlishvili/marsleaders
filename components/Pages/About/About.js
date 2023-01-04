@@ -43,7 +43,7 @@ function About({ carousel }) {
           </div>
         </div>
         <div className="h-70-percent lg:h-50-percent text-primary flex-col lg:flex-row flex items-center relative p-3-0 lg:px-0">
-          <div className="relative h-full group 3xl:ml-7-0 lg:ml-3-0">
+          <div className="relative h-full group 3xl:ml-7-0 lg:ml-3-0 pb-5-0 md:pb-0">
             <InlineSVG
               src={MarsleaderHover.src}
               className="opacity-0 group-hover:opacity-100 duration-300 h-full hidden xl:block"
