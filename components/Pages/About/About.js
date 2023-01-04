@@ -43,7 +43,7 @@ function About({ carousel }) {
           </div>
         </div>
         <div className="h-70-percent lg:h-50-percent text-primary flex-col lg:flex-row flex items-center relative p-3-0 lg:px-0">
-          <div className="relative h-60-percent lg:h-full group 3xl:ml-7-0 lg:ml-3-0">
+          <div className="relative h-full group 3xl:ml-7-0 lg:ml-3-0">
             <InlineSVG
               src={MarsleaderHover.src}
               className="opacity-0 group-hover:opacity-100 duration-300 h-full hidden xl:block"
@@ -55,7 +55,7 @@ function About({ carousel }) {
               layout="intrinsic "
             />
           </div>
-          <p className="font-techno mt-2-0 xs:mt-4-0 text-center lg:text-left text-text-primary text-2-2 leading-3-2 lg:text-3-6 lg:leading-6-0 tracking-3-6 font-blonde lg:w-60-percent lg:w-45-percent ">
+          <p className="hidden sm:block font-techno mt-2-0 xs:mt-4-0 text-center lg:text-left text-text-primary text-2-2 leading-3-2 lg:text-3-6 lg:leading-6-0 tracking-3-6 font-blonde lg:w-60-percent lg:w-45-percent ">
             The Age of Exploration might be over for earth, but it’s only the
             beginning <span className="text-red">for Mars</span>
           </p>

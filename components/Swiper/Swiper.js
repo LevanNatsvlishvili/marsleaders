@@ -27,7 +27,7 @@ const CardSlider = (props) => {
     speed: 800,
     breakpoints: {
       200: {
-        slidesPerView: 3,
+        slidesPerView: 1.25,
       },
       600: {
         slidesPerView: 3,
@@ -52,7 +52,7 @@ const CardSlider = (props) => {
   };
 
   return (
-    <div>
+    <div className="h-full">
       <div className="w-full bg-[#383838] h-0-1 mt-5-2" />
       <div className="w-full mt-6-0 ">
         <div className="swiper-component">
@@ -84,7 +84,7 @@ const CardSlider = (props) => {
             }
 
             @media only screen and (max-width: 600px) {
-              .swiper-component > .swiper-slide {
+              .swiper-component .swiper-slide {
                 width: 26rem !important;
                 height: 30rem !important;
                 min-width: 26rem !important;

@@ -38,7 +38,7 @@ const TeamSwiper = (props) => {
     <div>
       <div className="w-full bg-[#383838] h-0-1 mt-5-2" />
       <div className="w-full mt-6-0 ">
-        <div className="swiper-component">
+        <div className="team-swiper">
           <Swiper modules={[Navigation]} {...sliderOptions} className="">
             {list.map((item, i) => (
               <SwiperSlide key={item.id || i} className="cursor-pointer ">
