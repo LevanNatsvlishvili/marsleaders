@@ -72,11 +72,7 @@ export default function Home() {
         />
         <meta name="og:title" content="Marsleaders" />
         <link rel="icon" href={Logo.src} />
-        <meta
-          property="og:url"
-          key="ogUrl"
-          content="https://marsleaeders.com"
-        />
+        <meta property="og:url" key="ogUrl" content="https://marsleaders.com" />
 
         <meta
           property="og:image"
@@ -84,34 +80,45 @@ export default function Home() {
           content="/images/cover-image.png"
         />
       </Head>
+      <div className="md:block hidden h-full">
+        <Swiper
+          {...swiperSettigns}
+          modules={[Mousewheel]}
+          className="mySwiper h-full"
+        >
+          <SwiperSlide className="!h-full">
+            <Welcome carousel={carousel} />
+          </SwiperSlide>
+          <SwiperSlide className="!h-full">
+            <About carousel={carousel} />
+          </SwiperSlide>
+          <SwiperSlide className="!h-full">
+            <Project carousel={carousel} />
+          </SwiperSlide>
+          <SwiperSlide className="!h-full">
+            <Timeline carousel={carousel} />
+          </SwiperSlide>
+          <SwiperSlide className="!h-full">
+            <BenefitsComponent carousel={carousel} />
+          </SwiperSlide>
+          <SwiperSlide className="!h-full">
+            <Team carousel={carousel} />
+          </SwiperSlide>
+          <SwiperSlide className="!h-full">
+            <Faq carousel={carousel} />
+          </SwiperSlide>
+        </Swiper>
+      </div>
 
-      <Swiper
-        {...swiperSettigns}
-        modules={[Mousewheel]}
-        className="mySwiper h-full"
-      >
-        <SwiperSlide className="!h-full">
-          <Welcome carousel={carousel} />
-        </SwiperSlide>
-        <SwiperSlide className="!h-full">
-          <About carousel={carousel} />
-        </SwiperSlide>
-        <SwiperSlide className="!h-full">
-          <Project carousel={carousel} />
-        </SwiperSlide>
-        <SwiperSlide className="!h-full">
-          <Timeline carousel={carousel} />
-        </SwiperSlide>
-        <SwiperSlide className="!h-full">
-          <BenefitsComponent carousel={carousel} />
-        </SwiperSlide>
-        <SwiperSlide className="!h-full">
-          <Team carousel={carousel} />
-        </SwiperSlide>
-        <SwiperSlide className="!h-full">
-          <Faq carousel={carousel} />
-        </SwiperSlide>
-      </Swiper>
+      <div className="md:hidden block bg-secondary">
+        <Welcome carousel={carousel} />
+        <About carousel={carousel} />
+        <Project carousel={carousel} />
+        <Timeline carousel={carousel} />
+        <BenefitsComponent carousel={carousel} />
+        <Team carousel={carousel} />
+        <Faq carousel={carousel} />
+      </div>
 
       <style jsx global>
         {`

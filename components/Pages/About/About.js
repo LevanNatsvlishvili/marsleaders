@@ -7,8 +7,8 @@ import { MarsleaderHover } from 'components/Icons/MarsleaderHover';
 
 function About({ carousel }) {
   return (
-    <section className="h-100-vh w-full flex relative section">
-      <div className="w-4-0 min-w-4-0 lg:min-w-6-0 lg:w-6-0 h-full z-40 bg-red-darker">
+    <section className="md:h-100-vh w-full flex relative section">
+      <div className="w-4-0 min-w-4-0 lg:min-w-6-0 lg:w-6-0 h-auto md:h-full z-40 bg-red-darker">
         <div className="w-full h-full relative overflow-hidden flex justify-center">
           <div
             className="text-carousel text-carousel-2"
@@ -17,8 +17,8 @@ function About({ carousel }) {
         </div>
       </div>
       <div className="w-full">
-        <div className="pt-3-0 md:pt-0 h-30-percent lg:h-50-percent text-primary flex relative">
-          <div className="w-fit 4k:w-full h-full bg-red flex md:justify-center flex-col px-2-8 lg:px-6-0 xl:pl-14-0 xl:pr-11-6 pt-6-0">
+        <div className="md:h-30-percent lg:h-50-percent text-primary flex relative">
+          <div className="w-fit pb-4-0 md:pb-0 4k:w-full h-full bg-red flex md:justify-center flex-col px-2-8 lg:px-6-0 xl:pl-14-0 xl:pr-11-6 pt-4-0">
             <div className="flex items-center">
               <InlineSVG
                 className="h-5-0 lg:h-7-0 lg:w-3-8 hidden lg:block"
@@ -42,8 +42,8 @@ function About({ carousel }) {
             <InlineSVG src={LogoLg.src} className="h-full mt-6-0" />
           </div>
         </div>
-        <div className="h-70-percent lg:h-50-percent text-primary flex-col lg:flex-row flex items-center relative p-3-0 lg:px-0">
-          <div className="relative h-full group 3xl:ml-7-0 lg:ml-3-0 pb-5-0 md:pb-0">
+        <div className="md:h-70-percent lg:h-50-percent text-primary flex-col lg:flex-row flex items-center relative p-3-0 lg:px-0">
+          <div className=" relative h-full group 3xl:ml-7-0 lg:ml-3-0 pb-5-0 md:pb-0">
             <InlineSVG
               src={MarsleaderHover.src}
               className="opacity-0 group-hover:opacity-100 duration-300 h-full hidden xl:block"
@@ -51,7 +51,7 @@ function About({ carousel }) {
             <img
               src="/images/cards/marsleader-1.png"
               alt=""
-              className="xl:absolute xl:top-50-percent xl:left-50-percent xl:-translate-y-50-percent xl:-translate-x-50-percent h-full lg:py-4-0 lg:px-2-8"
+              className="xl:absolute xl:top-50-percent xl:left-50-percent xl:-translate-y-50-percent xl:-translate-x-50-percent xs:h-full w-full md:w-auto lg:py-4-0 lg:px-2-8"
               layout="intrinsic "
             />
           </div>
