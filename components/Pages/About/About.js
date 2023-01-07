@@ -7,7 +7,7 @@ import { MarsleaderHover } from 'components/Icons/MarsleaderHover';
 
 function About({ carousel }) {
   return (
-    <section className="md:h-100-vh w-full flex relative section">
+    <section id="about" className="md:h-100-vh w-full flex relative section">
       <div className="w-4-0 min-w-4-0 lg:min-w-6-0 lg:w-6-0 h-auto md:h-full z-40 bg-red-darker">
         <div className="w-full h-full relative overflow-hidden flex justify-center">
           <div

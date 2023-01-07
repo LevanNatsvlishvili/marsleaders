@@ -58,10 +58,10 @@ function AccordionItem(props) {
             active === id && '!text-white'
           )}
         >
-          <p className="min-w-6-0 font-galatea text-2-8 md:text-4-2 lg:text-6-0 leading-7-2 tracking-1-8 leading-2-4 font-700 font-tbc-bold text-inherit">
+          <p className="w-4-0 xs:min-w-6-0 font-galatea text-2-8 md:text-4-2 lg:text-6-0 leading-7-2 tracking-1-8 leading-2-4 font-700 font-tbc-bold text-inherit">
             0{id + 1}
           </p>
-          <p className="group-hover:translate-x-1-0 duration-300 font-galatea font-700 ml-0-8 md:ml-3-5 text-1-4 font md:text-2-8 leading-3-5 tracking-0-84 text-inherit">
+          <p className="group-hover:translate-x-1-0 duration-300 font-galatea font-700 ml-0-8 md:ml-3-5 text-1-4 font md:text-2-8 leading-2-0 md:leading-3-5 tracking-0-84 text-inherit">
             {heading}
           </p>
         </div>

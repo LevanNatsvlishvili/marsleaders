@@ -13,8 +13,13 @@ const TeamSwiper = (props) => {
 
   const sliderOptions = {
     speed: 800,
-    slidesPerView: 1.25,
+    slidesPerView: 1,
+    spaceBetween: 20,
+
     breakpoints: {
+      280: {
+        slidesPerView: 1.25,
+      },
       350: {
         slidesPerView: 1.5,
       },
@@ -31,12 +36,11 @@ const TeamSwiper = (props) => {
         slidesPerView: 5,
       },
     },
-    spaceBetween: 10,
   };
 
   return (
-    <div>
-      <div className="w-full bg-[#383838] h-0-1 mt-5-2" />
+    <div className="w-full">
+      {/* <div className="w-full bg-[#383838] h-0-1 mt-5-2" /> */}
       <div className="w-full mt-6-0 ">
         <div className="">
           <Swiper
@@ -69,11 +73,16 @@ const TeamSwiper = (props) => {
       </div>
       <style global jsx>
         {`
-          @media only screen and (max-width: 600px) {
-            .team-swiper .swiper-slide img {
-              max-height: 40rem !important;
-            }
-          }
+          // @media only screen and (max-width: 600px) {
+          //   .team-swiper .swiper-slide img {
+          //     max-height: 40rem !important;
+          //   }
+          // }
+          // @media only screen and (max-width: 300px) {
+          //   .team-swiper .swiper-slide img {
+          //     max-height: 30rem !important;
+          //   }
+          // }
         `}
       </style>
     </div>

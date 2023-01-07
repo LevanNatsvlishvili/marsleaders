@@ -11,7 +11,7 @@ module.exports = {
     borderRadius: require('./commons/theme/spacing'),
     lineHeight: require('./commons/theme/spacing'),
     letterSpacing: require('./commons/theme/letterSpacing'),
-    // zIndex: require('./commons/theme/zIndex'),
+    zIndex: require('./commons/theme/zIndex'),
     // opacity: require('./commons/theme/opacity'),
     container: require('./commons/theme/container'),
     maxWidth: require('./commons/theme/spacing'),

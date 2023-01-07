@@ -5,7 +5,10 @@ import TimelineMobile from './TimelineMobile';
 
 function Timeline({ carousel }) {
   return (
-    <section className="h-100-vh w-full flex relative overflow-hidden">
+    <section
+      id="roadmap"
+      className="h-100-vh w-full flex relative overflow-hidden"
+    >
       <div className="w-4-0 min-w-4-0 lg:min-w-6-0 lg:w-6-0 h-full z-40 bg-text-primary">
         <div className="w-full h-full relative overflow-hidden flex justify-center">
           <div

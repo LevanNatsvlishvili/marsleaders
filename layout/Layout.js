@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
 
       <Header />
 
-      <main className="flex h-100-vh">{children}</main>
+      <main className="flex lg:h-100-vh">{children}</main>
     </div>
   );
 };

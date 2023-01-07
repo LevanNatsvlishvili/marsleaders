@@ -1,34 +1,46 @@
 import InlineSVG from 'react-inlinesvg';
 import { Logo } from 'components/Icons/Logo';
 import { Star } from '../../components/Icons/Star';
-import { useRouter } from 'next/router';
 import clsx from 'clsx';
 import { Wallet } from '../../components/Icons/Wallet';
 import { Hamburger } from 'components/Icons/Hamburger';
 import SocMedia from 'components/SocMedia';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import useStore from 'context/Context';
+import { debounce } from 'lodash';
 
 const NavLinks = [
-  { title: 'Home', activeIndex: [0] },
-  { title: 'About', activeIndex: [1, 2] },
-  { title: 'Roadmap', activeIndex: [3] },
-  { title: 'Benefits', activeIndex: [4] },
-  { title: 'Team', activeIndex: [5] },
-  { title: 'FAQ', activeIndex: [6] },
+  { title: 'Home', activeIndex: [] },
+  { title: 'About', activeIndex: [] },
+  { title: 'Roadmap', activeIndex: [] },
+  { title: 'Benefits', activeIndex: [] },
+  { title: 'Team', activeIndex: [] },
+  { title: 'FAQ', activeIndex: [] },
 ];
 
-function useQuery() {
-  const location = useRouter();
-  return location.pathname;
-}
-
 function Header() {
-  const { currView, setCurrView, swiperRef } = useStore();
+  const {
+    currView,
+    setCurrView,
+    swiperRef,
+    currViewMobile,
+    setCurrViewMobile,
+  } = useStore();
 
-  const location = useQuery();
+  const handleScrollValue = () => async (value) => {
+    console.log(value);
+    setCurrViewMobile(value);
+  };
+
+  const debouncedHandleScrollUpdate = debounce(handleScrollValue(), 500);
+
+  const onScrollChange = (value) => {
+    debouncedHandleScrollUpdate(value);
+  };
+
   const [hamburger, setHamburger] = useState(false);
+  const [links, setLinks] = useState([]);
 
   const handleNavigation = (val) => {
     swiperRef.slideTo(val);
@@ -40,11 +52,65 @@ function Header() {
     setHamburger(false);
   };
 
+  useEffect(() => {
+    const sections = document.querySelectorAll('section');
+    const navLi = document.querySelectorAll('.mobile-nav-links ul li');
+
+    window.onscroll = () => {
+      var current = '';
+      const arr = [0];
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (sectionTop === 0 && section.id !== 'home') return;
+        console.log(section.offsetTop);
+        const curr = arr.find((val) => sectionTop !== val);
+        if (!curr) {
+          arr.push(sectionTop);
+        }
+
+        if (window.pageYOffset >= sectionTop - 60) {
+          current = section.getAttribute('id');
+        }
+        onScrollChange(section.offsetTop);
+      });
+
+      navLi.forEach((li) => {
+        console.log(current);
+        li.classList.remove('!text-text-primary');
+        if (li.classList.contains(current)) {
+          li.classList.add('!text-text-primary');
+        }
+      });
+
+      arr.splice(0, 2);
+      const returnArr = NavLinks.filter((el, i) => i !== arr.length - 1).map(
+        (el, i) => {
+          if (i === 1) {
+            return {
+              ...el,
+              activeIndex: [arr[1], arr[2]],
+            };
+          }
+          if (i === 0)
+            return {
+              ...el,
+              activeIndex: [arr[i]],
+            };
+          return {
+            ...el,
+            activeIndex: [arr[i + 1]],
+          };
+        }
+      );
+      setLinks(returnArr);
+    };
+  }, [onScrollChange]);
+
   return (
-    <header className="h-4-0 lg:h-6-0 bg-black w-full fixed z-20 flex items-center ">
+    <header className="z-60 h-4-0 lg:h-6-0 bg-black w-full fixed z-20 flex items-center ">
       <div
         onClick={() => handleNavigation(0)}
-        className="cursor-pointer w-4-0 h-4-0 max-w-4-0 lg:h-6-0 lg:w-6-0 lg:min-w-6-0 flex items-center justify-center bg-red"
+        className=" cursor-pointer w-4-0 h-4-0 max-w-4-0 lg:h-6-0 lg:w-6-0 lg:min-w-6-0 flex items-center justify-center bg-red"
       >
         <InlineSVG src={Logo.src} className="lg:w-5-0 lg:h-5-0 w-3-0 h-3-0" />
       </div>
@@ -101,22 +167,26 @@ function Header() {
             transition={{
               duration: 0.2,
             }}
-            className="w-full h-100-vh bg-black fixed top-4-0 flex items-center"
+            className="w-full h-100-vh bg-black fixed top-4-0 flex items-center z-100 mobile-nav-links"
           >
             <ul>
-              {NavLinks.map((link, i) => (
+              {links.map((link, i) => (
                 <li
-                  onClick={() => handleNavigationMobile(link.activeIndex[0])}
+                  // onClick={() => handleNavigationMobile(link.activeIndex[0])}
+                  onClick={() => window.scroll(0, link.activeIndex[0])}
                   key={i}
                   className={clsx(
                     'select-none font-techno mb-3-0 hover:text-text-primary text-text-primary/50 leading-2-4 text-2-6 lg:text-3-2 tracking-0-96 text-primary flex items-center',
                     {
-                      '!text-text-primary': link.activeIndex.includes(currView),
+                      [link.title.toLowerCase()]: true,
+                      '': link.activeIndex.includes(currView),
                     }
                   )}
                 >
+                  {/* <a className="flex" href="#home"> */}
                   <InlineSVG src={Star.src} className="mx-5-2 " />
                   {link.title}
+                  {/* </a> */}
                 </li>
               ))}
             </ul>

@@ -80,7 +80,7 @@ export default function Home() {
           content="/images/cover-image.png"
         />
       </Head>
-      <div className="md:block hidden h-full">
+      <div className="lg:block hidden h-full">
         <Swiper
           {...swiperSettigns}
           modules={[Mousewheel]}
@@ -110,7 +110,7 @@ export default function Home() {
         </Swiper>
       </div>
 
-      <div className="md:hidden block bg-secondary">
+      <div className="lg:hidden block bg-secondary">
         <Welcome carousel={carousel} />
         <About carousel={carousel} />
         <Project carousel={carousel} />
