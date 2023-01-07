@@ -68,15 +68,6 @@ const BenefitsSwiper = (props) => {
           </Swiper>
         </div>
 
-        {/* <div className="h-full flex items-center">
-          <div ref={prevRef} className="mr-0-9 cursor-pointer">
-            prev
-          </div>
-          <div ref={nextRef} className="cursor-pointer">
-            next
-          </div>
-        </div> */}
-
         <SwiperNav
           length={list.length}
           ref={{
