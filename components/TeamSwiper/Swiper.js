@@ -38,12 +38,16 @@ const TeamSwiper = (props) => {
     <div>
       <div className="w-full bg-[#383838] h-0-1 mt-5-2" />
       <div className="w-full mt-6-0 ">
-        <div className="team-swiper">
-          <Swiper modules={[Navigation]} {...sliderOptions} className="">
+        <div className="">
+          <Swiper
+            modules={[Navigation]}
+            {...sliderOptions}
+            className="team-swiper"
+          >
             {list.map((item, i) => (
               <SwiperSlide key={item.id || i} className="cursor-pointer ">
-                <div>
-                  <img src={item.img} alt="" className="h-full" />
+                <div className="w-full">
+                  <img src={item.img} alt="" className="h-full w-full" />
                   <div className="bg-[#3b3535] p-2-0 h-15-0">
                     <div className="flex items-center">
                       <p className="text-2-8 text-white leading-4-4 tracking-0-84 font-techno">
@@ -63,6 +67,15 @@ const TeamSwiper = (props) => {
           </Swiper>
         </div>
       </div>
+      <style global jsx>
+        {`
+          @media only screen and (max-width: 600px) {
+            .team-swiper .swiper-slide img {
+              max-height: 40rem !important;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };
