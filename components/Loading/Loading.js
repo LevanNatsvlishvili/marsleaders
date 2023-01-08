@@ -8,7 +8,7 @@ function Loading(props) {
   return (
     <div
       className={clsx(
-        `bg-black z-50 w-full h-full flex justify-center items-center absolute`,
+        `bg-black z-70 w-full h-full flex justify-center items-center fixed`,
         {
           block: loading,
           hidden: !loading,

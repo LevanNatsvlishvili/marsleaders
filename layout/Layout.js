@@ -2,6 +2,10 @@ import React, { useEffect } from 'react';
 import useStore from 'context';
 import Loading from 'components/Loading';
 import Header from './Header';
+// import dynamic from 'next/dynamic';
+// const Header = dynamic(() => import('./Header'), {
+//   ssr: false,
+// });
 
 const Layout = ({ children }) => {
   const { loading, setLoading } = useStore();

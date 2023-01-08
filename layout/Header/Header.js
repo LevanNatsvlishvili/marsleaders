@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import InlineSVG from 'react-inlinesvg';
 import { Logo } from 'components/Icons/Logo';
 import { Star } from '../../components/Icons/Star';
@@ -5,12 +6,12 @@ import clsx from 'clsx';
 import { Wallet } from '../../components/Icons/Wallet';
 import { Hamburger } from 'components/Icons/Hamburger';
 import SocMedia from 'components/SocMedia';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import useStore from 'context/Context';
 import { debounce } from 'lodash';
 
-const NavLinks = [
+const NavLinksMobile = [
   { title: 'Home', activeIndex: [] },
   { title: 'About', activeIndex: [] },
   { title: 'Roadmap', activeIndex: [] },
@@ -18,91 +19,107 @@ const NavLinks = [
   { title: 'Team', activeIndex: [] },
   { title: 'FAQ', activeIndex: [] },
 ];
+const NavLinks = [
+  { title: 'Home', activeIndex: [0] },
+  { title: 'About', activeIndex: [1, 2] },
+  { title: 'Roadmap', activeIndex: [3] },
+  { title: 'Benefits', activeIndex: [4] },
+  { title: 'Team', activeIndex: [5] },
+  { title: 'FAQ', activeIndex: [6] },
+];
 
 function Header() {
-  const {
-    currView,
-    setCurrView,
-    swiperRef,
-    currViewMobile,
-    setCurrViewMobile,
-  } = useStore();
+  const { currView, setCurrView, swiperRef, setCurrViewMobile } = useStore();
 
   const handleScrollValue = () => async (value) => {
-    console.log(value);
+    // console.log(value.view.window.pageYOffset);
     setCurrViewMobile(value);
   };
 
-  const debouncedHandleScrollUpdate = debounce(handleScrollValue(), 500);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const debouncedHandleScrollUpdate = useCallback(
+    debounce(handleScrollValue(), 500),
+    []
+  );
 
   const onScrollChange = (value) => {
     debouncedHandleScrollUpdate(value);
   };
 
-  const [hamburger, setHamburger] = useState(false);
+  const [hamburger, setHamburger] = useState(true);
   const [links, setLinks] = useState([]);
 
   const handleNavigation = (val) => {
     swiperRef.slideTo(val);
     setCurrView(val);
   };
-  const handleNavigationMobile = (val) => {
-    swiperRef.slideTo(val);
-    setCurrView(val);
+  const handleNavigationMobile = (link) => {
+    window.scroll(0, link.activeIndex[0]);
     setHamburger(false);
   };
 
   useEffect(() => {
     const sections = document.querySelectorAll('section');
-    const navLi = document.querySelectorAll('.mobile-nav-links ul li');
+    const navLi = document.querySelectorAll('.mobile-nav-links li');
+    var current = '';
 
-    window.onscroll = () => {
-      var current = '';
-      const arr = [0];
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (sectionTop === 0 && section.id !== 'home') return;
-        console.log(section.offsetTop);
-        const curr = arr.find((val) => sectionTop !== val);
-        if (!curr) {
-          arr.push(sectionTop);
-        }
+    const arr = [0];
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      if (sectionTop === 0 && section.id !== 'home') return;
+      const curr = arr.find((val) => sectionTop !== val);
+      if (!curr) {
+        arr.push(sectionTop);
+      }
 
-        if (window.pageYOffset >= sectionTop - 60) {
-          current = section.getAttribute('id');
-        }
-        onScrollChange(section.offsetTop);
-      });
+      if (window.pageYOffset >= sectionTop - 60) {
+        current = section.getAttribute('id');
+      }
+    });
 
-      navLi.forEach((li) => {
-        console.log(current);
-        li.classList.remove('!text-text-primary');
-        if (li.classList.contains(current)) {
-          li.classList.add('!text-text-primary');
-        }
-      });
-
-      arr.splice(0, 2);
-      const returnArr = NavLinks.filter((el, i) => i !== arr.length - 1).map(
-        (el, i) => {
-          if (i === 1) {
-            return {
-              ...el,
-              activeIndex: [arr[1], arr[2]],
-            };
-          }
-          if (i === 0)
-            return {
-              ...el,
-              activeIndex: [arr[i]],
-            };
-          return {
-            ...el,
-            activeIndex: [arr[i + 1]],
-          };
-        }
-      );
+    arr.splice(0, 2);
+    const returnArr = NavLinksMobile.filter(
+      (el, i) => i !== arr.length - 1
+    ).map((el, i) => {
+      if (i === 1) {
+        return {
+          ...el,
+          activeIndex: [arr[1], arr[2]],
+        };
+      }
+      if (i === 0)
+        return {
+          ...el,
+          activeIndex: [arr[i]],
+        };
+      return {
+        ...el,
+        activeIndex: [arr[i + 1]],
+      };
+    });
+    if (links.length === 0) {
       setLinks(returnArr);
+    }
+
+    navLi.forEach((li) => {
+      li.classList.remove('!text-text-primary');
+      if (li.classList.contains(current)) {
+        li.classList.add('!text-text-primary');
+      }
+    });
+  }, [, onScrollChange]);
+
+  useEffect(() => {
+    setHamburger(false);
+  }, []);
+
+  useEffect(() => {
+    document.body.addEventListener('touchstart', onScrollChange, false);
+    document.body.addEventListener('touchmove', onScrollChange, false);
+
+    return () => {
+      document.body.removeEventListener('touchstart', onScrollChange, false);
+      document.body.removeEventListener('touchmove', onScrollChange, false);
     };
   }, [onScrollChange]);
 
@@ -167,26 +184,22 @@ function Header() {
             transition={{
               duration: 0.2,
             }}
-            className="w-full h-100-vh bg-black fixed top-4-0 flex items-center z-100 mobile-nav-links"
+            className="w-full h-100-vh bg-black fixed top-4-0 flex items-center z-100 "
           >
-            <ul>
+            <ul className="mobile-nav-links">
               {links.map((link, i) => (
                 <li
-                  // onClick={() => handleNavigationMobile(link.activeIndex[0])}
-                  onClick={() => window.scroll(0, link.activeIndex[0])}
+                  onClick={() => handleNavigationMobile(link)}
                   key={i}
                   className={clsx(
                     'select-none font-techno mb-3-0 hover:text-text-primary text-text-primary/50 leading-2-4 text-2-6 lg:text-3-2 tracking-0-96 text-primary flex items-center',
                     {
                       [link.title.toLowerCase()]: true,
-                      '': link.activeIndex.includes(currView),
                     }
                   )}
                 >
-                  {/* <a className="flex" href="#home"> */}
                   <InlineSVG src={Star.src} className="mx-5-2 " />
                   {link.title}
-                  {/* </a> */}
                 </li>
               ))}
             </ul>

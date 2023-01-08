@@ -17,10 +17,14 @@ import { Logo } from 'components/Icons/Logo';
 import Team from 'components/Pages/Team';
 
 export default function Home() {
-  const { currView, setCurrView, setSwiperRef } = useStore();
+  const { currView, setCurrView, currViewMobile, setSwiperRef } = useStore();
   const [carousel, setCarousel] = useState(0);
 
   useEffect(() => {
+    if (carousel < -70) {
+      setCarousel(0);
+      return;
+    }
     setTimeout(() => {
       if (carousel > 90) {
         setCarousel(0);
@@ -29,8 +33,25 @@ export default function Home() {
       setCarousel(carousel - 1);
     }, 300);
 
+    console.log(carousel < -70);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currView]);
+
+  useEffect(() => {
+    if (carousel < -70) {
+      setCarousel(0);
+      return;
+    }
+    setTimeout(() => {
+      if (carousel > 90) {
+        setCarousel(0);
+        return;
+      }
+      setCarousel(carousel - 1);
+    }, 300);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currViewMobile]);
 
   const handleSlideChange = (e) => {
     setCurrView(e.activeIndex);
