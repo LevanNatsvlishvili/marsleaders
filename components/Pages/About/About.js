@@ -32,10 +32,9 @@ function About({ carousel }) {
             <div className="h-0-2 mt-1-0 xss:mt-1-6 mb-1-4 lg:mb-2-8 lg:mt-2-1 lg:mb-3-7 w-full bg-red-dark" />
 
             <p className="font-galatea text-text-secondary text-1-6 xss:text-2-2 lg:text-3-2 leading-3-9 tracking-0-96">
-              Marsleaders - is a play-&-earn blockchain based metaverse world
-              life simulation game, giving humanity an opportunity to start
-              over, from a blank red soil, to base a new virtual civilization on
-              Mars.
+              Marsleaders is creating a multiplayer virtual roleplay
+              civilization game by moving 195 earth countries to Mars.
+              Competition between the countries & more.
             </p>
           </div>
           <div className="hidden lg:flex min-w-50-vh w-50-vh bg-red-darker h-full items-center justify-center py-11-0">
@@ -56,8 +55,9 @@ function About({ carousel }) {
             />
           </div>
           <p className="hidden sm:block font-techno mt-2-0 xs:mt-4-0 text-center lg:text-left text-text-primary text-2-2 leading-3-2 lg:text-3-6 lg:leading-6-0 tracking-3-6 font-blonde lg:w-60-percent lg:w-45-percent ">
-            The Age of Exploration might be over for earth, but it’s only the
-            beginning <span className="text-red">for Mars</span>
+            Marsleaders giving humanity an opportunity to start over, from a
+            blank red soil, to base a new virtual civilization{' '}
+            <span className="text-red">on Mars</span>
           </p>
 
           <img

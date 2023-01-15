@@ -29,19 +29,6 @@ const SwiperNav = forwardRef((props, ref) => {
           </div>
         </div>
       )}
-      <style jsx>
-        {`
-          .bullet-pagination .swiper-pagination-bullet {
-            margin-right: 3rem;
-          }
-          .swiper-pagination-bullet:last-child {
-            margin-right: 0;
-          }
-          .bullet-pagination .swiper-pagination-bullet {
-            background: #fff;
-          }
-        `}
-      </style>
     </div>
   );
 });

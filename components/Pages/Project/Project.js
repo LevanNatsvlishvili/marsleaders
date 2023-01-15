@@ -4,7 +4,7 @@ import InlineSVG from 'react-inlinesvg';
 import Swiper from 'components/Swiper';
 import { Star } from 'components/Icons/Star';
 
-function Project({ carousel }) {
+function Project({ carousel, id }) {
   return (
     <section id="about" className="md:h-100-vh w-full flex relative ">
       <div className="w-4-0 min-w-4-0 lg:min-w-6-0 lg:w-6-0 h-auto md:h-full z-40 bg-red-darker">
@@ -21,12 +21,12 @@ function Project({ carousel }) {
             <span className="text-red">NFT holders </span>
             and players will be able to obtain various roles with different
             privileges in a game, as well as virtual lands and facilities on the
-            newly ‘habitable’
+            newly "habitable"
             <span className="text-red"> red planet</span>, to create their own
-            reality, states, laws and community
+            reality, states, laws, and communities.
           </p>
 
-          <Swiper list={imagesNew} />
+          <Swiper list={imagesNew} id={id} />
 
           <p className="text-[#d6d6d6] leading-3-5 text-1-6 md:text-2-4 lg:text-2-8 tracking-0-84 font-galatea mt-4-4">
             Marsleaders is a game of fiction, however, success in this game

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Pagination, Navigation } from 'swiper/core';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -7,10 +7,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import PropTypes from 'prop-types';
 import SwiperNav from './SwiperNav';
-// import Promo from 'components/Promo';
 
 const CardSlider = (props) => {
-  const { list } = props;
+  const { list, id } = props;
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -22,7 +21,8 @@ const CardSlider = (props) => {
     },
     pagination: {
       type: 'bullets',
-      el: '.bullet-pagination',
+      el: `.${id}`,
+      // el: id,
     },
     speed: 800,
     breakpoints: {
@@ -69,12 +69,15 @@ const CardSlider = (props) => {
           </Swiper>
         </div>
 
-        <SwiperNav
-          ref={{
-            prevRef: prevRef,
-            nextRef: nextRef,
-          }}
-        />
+        {id === 'desktop-swiper' && (
+          <SwiperNav
+            id={id}
+            ref={{
+              prevRef: prevRef,
+              nextRef: nextRef,
+            }}
+          />
+        )}
         <style global jsx>
           {`
             .swiper-component

@@ -33,8 +33,6 @@ export default function Home() {
       setCarousel(carousel - 1);
     }, 300);
 
-    console.log(carousel < -70);
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currView]);
 
@@ -58,9 +56,6 @@ export default function Home() {
   };
 
   const swiperSettigns = {
-    mousewheel: {
-      releaseOnEdges: true,
-    },
     direction: 'vertical',
     slidesPerView: 1,
     mousewheel: {
@@ -85,21 +80,42 @@ export default function Home() {
         <title>Marsleaders</title>
         <meta
           name="description"
-          content="Marsleaders - is a play-&-earn blockchain based metaverse world life simulation game, giving humanity an opportunity to start over, from a blank red soil, to base a new virtual civilization on Mars."
+          content="Marsleaders - is a play to earn blockchain based metaverse world life simulation game, giving humanity an opportunity to start over, from a blank red soil, to base a new virtual civilization on Mars."
         />
         <meta
-          name="og:description"
+          name="keywords"
+          content="marsleaders, nft, blockchain, 2023, p2e, play to earn, "
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Marsleaders" />
+        <meta property="og:url" key="ogUrl" content="https://marsleaders.com" />
+        <meta
+          property="og:description"
           content="Marsleaders - is a play-&-earn blockchain based metaverse world life simulation game, giving humanity an opportunity to start over, from a blank red soil, to base a new virtual civilization on Mars."
         />
-        <meta name="og:title" content="Marsleaders" />
-        <link rel="icon" href={Logo.src} />
-        <meta property="og:url" key="ogUrl" content="https://marsleaders.com" />
-
         <meta
           property="og:image"
           key="ogImage"
           content="/images/cover-image.png"
         />
+        <meta property="twitter:type" content="website" />
+        <meta property="twitter:title" content="Marsleaders" />
+        <meta
+          property="twitter:url"
+          key="ogUrl"
+          content="https://marsleaders.com"
+        />
+        <meta
+          property="twitter:description"
+          content="Marsleaders - is a play-&-earn blockchain based metaverse world life simulation game, giving humanity an opportunity to start over, from a blank red soil, to base a new virtual civilization on Mars."
+        />
+        <meta
+          property="twitter:image"
+          key="ogImage"
+          content="/images/cover-image.png"
+        />
+        <link rel="icon" href={Logo.src} />
       </Head>
       <div className="lg:block hidden h-full">
         <Swiper
@@ -114,7 +130,7 @@ export default function Home() {
             <About carousel={carousel} />
           </SwiperSlide>
           <SwiperSlide className="!h-full">
-            <Project carousel={carousel} />
+            <Project carousel={carousel} id="desktop-swiper" />
           </SwiperSlide>
           <SwiperSlide className="!h-full">
             <Timeline carousel={carousel} />
@@ -134,7 +150,7 @@ export default function Home() {
       <div className="lg:hidden block bg-secondary">
         <Welcome carousel={carousel} />
         <About carousel={carousel} />
-        <Project carousel={carousel} />
+        <Project carousel={carousel} id="mobile-swiper" />
         <Timeline carousel={carousel} />
         <BenefitsComponent carousel={carousel} />
         <Team carousel={carousel} />

@@ -8,7 +8,7 @@ import InlineSVG from 'react-inlinesvg';
 import { ControlPanel } from 'components/Icons/ControlPanel';
 import { ArrowDownV2 } from 'components/Icons/Arrow';
 
-function TimelineMobile({ carousel }) {
+function TimelineMobile({ timeline }) {
   const { currView } = useStore();
   const [rocket, setRocket] = useState(0);
   const [planets, setPlanets] = useState(0);
@@ -32,6 +32,7 @@ function TimelineMobile({ carousel }) {
   useEffect(() => {
     setRocket(120);
     setDot(timeline.length - 1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleRocket = () => {
@@ -162,39 +163,3 @@ const CPanel = ({ up, down }) => (
 );
 
 export default TimelineMobile;
-
-const timeline = [
-  {
-    date: 'December 2023',
-    content: `MarsLeaders Official Launch`,
-  },
-  {
-    date: 'Novebmer 2023',
-    content: `Game utility sales Announcing the season II`,
-  },
-  {
-    date: 'September 2023',
-    content: `Opening BETA version of MarsLeaders Announcing game utility sales (vehicles, businesses)`,
-  },
-  {
-    date: 'April 2023',
-    content: `First community party in New York First community party in Amsterdam Marsleaders lands sale`,
-  },
-  {
-    date: 'March 2023',
-    content: `Announcing metaverse lands on sale Announcing whitelist contests for the land sales `,
-  },
-  {
-    date: 'Ferbuary 2023',
-    content: `MarsLeaders game development
-      First Season competition launch on Discord with 500k prize pool `,
-  },
-  {
-    date: 'January 2023',
-    content: `Announcing MarsCoin First sales launch of Citizen collection (9750 NFT’s) Presidents sales with auction system (195 NFT’s) Contest Winner’s Awards`,
-  },
-  {
-    date: 'September-January 2022',
-    content: 'Contests with prizes Sneak peeks Whitelist giveaways',
-  },
-];

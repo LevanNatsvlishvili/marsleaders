@@ -3,12 +3,14 @@ import InlineSVG from 'react-inlinesvg';
 import PropTypes from 'prop-types';
 import { ArrowLeft, ArrowRight } from 'components/Icons/Arrow';
 import { Dot } from 'components/Icons/Dot';
+import clsx from 'clsx';
 
 const SwiperNav = forwardRef((props, ref) => {
   const { nextRef, prevRef } = ref;
+
   return (
     <div className="md:flex hidden h-2-4 items-center w-full mt-5-2 pr-11-2 relative pl-16-2">
-      <div className="bullet-pagination absolute !bottom-0 h-full">
+      <div className={clsx('absolute !bottom-0 h-full', props.id)}>
         <div className="h-0-7 w-0-7 rounded-50-percent bg-[#E6E6E6] swiper-pagination-bullet" />
       </div>
       <div className="h-0-2 relative  w-full">
@@ -23,7 +25,7 @@ const SwiperNav = forwardRef((props, ref) => {
           <InlineSVG src={ArrowRight.src} className="" />
         </div>
       </div>
-      <style jsx>
+      <style jsx global>
         {`
           .bullet-pagination .swiper-pagination-bullet {
             margin-right: 3rem;

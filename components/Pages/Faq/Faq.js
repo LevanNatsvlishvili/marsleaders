@@ -10,7 +10,7 @@ function Faq({ carousel }) {
       <div className="w-4-0 min-w-4-0 lg:min-w-6-0 lg:w-6-0 h-full z-40 bg-text-primary">
         <div className="w-full h-full relative overflow-hidden flex justify-center">
           <div
-            className="text-carousel text-carousel-5"
+            className="text-carousel text-carousel-6"
             style={{ transform: `translateY(${carousel}00px)` }}
           />
         </div>
@@ -45,14 +45,12 @@ const faqs = [
     `,
   },
   {
-    heading: 'When is mint and strategies?',
-    content: `Marsleaders is launching first sale only for VIPs, people who have whitelist, will be able to purchase NFT before the public sale. There is more than one month period between VIP sale and Public sale, because we announced warmup competition before first season takes off.
-      <br/>
-      VIP Sale - 14 January
-      <br/>Launching presidents at an auction (10 presidents weekly) - From 20 January
-      <br/>Launching warmup competition between VIP community members with prizepool of $20 000
-      <br/>Launching public sale at 20 Ferbuary
-      <br/>First season takes off.
+    heading: 'Mint date and strategies?',
+    content: `Supply: 1950
+      <br/>Mint date: Jan 31, 5PM UTC
+      <br/>Mint Duration: 1hr Presale minting; 1hr Public
+      <br/>Mint Price: WL: 0.06eth ; Public 0.09eth
+      <br/>Max per wallet: 3 for Presale, 5 for Public
       `,
   },
   {

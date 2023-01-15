@@ -50,6 +50,13 @@ const presidents = [
   },
 ];
 
+const content = {
+  citizens:
+    "Marsleaders will be free to play, but if you're holding, you're getting awesome benefits & more to reveal",
+  presidents:
+    "If you become the president, you will receive the twitter account of the country's president and recommendations for managing the country",
+};
+
 function BenefitsComponent({ carousel }) {
   const [value, setValue] = useState('citizens');
 
@@ -80,9 +87,7 @@ function BenefitsComponent({ carousel }) {
         </div>
         <div className="h-15-vh sm:h-75-vh w-full flex py-4-0 pl-2-0 pr-6-0 md:pl-4-0 md:md:pl-9-0 xsm:pl-4-0 xsm:pr-8-0 md:pr-14-0 flex-col">
           <p className="font-galatea text-text-secondary text-1-6 xss:text-2-2 lg:text-3-2 leading-3-9 tracking-0-96">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley
+            {content[value]}
           </p>
 
           <div className={value === 'citizens' ? 'block' : 'hidden'}>

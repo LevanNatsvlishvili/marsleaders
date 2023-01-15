@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { Navigation } from 'swiper/core';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -71,20 +71,6 @@ const TeamSwiper = (props) => {
           </Swiper>
         </div>
       </div>
-      <style global jsx>
-        {`
-          // @media only screen and (max-width: 600px) {
-          //   .team-swiper .swiper-slide img {
-          //     max-height: 40rem !important;
-          //   }
-          // }
-          // @media only screen and (max-width: 300px) {
-          //   .team-swiper .swiper-slide img {
-          //     max-height: 30rem !important;
-          //   }
-          // }
-        `}
-      </style>
     </div>
   );
 };
