@@ -80,11 +80,11 @@ export default function Home() {
         <title>Marsleaders</title>
         <meta
           name="description"
-          content="Marsleaders - is a play to earn blockchain based metaverse world life simulation game, giving humanity an opportunity to start over, from a blank red soil, to base a new virtual civilization on Mars."
+          content="Marsleaders is a play to earn blockchain based metaverse world life simulation game, giving humanity an opportunity to start over, from a blank red soil, to base a new virtual civilization on Mars."
         />
         <meta
           name="keywords"
-          content="marsleaders, nft, blockchain, 2023, p2e, play to earn, "
+          content="marsleaders, nft, blockchain, 2023, p2e, play to earn "
         />
 
         <meta property="og:type" content="website" />

@@ -84,8 +84,8 @@ function TimelineMobile({ timeline }) {
 
   return (
     <div className="w-full h-full ">
-      <div className="h-50-vh w-full overflow-hidden">
-        <div className="absolute h-8-0 w-6-0 xss:h-10-0 -mt-3-0 top-50-percent -ml-4-0 z-20 left-50-percent -translate-y-50-percent translate-x-50-percent">
+      <div className="h-35-0 w-full overflow-hidden">
+        <div className="absolute h-8-0 w-6-0 xss:h-10-0 -mt-1-0 top-50-percent -ml-4-0 z-20 left-50-percent -translate-y-50-percent translate-x-50-percent">
           <motion.img
             animate={{
               rotate: direction === 'up' ? '0deg' : '180deg',
@@ -116,7 +116,7 @@ function TimelineMobile({ timeline }) {
           </div>
         </div>
       </div>
-      <div className="h-50-vh w-full p-2-0">
+      <div className=" w-full p-2-0">
         <div className="h-3-8 border border-[#2c2c2c] px-1-6 rounded-1-6 mt-0-8 flex items-center">
           <p className="font-techno text-white text-1-6 font-ranger leading-1-9 tracking-3-2">
             {timeline[dot]['date']}

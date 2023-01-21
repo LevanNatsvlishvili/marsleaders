@@ -31,21 +31,6 @@ const NavLinks = [
 function Header() {
   const { currView, setCurrView, swiperRef, setCurrViewMobile } = useStore();
 
-  const handleScrollValue = () => async (value) => {
-    // console.log(value.view.window.pageYOffset);
-    setCurrViewMobile(value);
-  };
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const debouncedHandleScrollUpdate = useCallback(
-    debounce(handleScrollValue(), 500),
-    []
-  );
-
-  const onScrollChange = (value) => {
-    debouncedHandleScrollUpdate(value);
-  };
-
   const [hamburger, setHamburger] = useState(true);
   const [links, setLinks] = useState([]);
 
@@ -107,21 +92,79 @@ function Header() {
         li.classList.add('!text-text-primary');
       }
     });
-  }, [, onScrollChange]);
+  }, [handleNavigationMobile]);
 
   useEffect(() => {
     setHamburger(false);
   }, []);
 
   useEffect(() => {
-    document.body.addEventListener('touchstart', onScrollChange, false);
-    document.body.addEventListener('touchmove', onScrollChange, false);
+    var xDown = null;
+    var yDown = null;
+
+    const handleScrollValue = () => async (value) => {
+      // console.log(value.view.window.pageYOffset);
+      setCurrViewMobile(value);
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const debouncedHandleScrollUpdate = debounce(handleScrollValue(), 500);
+
+    function getTouches(evt) {
+      return (
+        evt.touches || // browser API
+        evt.originalEvent.touches
+      ); // jQuery
+    }
+
+    function handleTouchStart(evt) {
+      const firstTouch = getTouches(evt)[0];
+      xDown = firstTouch.clientX;
+      yDown = firstTouch.clientY;
+    }
+
+    function handleTouchMove(evt) {
+      if (!xDown || !yDown) {
+        return;
+      }
+
+      var xUp = evt.touches[0].clientX;
+      var yUp = evt.touches[0].clientY;
+
+      var xDiff = xDown - xUp;
+      var yDiff = yDown - yUp;
+      console.log(yDiff);
+      if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        /*most significant*/
+        if (xDiff > 0) {
+          /* left swipe */
+          setCurrViewMobile((prev) => prev + 1);
+        } else {
+          /* right swipe */
+          setCurrViewMobile((prev) => prev + 1);
+        }
+      } else {
+        if (yDiff > 0) {
+          /* down swipe */
+          setCurrViewMobile((prev) => prev + 1);
+        } else {
+          /* up swipe */
+          setCurrViewMobile((prev) => prev + 1);
+        }
+      }
+      /* reset values */
+      xDown = null;
+      yDown = null;
+    }
+
+    document.body.addEventListener('touchstart', handleTouchStart, false);
+    document.body.addEventListener('touchmove', handleTouchMove, false);
 
     return () => {
-      document.body.removeEventListener('touchstart', onScrollChange, false);
-      document.body.removeEventListener('touchmove', onScrollChange, false);
+      document.body.removeEventListener('touchstart', handleTouchStart, false);
+      document.body.removeEventListener('touchmove', handleTouchMove, false);
     };
-  }, [onScrollChange]);
+  }, []);
 
   return (
     <header className="z-60 h-4-0 lg:h-6-0 bg-black w-full fixed z-20 flex items-center ">

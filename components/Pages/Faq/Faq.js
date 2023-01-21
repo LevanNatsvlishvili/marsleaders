@@ -35,34 +35,43 @@ function Faq({ carousel }) {
 const faqs = [
   {
     heading: 'What is Marsleaders?',
-    content:
-      'Marsleaders is a competitively driven community that aims to make a blockchain-based multiplayer roleplay life-simulation civilization based on Mars. Moving 195 Earth countries along with their presidents and citizens to Mars in a fictitious manner, hosting competitions between the countries by hosting weekly challenges and calculating points on a leaderboard based on how well citizens and presidents handle these challenges.',
+    content: `
+  Marsleaders is a competitively driven community that aims to make a blockchain-
+based multiplayer civilization based on Mars. Offering planet of explorations, new 
+frontiers and opportunities for you to put your entrepreneurship talents to the test,
+and be the constructor of your virtual existence. We start this by moving 195 Earth
+countries along with their presidents and citizens to Mars in a fictitious manner, 
+hosting competitions between the countries by giving weekly challenges and 
+calculating points on a leaderboard based on how well citizens and presidents 
+handle these challenges.
+  `,
   },
   {
-    heading: 'Is team doxxed and how can I get more details about project?',
-    content: `The team is doxxed. If you want to be more educated about the project, we advise you to check #project-info, #roadmap, and #utilities.
-    <br/>Please always feel free to ask any questions you may have by raising a ticket or asking in community chats. 
+    heading: 'How can I learn more about the project and team?',
+    content: `Check out #project-info, #roadmap, #utilities and #whitepaper on our Discord.
+    Marsleaders is considered a doxxed team, although publicly it's not because of safety reasons.
+    Marsleaders staff have already doxxed for big partnerships, and the team is always ready to doxx for legal institutions.
+    Follow us to stay tuned on upcoming AMAs.
     `,
   },
   {
-    heading: 'Mint date and strategies?',
+    heading: 'When is the mint?',
     content: `Supply: 1950
       <br/>Mint date: Jan 31, 5PM UTC
-      <br/>Mint Duration: 1hr Presale minting; 1hr Public
+      <br/>Mint Duration: 1hr Presale ; 1hr Public
       <br/>Mint Price: WL: 0.06eth ; Public 0.09eth
       <br/>Max per wallet: 3 for Presale, 5 for Public
       `,
   },
   {
     heading: 'What is mint price?',
-    content: `Price for Presale collection is 0.07ETH, Public mint price is TBA.
-    <br/>You can mint up to 3 NFT with whitelist.
+    content: `Price for Presale collection WL: 0.06ETH, Public: 0.09eth
     `,
   },
   {
-    heading: 'How do get I A whitelist?',
+    heading: 'How to get a whitelist?',
     content:
-      '<p> Current Mission To Get Whitelisted <br/> \n ☛Get JR.Martian Rank & invite 3 members<br/> ☛Invite 10 members with your personal invitation link</p>',
+      '<p> Current Mission To Get Whitelisted <br/> \n ☛Get Martian Rank & invite 5 members <br/> ☛Invite 15 members with your personal invitation link</p>',
   },
 ];
 

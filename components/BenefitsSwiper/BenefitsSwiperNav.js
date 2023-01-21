@@ -16,14 +16,14 @@ const SwiperNav = forwardRef((props, ref) => {
       )}
     >
       <div className="h-0-2 relative w-full">
-        <div className="!h-0-2 relative !bg-[#383838] w-full " />
+        <div className="!h-0-2 relative !bg-red-dark w-full " />
       </div>
       {length > 3 && (
         <div className="h-full absolute right-0  flex items-center">
           <div ref={prevRef} className="mr-0-9 cursor-pointer">
             <InlineSVG src={ArrowLeft.src} className="" />
           </div>
-          <InlineSVG src={Dot.src} className="mr-0-9" />
+          <InlineSVG src={Dot.src} className="mr-0-9 fill-red-dark" />
           <div ref={nextRef} className="cursor-pointer">
             <InlineSVG src={ArrowRight.src} className="" />
           </div>

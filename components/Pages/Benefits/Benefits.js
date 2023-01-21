@@ -29,7 +29,7 @@ const citizens = [
 ];
 const presidents = [
   {
-    content: 'More percentage from the prize pool',
+    content: 'Larger share from the Prize Pool',
     icon: BenefitsPresident1,
   },
   {
@@ -37,7 +37,7 @@ const presidents = [
     icon: BenefitsPresident2,
   },
   {
-    content: '3x Personal Free Land',
+    content: '3X Free Land on the Marsleaders game',
     icon: BenefitsPresident3,
   },
   {
@@ -52,7 +52,7 @@ const presidents = [
 
 const content = {
   citizens:
-    "Marsleaders will be free to play, but if you're holding, you're getting awesome benefits & more to reveal",
+    'Marsleaders is free to play, but if you’re an NFT Holder, expect special benefits & more to reveal',
   presidents:
     "If you become the president, you will receive the twitter account of the country's president and recommendations for managing the country",
 };
