@@ -247,7 +247,7 @@ function Header() {
               ))}
             </ul>
             <div className="absolute bottom-8-0 w-full text-white ">
-              <SocMedia />
+              <SocMedia isMobile />
             </div>
           </motion.div>
         )}
