@@ -84,7 +84,7 @@ function TimelineMobile({ timeline }) {
 
   return (
     <div className="w-full h-full ">
-      <div className="h-35-0 w-full overflow-hidden">
+      <div className="h-45-0 w-full overflow-hidden">
         <div className="absolute h-8-0 w-6-0 xss:h-10-0 -mt-1-0 top-50-percent -ml-4-0 z-20 left-50-percent -translate-y-50-percent translate-x-50-percent">
           <motion.img
             animate={{
@@ -100,7 +100,7 @@ function TimelineMobile({ timeline }) {
             minHeight: `calc(20%*${timeline.length})`,
             transform: `translateY(calc(${rocket}% * -1))`,
           }}
-          className="h-full w-full duration-1000 relative mt-8-0 xss:mt-12-0 xs:mt-10-0 md:mt-16-0 lg:mt-18-0"
+          className="h-full w-full duration-1000 relative mt-8-0 xss:mt-12-0 xs:mt-10-0 lg:mt-16-0 lg:mt-18-0"
         >
           <div className="absolute h-full left-50-percent -translate-x-50-percent ">
             {timeline.map((checkpoint, i) => (

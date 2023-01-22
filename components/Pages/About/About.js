@@ -17,7 +17,7 @@ function About({ carousel }) {
         </div>
       </div>
       <div className="w-full">
-        <div className="lg:h-30-percent lg:h-50-percent text-primary flex relative">
+        <div className="lg:h-50-percent text-primary flex relative">
           <div className="w-fit pb-4-0 lg:pb-0 4k:w-full h-full bg-red flex lg:justify-center flex-col px-2-8 lg:px-6-0 xl:pl-14-0 xl:pr-11-6 pt-4-0">
             <div className="flex items-center">
               <InlineSVG
@@ -44,7 +44,7 @@ function About({ carousel }) {
             <InlineSVG src={LogoLg.src} className="h-full mt-6-0" />
           </div>
         </div>
-        <div className="lg:h-70-percent lg:h-50-percent text-primary flex-col lg:flex-row flex items-center relative p-3-0 lg:px-0">
+        <div className="lg:h-50-percent text-primary flex-col lg:flex-row flex items-center relative p-3-0 lg:px-0">
           <div className=" relative h-full group 3xl:ml-7-0 lg:ml-3-0 pb-5-0 lg:pb-0">
             <InlineSVG
               src={MarsleaderHover.src}

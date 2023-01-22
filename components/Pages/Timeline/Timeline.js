@@ -9,7 +9,7 @@ function Timeline({ carousel }) {
       id="roadmap"
       className="lg:h-100-vh w-full flex relative overflow-hidden"
     >
-      <div className="w-4-0 min-w-4-0 lg:min-w-6-0 lg:w-6-0 h-auto md:h-full z-40 bg-text-primary">
+      <div className="w-4-0 min-w-4-0 lg:min-w-6-0 lg:w-6-0 h-auto lg:h-full z-40 bg-text-primary">
         <div className="w-full h-full relative overflow-hidden flex justify-center">
           <div
             className="text-carousel text-carousel-3"
