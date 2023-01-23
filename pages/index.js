@@ -62,7 +62,7 @@ export default function Home() {
       forceToAxis: true,
       sensitivity: 1,
       releaseOnEdges: true,
-      thresholdDelta: 50,
+      thresholdDelta: 80,
     },
     allowTouchMove: true,
     breakpoints: {

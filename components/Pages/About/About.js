@@ -29,9 +29,9 @@ function About({ carousel }) {
               </p>
             </div>
 
-            <div className="h-0-2 mt-1-0 xss:mt-1-6 mb-1-4 lg:mb-2-8 lg:mt-2-1 lg:mb-3-7 w-full bg-red-dark" />
+            <div className="h-0-2 mt-1-0 xss:mt-1-6 mb-1-4 lg:mb-2-0 lg:mt-2-1 lg:mb-3-7 w-full bg-red-dark" />
 
-            <p className="font-galatea text-text-secondary text-1-6 xss:text-2-2 lg:text-3-2 leading-3-9 tracking-0-96">
+            <p className="font-galatea text-text-secondary text-1-6 xss:text-2-2 lg:text-2-8 leading-3-9 tracking-0-96">
               Marsleaders is an Etherium Blockchain based virtual Civilization
               on Mars, presenting the Red Planet to our exploration and
               experimentation. Here on Mars, each of Earth's 195 countries are
