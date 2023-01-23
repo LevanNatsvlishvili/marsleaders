@@ -39,7 +39,7 @@ function Welcome({ carousel }) {
         <div className="block  absolute top-50-percent md:-translate-y-50-percent left-50-percent -translate-x-50-percent w-100-percent">
           <div className="block mb-10-0">{!loading && <HeadingGlitch />}</div>
         </div>
-        <div className="absolute bottom-25-percent left-50-percent -translate-x-50-percent md:hidden block">
+        <div className="absolute bottom-25-percent left-50-percent -translate-x-50-percent ">
           <ScrollDown loading={loading} currView={currView} />
         </div>
       </div>
