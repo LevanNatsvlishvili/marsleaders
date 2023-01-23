@@ -15,7 +15,7 @@ function Project({ carousel, id }) {
           />
         </div>
       </div>
-      <div className="pb-4-0 overflow-hidden w-full flex lg:items-center justify-center bg-secondary pt-6-0">
+      <div className="pb-4-0 overflow-hidden w-full flex lg:items-center justify-center bg-secondary pt-8-0 2xl:pt-6-0">
         <div className="max-w-90-percent lg:max-w-80-percent xl:max-w-72-percent ">
           <p className="text-[#d6d6d6] leading-3-5 text-1-6 md:text-2-4 lg:text-2-8 tracking-0-84 font-galatea">
             Join Marsleaders and help to shape this new virtual planet. The
