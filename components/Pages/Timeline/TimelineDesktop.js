@@ -162,7 +162,7 @@ const Rocket = ({ up, down, direction }) => (
         animate={{
           rotate: direction === 'up' ? '0deg' : '180deg',
         }}
-        className="w-full h-full"
+        className="h-full"
         src="/images/shuttle.png"
         alt=""
       />
