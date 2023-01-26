@@ -63,7 +63,7 @@ const CardSlider = (props) => {
           >
             {list.map((item, i) => (
               <SwiperSlide key={item.id || i} className="cursor-pointer ">
-                <img src={item} alt="" className="h-full" />
+                <img src={item} alt="" className="" />
               </SwiperSlide>
             ))}
           </Swiper>
